@@ -29,9 +29,42 @@ body {
 }
 
 .wrap {
+  position: relative;
   max-width: 720px;
   margin: 0 auto;
   padding: 48px 20px 64px;
+}
+
+/* Taalkeuze: toon alleen de actieve taal. */
+html[data-lang="nl"] [lang="en"] { display: none !important; }
+html[data-lang="en"] [lang="nl"] { display: none !important; }
+
+.lang-switch {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  display: inline-flex;
+  gap: 2px;
+  background: var(--card);
+  border: 1px solid var(--card-stroke);
+  border-radius: 999px;
+  padding: 3px;
+  z-index: 10;
+}
+.lang-switch button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.lang-switch button[aria-pressed="true"] {
+  background: var(--house);
+  color: var(--bg-bottom);
 }
 
 a { color: var(--house); text-decoration: none; }

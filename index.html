@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" data-lang="nl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,14 +8,22 @@
   <link rel="icon" type="image/png" href="assets/polder_favicon.png">
   <link rel="apple-touch-icon" href="assets/polder_favicon.png">
   <link rel="stylesheet" href="styles.css">
+  <script src="lang.js"></script>
 </head>
 <body>
   <div class="wrap">
+    <div class="lang-switch" role="group" aria-label="Taal / Language">
+      <button type="button" data-lang="nl">NL</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+
     <header class="hero">
       <img src="assets/polderpijplijn.png" alt="Polderpijplijn-logo">
       <h1>Polderpijplijn</h1>
-      <p class="lead">Een paar persoonlijke apps, met aandacht gemaakt. Geen
+      <p class="lead" lang="nl">Een paar persoonlijke apps, met aandacht gemaakt. Geen
         tracking, geen advertenties, geen accounts.</p>
+      <p class="lead" lang="en">A few personal apps, made with care. No tracking,
+        no ads, no accounts.</p>
     </header>
 
     <section class="card">
@@ -27,12 +35,16 @@
           <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
           <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
         </svg>
-        <h2>Over ons</h2>
+        <h2 lang="nl">Over ons</h2>
+        <h2 lang="en">About</h2>
       </div>
-      <p>Deze apps zijn gemaakt door Maarten, samen met Claude
+      <p lang="nl">Deze apps zijn gemaakt door Maarten, samen met Claude
         (Anthropic) als programmeerpartner. Het zijn privéprojecten, geen
         commerciële producten — gebouwd uit nieuwsgierigheid en voor eigen
         gebruik.</p>
+      <p lang="en">These apps are made by Maarten, together with Claude
+        (Anthropic) as a programming partner. They are personal projects, not
+        commercial products — built out of curiosity and for personal use.</p>
     </section>
 
     <section class="card">
@@ -41,7 +53,8 @@
         <img src="assets/icon.png" alt="Thuis-icoon">
         <span class="meta">
           <strong>Thuis</strong>
-          <span>Persoonlijk energie-dashboard voor je huis</span>
+          <span lang="nl">Persoonlijk energie-dashboard voor je huis</span>
+          <span lang="en">A personal energy dashboard for your home</span>
         </span>
         <span class="chev">&rsaquo;</span>
       </a>

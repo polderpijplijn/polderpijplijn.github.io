@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" data-lang="nl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,29 +8,44 @@
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="apple-touch-icon" href="../assets/favicon.png">
   <link rel="stylesheet" href="../styles.css">
+  <script src="../lang.js"></script>
 </head>
 <body>
   <div class="wrap">
-    <a class="back-link" href="../">&lsaquo; Alle apps</a>
+    <div class="lang-switch" role="group" aria-label="Taal / Language">
+      <button type="button" data-lang="nl">NL</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+
+    <a class="back-link" href="../" lang="nl">&lsaquo; Alle apps</a>
+    <a class="back-link" href="../" lang="en">&lsaquo; All apps</a>
 
     <header class="hero">
       <img src="../assets/icon.png" alt="Thuis-icoon">
       <h1>Thuis</h1>
-      <p class="lead">Een persoonlijk dashboard voor je energie thuis: zon, net,
+      <p class="lead" lang="nl">Een persoonlijk dashboard voor je energie thuis: zon, net,
         gas, verbruik, laadpaal en een verkenning voor de warmtepomp.</p>
+      <p class="lead" lang="en">A personal dashboard for your energy at home: solar, grid,
+        gas, usage, charger and an exploration for the heat pump.</p>
     </header>
 
     <section class="card">
-      <h2 style="margin-bottom:8px">Wat het doet</h2>
-      <p>Thuis haalt je energiegegevens op uit je eigen Home Assistant en toont
+      <h2 style="margin-bottom:8px" lang="nl">Wat het doet</h2>
+      <h2 style="margin-bottom:8px" lang="en">What it does</h2>
+      <p lang="nl">Thuis haalt je energiegegevens op uit je eigen Home Assistant en toont
         ze in een overzichtelijk dashboard. Beschikbaar voor iOS en Android. De
         app draait volledig op jouw gegevens en diensten — er zit geen account
         of cloud van ons tussen.</p>
+      <p lang="en">Thuis fetches your energy data from your own Home Assistant and shows
+        it in a clear dashboard. Available for iOS and Android. The app runs
+        entirely on your own data and services — there's no account or cloud of
+        ours in between.</p>
     </section>
 
     <section class="card">
-      <h2 style="margin-bottom:8px">Aan de slag</h2>
-      <ol>
+      <h2 style="margin-bottom:8px" lang="nl">Aan de slag</h2>
+      <h2 style="margin-bottom:8px" lang="en">Getting started</h2>
+      <ol lang="nl">
         <li>Open de instellingen in de app.</li>
         <li>Vul het adres van je <strong>Home Assistant</strong> in — lokaal
           (bijv. <code>homeassistant.local:8123</code>) of extern via Nabu Casa
@@ -41,9 +56,53 @@
           om de status van je laadpaal te zien.</li>
         <li>Tik op <strong>Verbinden</strong>.</li>
       </ol>
-      <h3>Even rondkijken zonder server?</h3>
-      <p>Vul <code>demo</code> in als adres en verbind — dan toont de app
+      <ol lang="en">
+        <li>Open the settings in the app.</li>
+        <li>Enter the address of your <strong>Home Assistant</strong> — local
+          (e.g. <code>homeassistant.local:8123</code>) or remote via Nabu Casa
+          (<code>https://&hellip;.ui.nabu.casa</code>).</li>
+        <li>In Home Assistant, create a <em>long-lived access token</em>
+          (profile &rarr; at the bottom) and paste it into the app.</li>
+        <li>Optional: enter your <strong>PlugChoice</strong> token (read-only)
+          to see the status of your charger.</li>
+        <li>Tap <strong>Connect</strong>.</li>
+      </ol>
+      <h3 lang="nl">Even rondkijken zonder server?</h3>
+      <h3 lang="en">Just want to look around without a server?</h3>
+      <p lang="nl">Vul <code>demo</code> in als adres en verbind — dan toont de app
         voorbeeldgegevens, zonder dat je iets hoeft in te stellen.</p>
+      <p lang="en">Enter <code>demo</code> as the address and connect — the app then
+        shows example data, without you having to set anything up.</p>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-bottom:8px">Home Assistant &amp; PlugChoice</h2>
+      <p lang="nl">Thuis bouwt voort op twee diensten die je zelf beheert:</p>
+      <p lang="en">Thuis builds on two services that you manage yourself:</p>
+      <ul lang="nl">
+        <li><strong><a href="https://www.home-assistant.io" target="_blank" rel="noopener">Home Assistant</a></strong>
+          — het open-source platform voor woningautomatisering. Hieruit haalt
+          Thuis al je energiegegevens: zonopbrengst, netverbruik, teruglevering
+          en gas.</li>
+        <li><strong><a href="https://plugchoice.com" target="_blank" rel="noopener">PlugChoice</a></strong>
+          — het laadplatform achter veel slimme laadpalen. Thuis gebruikt
+          PlugChoice voor de live gegevens van je laadpaal: laadstatus, actueel
+          vermogen en het verloop van je laadsessies.</li>
+      </ul>
+      <ul lang="en">
+        <li><strong><a href="https://www.home-assistant.io" target="_blank" rel="noopener">Home Assistant</a></strong>
+          — the open-source home automation platform. This is where Thuis gets
+          all your energy data: solar production, grid usage, feed-in and
+          gas.</li>
+        <li><strong><a href="https://plugchoice.com" target="_blank" rel="noopener">PlugChoice</a></strong>
+          — the charging platform behind many smart chargers. Thuis uses
+          PlugChoice for the live data of your charger: charging status, current
+          power and the history of your charging sessions.</li>
+      </ul>
+      <p lang="nl">Beide koppelingen zijn optioneel en alleen-lezen; je tokens blijven
+        op je eigen toestel.</p>
+      <p lang="en">Both connections are optional and read-only; your tokens stay on
+        your own device.</p>
     </section>
 
     <section class="card">
@@ -55,10 +114,14 @@
         </svg>
         <h2>Privacy</h2>
       </div>
-      <p>Thuis verzamelt geen gegevens en bevat geen tracking of advertenties. Je
+      <p lang="nl">Thuis verzamelt geen gegevens en bevat geen tracking of advertenties. Je
         adres en tokens blijven versleuteld op je eigen toestel en de app praat
         alleen met de diensten die je zelf instelt.</p>
-      <p><a href="privacy.html">Lees de volledige privacyverklaring &rsaquo;</a></p>
+      <p lang="en">Thuis collects no data and contains no tracking or ads. Your address
+        and tokens stay encrypted on your own device, and the app only talks to
+        the services you set up yourself.</p>
+      <p lang="nl"><a href="privacy.html">Lees de volledige privacyverklaring &rsaquo;</a></p>
+      <p lang="en"><a href="privacy.html">Read the full privacy policy &rsaquo;</a></p>
     </section>
 
     <p class="footer">Contact: <a href="mailto:info@polderpijplijn.nl">info@polderpijplijn.nl</a></p>

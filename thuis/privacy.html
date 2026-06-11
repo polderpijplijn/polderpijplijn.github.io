@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" data-lang="nl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,79 +8,130 @@
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="apple-touch-icon" href="../assets/favicon.png">
   <link rel="stylesheet" href="../styles.css">
+  <script src="../lang.js"></script>
 </head>
 <body>
   <div class="wrap">
-    <a class="back-link" href="./">&lsaquo; Terug naar Thuis</a>
+    <div class="lang-switch" role="group" aria-label="Taal / Language">
+      <button type="button" data-lang="nl">NL</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
 
-    <h1>Privacyverklaring</h1>
-    <p class="updated">App: Thuis (iOS en Android) &middot; Laatst bijgewerkt: 9 juni 2026</p>
+    <a class="back-link" href="./" lang="nl">&lsaquo; Terug naar Thuis</a>
+    <a class="back-link" href="./" lang="en">&lsaquo; Back to Thuis</a>
+
+    <h1 lang="nl">Privacyverklaring</h1>
+    <h1 lang="en">Privacy policy</h1>
+    <p class="updated" lang="nl">App: Thuis (iOS en Android) &middot; Laatst bijgewerkt: 9 juni 2026</p>
+    <p class="updated" lang="en">App: Thuis (iOS and Android) &middot; Last updated: 9 June 2026</p>
 
     <section class="card">
-      <p>Deze privacyverklaring beschrijft hoe de app <strong>Thuis</strong> met
+      <p lang="nl">Deze privacyverklaring beschrijft hoe de app <strong>Thuis</strong> met
         gegevens omgaat. Thuis is een persoonlijk, niet-commercieel project van
         Maarten. De verklaring geldt voor zowel de iOS- als de
         Android-versie van de app.</p>
+      <p lang="en">This privacy policy describes how the app <strong>Thuis</strong> handles
+        data. Thuis is a personal, non-commercial project by Maarten. The policy
+        applies to both the iOS and Android version of the app.</p>
     </section>
 
     <section class="card">
-      <h2>Welke gegevens we verzamelen</h2>
-      <p>Geen. Thuis verzamelt, bewaart of verstuurt geen persoonsgegevens naar
+      <h2 lang="nl">Welke gegevens we verzamelen</h2>
+      <h2 lang="en">What data we collect</h2>
+      <p lang="nl">Geen. Thuis verzamelt, bewaart of verstuurt geen persoonsgegevens naar
         de makers of naar derden. De app bevat:</p>
-      <ul>
+      <p lang="en">None. Thuis does not collect, store or send any personal data to the
+        makers or to third parties. The app contains:</p>
+      <ul lang="nl">
         <li>geen tracking;</li>
         <li>geen advertenties;</li>
         <li>geen analytics of gebruiksstatistieken;</li>
         <li>geen accounts of registratie.</li>
       </ul>
+      <ul lang="en">
+        <li>no tracking;</li>
+        <li>no ads;</li>
+        <li>no analytics or usage statistics;</li>
+        <li>no accounts or registration.</li>
+      </ul>
     </section>
 
     <section class="card">
-      <h2>Gegevens op je toestel</h2>
-      <p>Om verbinding te maken met je eigen diensten sla je in de app een aantal
+      <h2 lang="nl">Gegevens op je toestel</h2>
+      <h2 lang="en">Data on your device</h2>
+      <p lang="nl">Om verbinding te maken met je eigen diensten sla je in de app een aantal
         instellingen op. Deze blijven uitsluitend op je toestel:</p>
-      <ul>
+      <p lang="en">To connect to your own services, you store a number of settings in the
+        app. These stay solely on your device:</p>
+      <ul lang="nl">
         <li>het adres van je Home Assistant en het bijbehorende toegangstoken;</li>
         <li>een optioneel PlugChoice-token voor je laadpaal;</li>
         <li>je eigen voorkeuren (zoals tarieven en woninggegevens).</li>
       </ul>
-      <p>De tokens worden versleuteld opgeslagen — op iOS in de Keychain, op
+      <ul lang="en">
+        <li>the address of your Home Assistant and its access token;</li>
+        <li>an optional PlugChoice token for your charger;</li>
+        <li>your own preferences (such as tariffs and home details).</li>
+      </ul>
+      <p lang="nl">De tokens worden versleuteld opgeslagen — op iOS in de Keychain, op
         Android in EncryptedSharedPreferences. Ze worden nergens naartoe
         gestuurd, behalve naar de door jou ingestelde diensten om de gegevens
         op te halen.</p>
+      <p lang="en">The tokens are stored encrypted — on iOS in the Keychain, on
+        Android in EncryptedSharedPreferences. They are not sent anywhere,
+        except to the services you set up yourself in order to fetch the
+        data.</p>
     </section>
 
     <section class="card">
-      <h2>Diensten van derden</h2>
-      <p>Thuis communiceert alleen met de diensten die je zelf instelt:</p>
-      <ul>
+      <h2 lang="nl">Diensten van derden</h2>
+      <h2 lang="en">Third-party services</h2>
+      <p lang="nl">Thuis communiceert alleen met de diensten die je zelf instelt:</p>
+      <p lang="en">Thuis only communicates with the services you set up yourself:</p>
+      <ul lang="nl">
         <li><strong>Home Assistant</strong> — je eigen server. De app haalt
           hier je energiegegevens op. Adres en token blijven op je toestel.</li>
         <li><strong>PlugChoice</strong> — optioneel en alleen-lezen, voor de
           status van je laadpaal. Het token blijft op je toestel.</li>
       </ul>
-      <p>De app deelt geen gegevens met de makers of met andere derden.</p>
+      <ul lang="en">
+        <li><strong>Home Assistant</strong> — your own server. The app fetches
+          your energy data here. The address and token stay on your device.</li>
+        <li><strong>PlugChoice</strong> — optional and read-only, for the
+          status of your charger. The token stays on your device.</li>
+      </ul>
+      <p lang="nl">De app deelt geen gegevens met de makers of met andere derden.</p>
+      <p lang="en">The app shares no data with the makers or with other third parties.</p>
     </section>
 
     <section class="card">
-      <h2>Kinderen</h2>
-      <p>De app is niet gericht op kinderen en verzamelt bewust geen gegevens van
+      <h2 lang="nl">Kinderen</h2>
+      <h2 lang="en">Children</h2>
+      <p lang="nl">De app is niet gericht op kinderen en verzamelt bewust geen gegevens van
         wie dan ook.</p>
+      <p lang="en">The app is not aimed at children and deliberately collects no data from
+        anyone.</p>
     </section>
 
     <section class="card">
-      <h2>Wijzigingen</h2>
-      <p>Als deze verklaring verandert, passen we de datum bovenaan deze pagina
+      <h2 lang="nl">Wijzigingen</h2>
+      <h2 lang="en">Changes</h2>
+      <p lang="nl">Als deze verklaring verandert, passen we de datum bovenaan deze pagina
         aan. De meest actuele versie staat altijd op deze pagina.</p>
+      <p lang="en">If this policy changes, we update the date at the top of this page. The
+        most current version is always on this page.</p>
     </section>
 
     <section class="card">
       <h2>Contact</h2>
-      <p>Vragen over privacy? Mail naar
+      <p lang="nl">Vragen over privacy? Mail naar
+        <a href="mailto:info@polderpijplijn.nl">info@polderpijplijn.nl</a>.</p>
+      <p lang="en">Questions about privacy? Email
         <a href="mailto:info@polderpijplijn.nl">info@polderpijplijn.nl</a>.</p>
     </section>
 
-    <p class="footer">Thuis &middot; een privéproject van Maarten</p>
+    <p class="footer" lang="nl">Thuis &middot; een privéproject van Maarten</p>
+    <p class="footer" lang="en">Thuis &middot; a personal project by Maarten</p>
   </div>
 </body>
 </html>
