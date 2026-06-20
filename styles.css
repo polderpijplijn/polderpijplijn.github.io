@@ -121,6 +121,7 @@ h2 { font-size: 20px; font-weight: 700; margin: 0 0 4px; }
   color: var(--text);
 }
 .app-tile:hover { text-decoration: none; }
+.app-tile + .app-tile { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--card-stroke); }
 .app-tile img { width: 56px; height: 56px; border-radius: 14px; flex: none; }
 .app-tile .meta { display: flex; flex-direction: column; }
 .app-tile .meta strong { font-size: 17px; }
