@@ -23,21 +23,22 @@ working library, step by step.
 Grim Reader does not store your books; it reads them from a Grimmory server that
 you host yourself. If you don't have one yet, set that up first.
 
-The simplest and recommended way to run Grimmory is with **Docker**. A typical
-setup uses a `docker-compose.yml` that points Grimmory at two folders on your
-machine:
+The simplest and recommended way to run Grimmory is with **Docker**. The official
+image is **`grimmory/grimmory:latest`** on Docker Hub, and you run it with a
+`docker-compose.yml` that points Grimmory at two things on your machine:
 
-- a **data** folder, where Grimmory keeps its database and settings;
+- a **data** folder, where Grimmory keeps its settings;
 - one or more **book** folders, where your actual files live.
 
 You point Grimmory at your book folder, it scans the files, reads the metadata
 (title, author, series, cover) and builds your library.
 
-> **Get the exact image and compose file from the source.** Image names and
-> configuration change over time, so always follow the official instructions
-> rather than copying a command from memory. The install guide, the current
-> Docker image and an example `docker-compose.yml` are on the Grimmory website:
-> **[grimmory.org](https://grimmory.org)**.
+> **Follow the official compose file.** Grimmory also needs a database container,
+> and exact ports, volumes and environment variables change over time — so set it
+> up with the current `docker-compose.yml` from the source rather than copying a
+> command from memory. The install guide and an up-to-date example are on the
+> Grimmory website: **[grimmory.org](https://grimmory.org)**. The image itself is
+> [`grimmory/grimmory`](https://hub.docker.com/r/grimmory/grimmory) on Docker Hub.
 
 Once Grimmory is running, open it in a web browser (it usually listens on a port
 like `6060`), create your **first user**, and add at least one library folder so
