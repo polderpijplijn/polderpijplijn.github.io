@@ -1,0 +1,4 @@
+# Minimale Jekyll-config voor GitHub Pages.
+# Geen thema: de site levert z'n eigen styles.css. Bestaande HTML-pagina's
+# worden ongemoeid doorgezet; alleen .md met front-matter rendert via _layouts.
+title: Polderpijplijn
