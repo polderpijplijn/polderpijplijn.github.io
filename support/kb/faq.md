@@ -12,7 +12,14 @@ your own services (such as your own server).
 ## How do I report a problem or suggest a feature?
 
 Go to the [Help & support](/support/) page and choose "Report a problem" or
-"Suggest a feature". You'll need a free GitHub account to post.
+"Suggest a feature".
+
+## Do I need a GitHub account?
+
+Yes. Reporting a problem, suggesting a feature or asking a question all go through
+GitHub, so you create a [free GitHub account](https://github.com/signup) once.
+After that you simply sign in whenever you want to report or reply. Prefer not to?
+Email us at `info@polderpijplijn.nl` instead.
 
 ## Which version do I have?
 
