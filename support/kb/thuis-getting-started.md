@@ -128,7 +128,8 @@ entities were found.
 
 Once connected, the dashboard has tiles that open detailed screens:
 
-- **Solar (Zon)** — current and historical production, and the forecast.
+- **Solar (Zon)** — current and historical production, and the forecast (see
+  [The self-learning solar forecast](#the-self-learning-solar-forecast) below).
 - **Grid (Net)** — live import/export, per phase, and totals.
 - **House usage (Verbruik huis)** — what your home is consuming.
 - **Gas** — gas usage and an optional cost indication.
@@ -137,6 +138,75 @@ Once connected, the dashboard has tiles that open detailed screens:
 - **Charger (Laadpaal)** — live charger status, control and history (PlugChoice).
 - **Home efficiency (Huis Energie Efficiëntie)** — how your home performs, based
   on indoor temperature, floor area and house type (set these under Settings).
+
+---
+
+## The self-learning solar forecast
+
+The solar screen shows how much your panels are expected to produce — both the
+**expected total for today and tomorrow** and the per-hour shape that feeds the
+"best time" advice. Instead of relying on a generic forecast service, Thuis
+**learns its own forecast from your measured production**, so it calibrates to
+*your* roof: its real capacity, orientation, shading and inverter behaviour.
+
+### How it works
+
+The forecast combines two things the app learns over time:
+
+1. **A clear-sky envelope** — for each hour of the day, the production your panels
+   reach on a near-clear day. Thuis learns this from your own measured production
+   over a rolling **28-day** window.
+2. **A cloud-transmission curve** — how much the hourly **cloud-cover forecast**
+   from your weather integration (for example Met.no) reduces production. Thuis
+   learns this by comparing, day after day, the *forecast* cloud cover against what
+   your panels actually produced.
+
+To predict a day, Thuis takes the hourly cloud forecast and, for each daylight
+hour, multiplies the clear-sky value by the learned transmission for that cloud
+level, then adds the hours up. Because it learns against the *forecast* cloud (not
+the measured cloud), the model also quietly absorbs the systematic bias of the
+weather service itself.
+
+### The ~3 AM background refresh
+
+So that today's forecast doesn't depend on the moment you happen to open the app,
+Thuis refreshes and **freezes today's forecast once, early in the morning (around
+3 AM)**, using a background task. From then on, the "expected today" figure is the
+one that was locked in overnight — a fair, fixed prediction to compare the day's
+real production against. If the background task didn't get a chance to run (for
+example the phone was off), the forecast is frozen instead the first time you open
+the app that day.
+
+### Reading the accuracy chart — solid vs. dashed lines
+
+The accuracy chart plots two lines per day:
+
+- **Measured** — what your panels actually produced.
+- **Predicted** — what the model expected.
+
+Part of the predicted line is **dashed** and part is **solid**, and the difference
+matters:
+
+- A **dashed** predicted line is *reconstructed* — for days before the app started
+  freezing a real forecast each morning, Thuis estimates afterwards what it *would*
+  have predicted. It's a best-effort estimate, not a real prediction.
+- A **solid** predicted line is a **real, pre-frozen forecast** — the value that was
+  actually locked in around 3 AM that day, before production was known.
+
+So the point where the line turns from dashed to solid marks **the moment real
+predictions begin**. Only the solid part is a genuine test of the forecast's
+accuracy.
+
+### Getting started and accuracy over time
+
+The model needs data to learn. In the **first week or two** the clear-sky envelope
+is still thin, so Thuis falls back to a coarser estimate based on the forecast's
+weather condition (sunny / partly cloudy / cloudy / rainy) and gets noticeably
+sharper as production history builds up. Accuracy also dips for a while **after a
+season change**, because the envelope has to relearn the new sun height. A longer
+history (ideally more than a year, so every season is covered) gives the best
+results. As the app notes: no rights can be derived from the accuracy of the
+forecast.
 
 ---
 

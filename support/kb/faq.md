@@ -21,6 +21,16 @@ GitHub, so you create a [free GitHub account](https://github.com/signup) once.
 After that you simply sign in whenever you want to report or reply. Prefer not to?
 Email us at `info@polderpijplijn.nl` instead.
 
+## What do the dashed lines in the Thuis solar accuracy chart mean?
+
+A **dashed** predicted line is reconstructed afterwards — an estimate of what the
+app *would* have predicted before it started freezing a real forecast each
+morning. A **solid** predicted line is a real, pre-frozen forecast (locked in
+around 3 AM, before production was known). The point where the line turns solid is
+where genuine predictions begin. See
+[The self-learning solar forecast](/support/kb/thuis-getting-started.html#the-self-learning-solar-forecast)
+for the full explanation.
+
 ## Which version do I have?
 
 Open the app and go to **Settings**; the version number is at the bottom. Please
