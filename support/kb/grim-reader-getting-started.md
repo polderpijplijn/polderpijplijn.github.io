@@ -186,6 +186,80 @@ run one tool, check the result, then continue.
 
 ---
 
+## Reading books from a WebDAV server
+
+Besides your Grimmory server, Grim Reader can also read EPUB and PDF books
+straight from a **WebDAV** server — for example a NAS (Synology, QNAP) or a
+Nextcloud share. This works independently of Grimmory, so you can use it with or
+without a Grimmory server signed in.
+
+### One place for all your servers
+
+Open **Settings → Servers**. Your **Grimmory** library and any **WebDAV**
+servers now live together in this single section. Next to each server a small
+icon shows its status, checked every time you open Settings:
+
+- a green **check** — the server is reachable and your login works;
+- an orange **warning** — the app can't reach it (server offline, wrong address
+  or password);
+- a spinner — the connection is being checked.
+
+For a WebDAV server you may also see a green **pencil**. That means the app has
+write access and may keep a small private folder of its own on the server for
+book and author details. A **lock** instead means the share is read-only — books
+still work, the app just can't store extra metadata there.
+
+### Add a server
+
+1. Open **Settings → Servers**.
+2. Tap **Add server** and choose **WebDAV server**. (Choosing *Grimmory server*
+   just points you at your single Grimmory login — see the note below.)
+3. Fill in:
+   - **Name** — anything you like, just a label.
+   - **Address** — the WebDAV address of the folder that contains your books
+     (see the tip below).
+   - **Username** and **password** — your login for that server.
+4. Tap **Test connection** to check the address and login, then **Save**.
+
+Your password is stored securely in the **Keychain**, not in the app's settings.
+To edit or remove a server later, swipe left on it in the Servers list.
+
+> **One Grimmory connection.** Grim Reader signs in to a single Grimmory server
+> at a time. To switch to a different Grimmory server, choose *Add server →
+> Grimmory server* and log out, then sign in again with the new address. WebDAV
+> servers, on the other hand, can be added as many as you like.
+
+> **Important — point the address at the folder, not the root.** Many servers
+> (QNAP in particular) don't list their shares when you open the WebDAV *root*,
+> so the app would show an empty list. Enter the address **including the share or
+> folder** that holds your books — for example
+> `https://my-nas.example.com:5006/Ebooks` rather than just
+> `https://my-nas.example.com:5006`. On a QNAP, make sure the **WebDAV** service
+> is enabled and note the port it uses.
+
+### See all your books at once
+
+Tap a WebDAV server in the **Servers** list to open a single overview of **every
+book on it**, gathered from across all its folders and shown as a grid with
+covers, titles and authors. The app reads each book once to pull its cover and
+details out of the file — the cover image inside an EPUB, or the first page of a
+PDF.
+
+This overview is **remembered on your device**, so it doesn't have to scan the
+whole server every time:
+
+- **Refresh** (the circular arrow) rescans the server for new or removed books.
+- **Browse by folder** (the folder icon) opens the classic folder-by-folder view
+  if you'd rather navigate the structure yourself.
+
+### Download and read
+
+Open any book to see its details, then **Download** it. Downloaded WebDAV books
+appear under **My books** and stay available offline, exactly like books you
+download from a Grimmory server or a catalogue.
+
+---
+
 ## Something not working?
 
 If you get stuck at any step, head to **[Help & support](/support/)** to report a
