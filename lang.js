@@ -1,10 +1,21 @@
-// Taalkeuze voor de site: standaard Nederlands, Engels als optie.
+// Taalkeuze voor de site: standaard Engels, Nederlands voor Nederlandstalige
+// browsers. Een eigen keuze (klik op de toggle) blijft bewaard en heeft voorrang.
 // Toont/verbergt elementen op basis van hun lang-attribuut (zie styles.css).
 (function () {
   var KEY = "pp-lang";
+  function detect() {
+    // Geen opgeslagen keuze: kijk naar de browsertalen. Nederlands → nl,
+    // al het overige → en (standaard Engels).
+    var langs = navigator.languages || [navigator.language || ""];
+    for (var i = 0; i < langs.length; i++) {
+      if (/^nl/i.test(langs[i] || "")) return "nl";
+    }
+    return "en";
+  }
   function current() {
     var l = localStorage.getItem(KEY);
-    return l === "en" ? "en" : "nl";
+    if (l === "en" || l === "nl") return l;
+    return detect();
   }
   function apply(l) {
     var html = document.documentElement;
