@@ -90,9 +90,16 @@ charging**.
 ### What Thuis can control via PlugChoice
 
 - **Start** and **stop** a charging session.
-- **Set the charge limit** (in amps). Note: a charge limit can only be changed
-  *while* the car is actually charging — otherwise the charger reports it's not in
-  a charging state.
+- **Set the charge limit** with the slider on the charging screen. Note: a charge
+  limit can only be changed *while* the car is actually charging — otherwise the
+  charger reports it's not in a charging state.
+
+> **The limit is a ceiling, not a promise.** The actual charging power is the
+> *lowest* of the limit you set in the app and any limit configured on the
+> charger itself (for example in the manufacturer's own app) — that local
+> setting is invisible to PlugChoice. That's why the slider shows the **live
+> measured power** right below it: raise the limit and you can immediately see
+> whether the charger actually follows.
 
 > The first time, start a session once with your own charge card. Thuis reuses
 > that card to start later sessions from the app, so you don't have to enter
@@ -126,7 +133,11 @@ entities were found.
 
 ## What the screens show
 
-Once connected, the dashboard has tiles that open detailed screens:
+Once connected, the app has two tabs: **Thuis** (the live dashboard) and
+**Analyses** (the what-if estimates — see
+[Experimental explorations](#experimental-explorations-the-analyses-tab) below).
+
+The dashboard has tiles that open detailed screens:
 
 - **Solar (Zon)** — current and historical production, and the forecast (see
   [The self-learning solar forecast](#the-self-learning-solar-forecast) below).
@@ -136,6 +147,11 @@ Once connected, the dashboard has tiles that open detailed screens:
 - **Weather (Weer)** — outdoor conditions used by the solar forecast.
 - **Best time (Beste moment)** — when it's greenest/cheapest to use power.
 - **Charger (Laadpaal)** — live charger status, control and history (PlugChoice).
+- **Climate (Klimaat)** — indoor and outdoor temperature and humidity from any
+  sensors connected to Home Assistant, grouped per room and renameable. This
+  screen also holds the **ventilation tip**: pick an indoor and an outdoor
+  temperature sensor there, and the dashboard tells you when it's a good moment
+  to air the house (warmer than 20 °C inside and noticeably cooler outside).
 - **Home efficiency (Huis Energie Efficiëntie)** — how your home performs, based
   on indoor temperature, floor area and house type (set these under Settings).
 
@@ -224,11 +240,12 @@ Leave a field blank to hide that figure.
 
 ---
 
-## Experimental explorations
+## Experimental explorations (the Analyses tab)
 
 Thuis includes three forward-looking tools that **estimate** what *could* happen
-if you changed your setup. They are deliberately approximate and meant to give a
-feel for the order of magnitude — not to plan a purchase on.
+if you changed your setup. They live together in the separate **Analyses** tab,
+with the disclaimer shown right at the top. They are deliberately approximate and
+meant to give a feel for the order of magnitude — not to plan a purchase on.
 
 > **⚠️ These features are experimental. No rights can be derived from them.**
 > The figures are estimates based on your measured data and general assumptions.

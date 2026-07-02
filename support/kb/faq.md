@@ -21,6 +21,22 @@ GitHub, so you create a [free GitHub account](https://github.com/signup) once.
 After that you simply sign in whenever you want to report or reply. Prefer not to?
 Email us at `info@polderpijplijn.nl` instead.
 
+## Can I use Grim Reader without a server?
+
+Yes. Tap **Offline demo** on the login screen to look around with sample books,
+or add your own EPUB/PDF files via the **+** button in *My books* (or "Open
+with…" from any app) — no server required. A Grimmory or WebDAV server adds a
+synced library on top, but it's optional.
+
+## Why does read-aloud stop on my iPad when I go to the Home Screen?
+
+Reading aloud keeps playing with the **screen locked** — with playback controls,
+the title and the cover on the Lock Screen — on both iPhone and iPad. On
+**iPhone** it also keeps playing when you switch to the Home Screen or another
+app. On **iPad** that specific case doesn't work due to a system limitation in
+how iPadOS suspends the reading view: lock the screen instead, and the narration
+carries on. Audiobooks are unaffected and play everywhere on both devices.
+
 ## What do the dashed lines in the Thuis solar accuracy chart mean?
 
 A **dashed** predicted line is reconstructed afterwards — an estimate of what the

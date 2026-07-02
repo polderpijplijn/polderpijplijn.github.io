@@ -134,7 +134,11 @@ experience is highly adjustable under **Settings**.
 - **Line spacing** — increase the space between lines if dense text is hard to
   track.
 - **Read aloud** — Grim Reader can read books to you using the iOS voices, and
-  you can set the **reading speed** to a pace that suits you.
+  you can set the **reading speed** to a pace that suits you. Reading aloud
+  keeps going with the **screen locked**, with playback controls, the book title
+  and the cover on the Lock Screen. On iPhone it also keeps going when you
+  switch to the Home Screen or another app; on iPad, keep the app in the
+  foreground or lock the screen. (Audiobooks play everywhere on both.)
 - **VoiceOver** — the app works with VoiceOver, Apple's built-in screen reader.
 
 These settings are remembered, so once you've tuned the reader to your liking it
@@ -183,6 +187,38 @@ The maintenance tools include:
 
 Because these tools touch your whole library at once, take them slowly: back up,
 run one tool, check the result, then continue.
+
+---
+
+## Your own books — no server needed
+
+Grim Reader also works entirely without a server. Books you add yourself appear
+under **My books**, and the Start and Authors screens fill up with your own
+collection automatically.
+
+There are two ways to add a book:
+
+- **From the Files app** — tap the **+** button in *My books* and pick an EPUB or
+  PDF from anywhere in the Files app (iCloud Drive, On My iPhone/iPad, a USB
+  stick, …).
+- **"Open with…"** — share an EPUB or PDF from any other app (Mail, Safari, a
+  messaging app) and choose **Grim Reader**.
+
+The book is copied into the app, its cover and details are read from the file
+itself, and it stays available offline.
+
+---
+
+## Internet books — free catalogues
+
+Under **Internet books** you can browse public book catalogues and download
+straight into *My books*:
+
+- **Project Gutenberg** is built in — tens of thousands of free, public-domain
+  classics.
+- Add your **own OPDS catalogues** under **Settings → My catalogues** — for
+  example a Calibre-Web server or any other OPDS feed. A catalogue can have an
+  optional login; the password goes into the Keychain.
 
 ---
 
