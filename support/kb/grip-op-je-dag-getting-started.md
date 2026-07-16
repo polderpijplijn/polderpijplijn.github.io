@@ -4,6 +4,8 @@ title: Grip op je Dag — complete guide
 description: How to build a visual day schedule, use kid mode and the timer, work with multiple day types, share schedules by QR, and adjust the app to a child's sensory needs.
 ---
 
+*[Nederlandse versie](grip-op-je-dag-handleiding.html)*
+
 Grip op je Dag (Daily Grip) turns the day into a clear, visual schedule that a
 child can follow and check off step by step. It is designed for children who
 benefit from clarity and a steady routine, such as children on the autism
