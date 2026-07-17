@@ -1,8 +1,308 @@
 ---
 layout: kb
-title: Thuis — complete setup guide
+title_nl: Thuis — complete handleiding
+title_en: Thuis — complete setup guide
+title: Thuis — handleiding / guide
 description: What Thuis needs from Home Assistant and PlugChoice and why, how to connect, and what every screen does — including the experimental battery, tariff and heat-pump explorations.
 ---
+
+<div lang="nl" markdown="1">
+
+Thuis is een persoonlijk energie-dashboard dat gegevens leest uit **je eigen** Home
+Assistant en, optioneel, je **PlugChoice**-laadpaal. Er zit geen account en geen
+cloud van ons tussen: de app praat alleen met de diensten die je zelf instelt, en
+je adres en tokens blijven op je toestel.
+
+Deze gids legt uit wat elke dienst levert en waarom, hoe je verbindt, en wat elk
+scherm toont.
+
+## Wat je nodig hebt
+
+- Een draaiende **Home Assistant** met wat energie-sensoren (vereist).
+- De **Thuis**-app op je iPhone of iPad.
+- Optioneel: een **PlugChoice**-account als je een slimme laadpaal hebt en die wilt
+  zien en besturen.
+
+Eerst even rondkijken? Vul **`demo`** in als adres en verbind — de app toont dan
+voorbeeldgegevens, zonder dat je iets hoeft in te stellen.
+
+---
+
+## Stap 1 — Home Assistant (vereist)
+
+Home Assistant is het open-source platform voor woningautomatisering. Hieruit haalt
+Thuis **al je energiegegevens**. Je host het zelf; Thuis verbindt ermee via het
+lokale netwerkadres (of je Nabu Casa-adres) met een token dat je aanmaakt.
+
+### Wat Thuis uit Home Assistant leest, en waarom
+
+| Gegeven | Gebruikt voor | Typische bron |
+|---------|---------------|---------------|
+| Netvermogen (W) + per fase | De live "net"-tegel: afnemen vs. terugleveren | P1-meter |
+| Import-/exporttotalen (kWh) | Dagelijkse/periode-energiebalans en kosten | P1-meter |
+| Gastotaal (m³) | Het gasscherm en de warmtepompvergelijking | P1-meter |
+| Zonvermogen (W), vandaag en totaal (kWh) | Het zonscherm en de zelfverbruik-berekening | Omvormer-integratie |
+| Uurlijkse weersvoorspelling (bewolking %, conditie) | De zelflerende zonvoorspelling en "beste moment"-advies | Weer-integratie (bijv. Met.no) |
+| Buitentemperatuur (°C) | Weerscherm en efficiëntie-/warmtepompberekeningen | Weer of een sensor |
+| Binnentemperatuur (°C) | Efficiëntiescherm | Thermostaat / climate-entiteit |
+| Fossiel aandeel van het net (%) | Groener-moment-advies (optioneel) | Electricity Maps |
+
+### De verbindingsgegevens ophalen
+
+1. Noteer het **adres** van je Home Assistant — lokaal (bijvoorbeeld
+   `homeassistant.local:8123` of een lokaal IP) en, optioneel, je **Nabu Casa**-adres
+   (`https://….ui.nabu.casa`) zodat de app daarop kan terugvallen als je van huis
+   bent.
+2. Maak in Home Assistant een **long-lived access token** aan: open je profiel en
+   scrol naar onderen (*Long-lived access tokens*). Kopieer het.
+
+### Aanbevolen Home Assistant-integraties
+
+Thuis leest standaard energie-entiteiten. Deze integraties vullen het dashboard:
+
+- Een **P1-meter** — voor net, verbruik, teruglevering en gas. Getest met de
+  HomeWizard P1-meter.
+- Een **zonnepanelen-integratie** — voor actueel zonvermogen en opbrengst. Thuis
+  herkent Enphase, SolarEdge, Fronius, SMA en Huawei SUN2000 automatisch, of je
+  wijst de entiteiten met de hand aan.
+- Een **weer-integratie** (bijvoorbeeld Met.no of KNMI) — voor de uurlijkse
+  bewolkingsvoorspelling en buitentemperatuur.
+- Een **thermostaat of warmtepomp** (climate-entiteit) — voor de binnentemperatuur.
+- Optioneel: **Electricity Maps** — voor het fossiele aandeel van het net.
+- Optioneel: **Forecast.Solar** — een zonvoorspelling (Thuis kan ook zijn eigen
+  voorspelling leren van je gemeten productie over tijd).
+
+Wijken je entiteitsnamen af van de standaard, dan pas je ze aan onder
+**Instellingen → Verbindingsinstellingen → Entiteiten (geavanceerd)**. Er is een
+auto-detectieknop en een "kies uit lijst"-optie zodra je verbonden bent.
+
+---
+
+## Stap 2 — PlugChoice (optioneel, voor je laadpaal)
+
+PlugChoice is het laadplatform achter veel slimme laadpalen. Heb je er een, dan
+gebruikt Thuis PlugChoice voor de **live gegevens van je laadpaal** en om het
+**laden te besturen**.
+
+### Wat Thuis uit PlugChoice leest, en waarom
+
+- **Laadpaalstatus** (laden, gepauzeerd, beschikbaar, offline) en **live vermogen**
+  — voor de laadpaaltegel en het detailscherm.
+- **Sessie-, vandaag- en historie-kWh** — voor de laadhistorie en sessiegrafieken.
+
+### Wat Thuis via PlugChoice kan besturen
+
+- Een laadsessie **starten** en **stoppen**.
+- De **laadlimiet instellen** met de schuif op het laadscherm. Let op: een
+  laadlimiet kan alleen worden gewijzigd *terwijl* de auto daadwerkelijk laadt —
+  anders meldt de laadpaal dat die niet in een laadstatus is.
+
+> **De limiet is een plafond, geen belofte.** Het werkelijke laadvermogen is het
+> *laagste* van de limiet die je in de app instelt en een eventuele limiet die op
+> de laadpaal zelf is ingesteld (bijvoorbeeld in de app van de fabrikant) — die
+> lokale instelling is onzichtbaar voor PlugChoice. Daarom toont de schuif het
+> **live gemeten vermogen** er direct onder: verhoog de limiet en je ziet meteen
+> of de laadpaal echt volgt.
+
+> Start de eerste keer één sessie met je eigen laadpas. Thuis hergebruikt die pas
+> om latere sessies vanuit de app te starten, zodat je niets hoeft in te voeren.
+
+### De PlugChoice-token ophalen
+
+Maak in je PlugChoice-account op **app.plugchoice.com** een *personal access token*
+aan en plak die in Thuis. Het token blijft op je toestel, en de laadpaalkoppeling
+is volledig optioneel.
+
+---
+
+## Stap 3 — Verbinden
+
+1. Open Thuis en ga naar **Instellingen**.
+2. Open **Verbindingsinstellingen** en vul in:
+   - het **adres** van je Home Assistant (lokaal), en optioneel het **Nabu
+     Casa**-adres;
+   - je **long-lived access token**;
+   - optioneel, je **PlugChoice-token**.
+3. Vul optioneel je **prijzen** (gas, normaal/dal-stroom, teruglevering) en
+   **contractvorm** in — die bepalen de kostencijfers.
+4. Tik op **Verbinden**.
+
+Je tegels vullen zich met live gegevens. De statusregel onderaan Instellingen
+toont of je verbonden bent, of de externe verbinding wordt gebruikt, en hoeveel
+entiteiten zijn gevonden.
+
+---
+
+## Wat de schermen tonen
+
+Zodra je verbonden bent, heeft de app twee tabbladen: **Thuis** (het live
+dashboard) en **Analyses** (de wat-als-schattingen — zie
+[Experimentele verkenningen](#experimental-explorations-the-analyses-tab)
+hieronder).
+
+Het dashboard heeft tegels die detailschermen openen:
+
+- **Zon** — actuele en historische opbrengst, en de voorspelling (zie
+  [De zelflerende zonvoorspelling](#the-self-learning-solar-forecast) hieronder).
+- **Net** — live import/export, per fase, en totalen.
+- **Verbruik huis** — wat je huis verbruikt.
+- **Gas** — gasverbruik en een optionele kostenindicatie.
+- **Weer** — buitencondities die de zonvoorspelling gebruikt.
+- **Beste moment** — wanneer het het groenst/goedkoopst is om stroom te gebruiken.
+- **Laadpaal** — live laadpaalstatus, besturing en historie (PlugChoice).
+- **Klimaat** — binnen- en buitentemperatuur en luchtvochtigheid van alle sensoren
+  die aan Home Assistant zijn gekoppeld, gegroepeerd per kamer en hernoembaar. Dit
+  scherm bevat ook de **ventilatietip**: kies daar een binnen- en een
+  buitentemperatuursensor, en het dashboard vertelt wanneer het een goed moment is
+  om te luchten (warmer dan 20 °C binnen en merkbaar koeler buiten).
+- **Huis Energie Efficiëntie** — hoe je huis presteert, op basis van
+  binnentemperatuur, vloeroppervlak en woningtype (stel deze in onder Instellingen).
+
+---
+
+## De zelflerende zonvoorspelling
+
+Het zonscherm toont hoeveel je panelen naar verwachting produceren — zowel het
+**verwachte totaal voor vandaag en morgen** als de vorm per uur die het "beste
+moment"-advies voedt. In plaats van te leunen op een generieke voorspeldienst,
+**leert Thuis zijn eigen voorspelling van je gemeten productie**, zodat het
+kalibreert op *jouw* dak: de echte capaciteit, oriëntatie, schaduw en
+omvormergedrag.
+
+### Hoe het werkt
+
+De voorspelling combineert twee dingen die de app na verloop van tijd leert:
+
+1. **Een heldere-hemel-omhullende** — voor elk uur van de dag de productie die je
+   panelen halen op een bijna heldere dag. Thuis leert dit uit je eigen gemeten
+   productie over een voortschrijdend venster van **28 dagen**.
+2. **Een wolk-transmissiecurve** — hoeveel de uurlijkse **bewolkingsvoorspelling**
+   van je weer-integratie (bijvoorbeeld Met.no) de productie vermindert. Thuis
+   leert dit door dag na dag de *voorspelde* bewolking te vergelijken met wat je
+   panelen werkelijk produceerden.
+
+Om een dag te voorspellen neemt Thuis de uurlijkse wolkenvoorspelling en
+vermenigvuldigt voor elk daglichtuur de heldere-hemelwaarde met de geleerde
+transmissie voor dat bewolkingsniveau, en telt de uren op. Omdat het leert tegen de
+*voorspelde* bewolking (niet de gemeten bewolking), absorbeert het model ook stil
+de systematische afwijking van de weerdienst zelf.
+
+### De verversing rond 3 uur 's nachts
+
+Zodat de voorspelling van vandaag niet afhangt van het moment waarop je toevallig
+de app opent, ververst en **bevriest Thuis de voorspelling van vandaag één keer,
+vroeg in de ochtend (rond 3 uur)**, via een achtergrondtaak. Vanaf dat moment is
+het "verwacht vandaag"-cijfer het cijfer dat 's nachts is vastgelegd — een eerlijke,
+vaste voorspelling om de werkelijke productie van de dag mee te vergelijken. Kreeg
+de achtergrondtaak geen kans om te draaien (bijvoorbeeld omdat de telefoon uit was),
+dan wordt de voorspelling in plaats daarvan bevroren zodra je de app die dag voor
+het eerst opent.
+
+### De nauwkeurigheidsgrafiek lezen — doorgetrokken vs. stippellijn
+
+De nauwkeurigheidsgrafiek tekent twee lijnen per dag:
+
+- **Gemeten** — wat je panelen werkelijk produceerden.
+- **Voorspeld** — wat het model verwachtte.
+
+Een deel van de voorspellijn is **gestippeld** en een deel **doorgetrokken**, en
+het verschil doet ertoe:
+
+- Een **gestippelde** voorspellijn is *gereconstrueerd* — voor dagen voordat de app
+  elke ochtend een echte voorspelling begon vast te leggen, schat Thuis achteraf wat
+  het *zou* hebben voorspeld. Het is een schatting, geen echte voorspelling.
+- Een **doorgetrokken** voorspellijn is een **echte, vooraf vastgezette voorspelling**
+  — de waarde die die dag rond 3 uur 's nachts is vastgelegd, voordat de productie
+  bekend was.
+
+Het punt waar de lijn van gestippeld naar doorgetrokken gaat, markeert dus **het
+moment waarop echte voorspellingen beginnen**. Alleen het doorgetrokken deel is een
+echte test van de nauwkeurigheid van de voorspelling.
+
+### Aan de slag en nauwkeurigheid over tijd
+
+Het model heeft gegevens nodig om te leren. In de **eerste week of twee** is de
+heldere-hemel-omhullende nog dun, dus valt Thuis terug op een grovere schatting op
+basis van de weersconditie uit de voorspelling (zonnig / half bewolkt / bewolkt /
+regenachtig) en wordt merkbaar scherper naarmate de productiehistorie groeit. De
+nauwkeurigheid zakt ook een tijdje **na een seizoenswisseling**, omdat de
+omhullende de nieuwe zonstand opnieuw moet leren. Een langere historie (idealiter
+meer dan een jaar, zodat elk seizoen is gedekt) geeft de beste resultaten. Zoals de
+app aangeeft: aan de nauwkeurigheid van de voorspelling kunnen geen rechten worden
+ontleend.
+
+---
+
+## Prijzen en contractvorm
+
+Onder **Instellingen** kun je invullen:
+
+- **Gasprijs** (€/m³) en **stroomprijzen** (normaal, dal, teruglevering). Het
+  daltarief geldt ma–vr 23:00–07:00 en het hele weekend (standaard NL).
+- **Contractvorm** voor stroom en gas: *vast* of *dynamisch*. Voor een dynamisch
+  contract vraagt de app om je inkoopopslag (excl. btw); btw en energiebelasting
+  telt de app er zelf bij op.
+
+Laat een veld leeg om dat cijfer te verbergen.
+
+---
+
+## Experimentele verkenningen (het Analyses-tabblad)
+
+Thuis bevat drie vooruitkijkende tools die **schatten** wat er *zou* kunnen gebeuren
+als je je opstelling verandert. Ze staan samen in het aparte **Analyses**-tabblad,
+met de disclaimer bovenaan. Ze zijn bewust bij benadering en bedoeld om een gevoel
+voor de orde van grootte te geven — niet om een aankoop op te plannen.
+
+> **⚠️ Deze functies zijn experimenteel. Er kunnen geen rechten aan worden ontleend.**
+> De cijfers zijn schattingen op basis van je gemeten gegevens en algemene
+> aannames. Ze zijn geen advies en vervangen geen goede berekening door een
+> gekwalificeerde installateur of energieadviseur.
+
+### Huisbatterij
+
+Schat een aanbevolen capaciteit en de jaarlijkse besparing voor een kleine
+plug-in-thuisbatterij, op basis van je dagelijkse zonoverschot en import. Het gaat
+uit van een bescheiden plug-in-batterij (ongeveer 800 W, over de dag ladend/ontladend)
+en toont de besparing onder zowel een vast als een dynamisch tarief. Op bewolkte of
+winterdagen laadt zo'n batterij nauwelijks — de schatting weerspiegelt dat, maar het
+blijft een schatting.
+
+### Vast vs. dynamisch tarief
+
+Vergelijkt wat je stroom zou hebben gekost op een vast contract versus een dynamisch
+(uurlijks markt-)contract, met je echte verbruik en historische marktprijzen plus
+energiebelasting en btw. Prijzen uit het verleden bieden geen garantie voor de
+toekomst, dus behandel de uitkomst als een grove indicatie.
+
+### Warmtepomp
+
+Schat de warmtepompcapaciteit die je huis nodig zou hebben (afgeleid van je gemeten
+gasverbruik en buitentemperaturen), simuleert het stroom- en resterend gasverbruik
+voor een hybride of volledig elektrische opstelling, schat het jaarlijkse
+kostenverschil, en stelt passende pompen voor uit een referentielijst. De app zelf
+stelt dat het geen goede warmteverliesberekening door een installateur kan
+vervangen — er is minstens één volledig stookseizoen aan gegevens nodig voordat het
+iets kan schatten.
+
+---
+
+## Privacy
+
+Thuis verzamelt geen gegevens en bevat geen tracking of advertenties. Je adres en
+tokens blijven versleuteld op je eigen toestel, en de app praat alleen met de
+diensten die je zelf instelt.
+
+---
+
+## Werkt er iets niet?
+
+Ga naar **[Help &amp; support](/support/)** om een probleem te melden, een
+verbetering voor te stellen of een vraag te stellen.
+
+</div>
+
+<div lang="en" markdown="1">
 
 Thuis is a personal energy dashboard that reads data from **your own** Home
 Assistant and, optionally, your **PlugChoice** charger. There is no account and no
@@ -288,5 +588,7 @@ up yourself.
 
 ## Something not working?
 
-Head to **[Help & support](/support/)** to report a problem, suggest an
+Head to **[Help &amp; support](/support/)** to report a problem, suggest an
 improvement or ask a question.
+
+</div>

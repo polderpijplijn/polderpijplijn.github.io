@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-lang="en">
+<html lang="nl" data-lang="nl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,14 +8,23 @@
   <link rel="icon" type="image/png" href="/assets/polder_favicon.png">
   <link rel="apple-touch-icon" href="/assets/polder_favicon.png">
   <link rel="stylesheet" href="/styles.css?v=3">
+  <script src="/lang.js?v=2"></script>
   <script src="/email.js?v=1"></script>
 </head>
 <body>
   <div class="wrap">
+    <div class="lang-switch" role="group" aria-label="Taal / Language">
+      <button type="button" data-lang="nl">NL</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+
     <a class="back-link" href="/support/">&lsaquo; Help &amp; support</a>
 
     <header class="hero">
-      <h1>{{ page.title }}</h1>
+      {% if page.title_nl or page.title_en %}
+      {% if page.title_nl %}<h1 lang="nl">{{ page.title_nl }}</h1>{% endif %}
+      {% if page.title_en %}<h1 lang="en">{{ page.title_en }}</h1>{% endif %}
+      {% else %}<h1>{{ page.title }}</h1>{% endif %}
     </header>
 
     <article class="card kb-article">

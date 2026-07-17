@@ -1,8 +1,323 @@
 ---
 layout: kb
-title: Grim Reader — complete setup guide
+title_nl: Grim Reader — complete handleiding
+title_en: Grim Reader — complete setup guide
+title: Grim Reader — handleiding / guide
 description: From running a Grimmory server to reading, organising and managing your own self-hosted book library with Grim Reader.
 ---
+
+<div lang="nl" markdown="1">
+
+Grim Reader is een lees-app voor **Grimmory**, een zelf-gehoste server voor je
+eigen digitale boekencollectie. De app praat alleen met je eigen server — er zit
+geen account of cloud van ons tussen. Deze handleiding neemt je stap voor stap mee
+van niets naar een werkende bibliotheek.
+
+## Wat je nodig hebt
+
+- Een **Grimmory-server** die ergens draait waar jij de baas bent (een NAS, een
+  thuisserver, een kleine VPS).
+- De **Grim Reader**-app op je iPhone of iPad.
+- Je boeken, in EPUB-, PDF-, strip- (CBZ/CBR) of audioboek-formaat.
+
+---
+
+## Stap 1 — Een Grimmory-server draaien
+
+Grim Reader bewaart je boeken niet; het leest ze van een Grimmory-server die je
+zelf host. Heb je die nog niet, zet die dan eerst op.
+
+De eenvoudigste en aanbevolen manier om Grimmory te draaien is met **Docker**. De
+officiële image is **`grimmory/grimmory:latest`** op Docker Hub, en je draait 'm
+met een `docker-compose.yml` die Grimmory op twee dingen op je machine wijst:
+
+- een **data**-map, waar Grimmory zijn instellingen bewaart;
+- een of meer **boeken**-mappen, waar je eigen bestanden staan.
+
+Je wijst Grimmory naar je boekenmap, het scant de bestanden, leest de metadata
+(titel, auteur, serie, omslag) en bouwt je bibliotheek.
+
+> **Volg het officiële compose-bestand.** Grimmory heeft ook een database-container
+> nodig, en exacte poorten, volumes en omgevingsvariabelen veranderen na verloop
+> van tijd — zet het dus op met de actuele `docker-compose.yml` van de bron, in
+> plaats van een commando uit je hoofd te kopiëren. De installatiegids en een
+> actueel voorbeeld staan op de Grimmory-website:
+> **[grimmory.org](https://grimmory.org)**. De image zelf is
+> [`grimmory/grimmory`](https://hub.docker.com/r/grimmory/grimmory) op Docker Hub.
+
+Zodra Grimmory draait, open je het in een webbrowser (het luistert meestal op een
+poort als `6060`), maak je je **eerste gebruiker** aan, en voeg je minstens één
+bibliotheekmap toe zodat er boeken te zien zijn. Noteer:
+
+- het **adres** van de server — lokaal (bijvoorbeeld `192.168.1.10:6060`) of je
+  eigen externe adres;
+- je **gebruikersnaam** en **wachtwoord**.
+
+Deze heb je in de volgende stap nodig.
+
+---
+
+## Stap 2 — Eerste keer inloggen
+
+1. Open Grim Reader.
+2. Vul het **adres** van je Grimmory-server in. Zowel een lokaal adres
+   (`192.168.1.10:6060`) als een extern adres (`https://books.example.com`) werkt.
+3. Vul je **gebruikersnaam** en **wachtwoord** in — dezelfde inloggegevens die je
+   op de server hebt aangemaakt.
+4. Tik op **Inloggen**.
+
+Je bibliotheken verschijnen automatisch. Tik op een boek voor de details en kies
+**Download** om het op je toestel te bewaren en offline te lezen.
+
+### Eerst even rondkijken?
+
+Er is een **Offline demo**-knop op het inlogscherm. Die opent een kleine
+voorbeeldbibliotheek zonder server — handig om een gevoel voor de app te krijgen
+voordat je iets instelt.
+
+### Op meerdere toestellen
+
+Je serveradres en login worden veilig bewaard in je **iCloud-sleutelhanger**,
+zodat je andere Apple-toestellen je bibliotheek automatisch oppikken zodra je één
+keer bent ingelogd. Je inloggegevens blijven versleuteld op je eigen toestellen.
+
+---
+
+## Stap 3 — Hoe Grim Reader met Grimmory samenwerkt
+
+Alles wat je in de app ziet, is georganiseerd op de **Grimmory-server**. Grim
+Reader is een venster op die structuur, dus de manier waarop je dingen op de
+server ordent, is precies wat je in de app krijgt.
+
+### Bibliotheken
+
+Een **bibliotheek** is een map met boeken die Grimmory in de gaten houdt. Je kunt
+één bibliotheek voor romans hebben en een andere voor strips, of ze splitsen per
+taal — dat bepaal je zelf. Elke bibliotheek die je op de server maakt, verschijnt
+als een eigen item in de zijbalk (op iPad) of bladerlijst (op iPhone) van Grim
+Reader.
+
+### Series en auteurs
+
+Grimmory leest serie- en auteursinformatie uit de metadata van je boeken, zodat
+Grim Reader een serie kan groeperen en je op auteur kunt bladeren zonder extra
+werk. Belandt een boek in de verkeerde serie of onder de verkeerde auteur, pas het
+dan aan op de server (of gebruik de beheertools — zie stap 6) en het wordt overal
+bijgewerkt.
+
+> **Tip:** onder **Instellingen → Series** kun je series verbergen die maar een
+> paar boeken bevatten, zodat losse titels je serie-overzicht niet vervuilen. Stel
+> het minimum aantal boeken in dat een serie nodig heeft voordat die getoond
+> wordt.
+
+### Planken en slimme planken
+
+- Een **plank** is een met de hand samengestelde collectie die je op de server
+  bouwt — zoals een leeslijst of een "favorieten"-groep.
+- Een **slimme plank** (met een fonkel-icoon) vult zichzelf automatisch op basis
+  van regels die je in Grimmory instelt — bijvoorbeeld "alle ongelezen sciencefiction"
+  of "alles wat deze maand is toegevoegd". Je voegt niet met de hand boeken toe aan
+  een slimme plank; Grimmory houdt 'm actueel en Grim Reader toont simpelweg het
+  resultaat.
+
+Zowel gewone als slimme planken verschijnen in hun eigen secties, zodat je er
+direct naartoe kunt springen.
+
+---
+
+## Stap 4 — Toegankelijkheid
+
+Grim Reader is gebouwd om door zo veel mogelijk mensen te gebruiken. De
+leeservaring is sterk instelbaar onder **Instellingen**.
+
+- **Dynamic Type** — zet *Tekstgrootte volgt iOS* aan zodat de lezer de
+  tekstgrootte gebruikt die je systeembreed in iOS hebt ingesteld (Instellingen →
+  Beeldscherm en helderheid → Tekstgrootte, of Toegankelijkheid → Grotere tekst).
+  Liever per app instellen? Zet dat uit en gebruik de tekstgrootte-regelaar in de
+  app zelf.
+- **OpenDyslexic-lettertype** — bij de leeslettertypes kun je OpenDyslexic kiezen,
+  een lettertype dat is ontworpen om makkelijker leesbaar te zijn voor mensen met
+  dyslexie. Andere keuzes zijn klassieke boek-schreefletters (Georgia, Palatino,
+  Iowan, Charter) en een gewoon schreefloos systeemlettertype.
+- **Leesthema's** — kies Systeem, Licht, Sepia, Donker of **Hoog contrast** (puur
+  zwart op wit), passend bij je ogen en je verlichting.
+- **Regelafstand** — vergroot de ruimte tussen regels als dichte tekst lastig te
+  volgen is.
+- **Voorlezen** — Grim Reader kan boeken aan je voorlezen met de iOS-stemmen, en
+  je kunt de **leessnelheid** instellen op een tempo dat je bevalt. Voorlezen gaat
+  door met het **scherm vergrendeld**, met afspeelknoppen, de boektitel en de
+  omslag op het vergrendelscherm. Op iPhone blijft het ook doorgaan als je naar het
+  beginscherm of een andere app gaat; houd op iPad de app op de voorgrond of
+  vergrendel het scherm. (Audioboeken spelen overal op beide.)
+- **VoiceOver** — de app werkt met VoiceOver, Apples ingebouwde schermlezer.
+
+Deze instellingen worden onthouden, dus zodra je de lezer naar wens hebt afgesteld,
+blijft het zo.
+
+---
+
+## Stap 5 — Taal
+
+Grim Reader is beschikbaar in het **Engels** en **Nederlands**.
+
+- **App-taal** — de app volgt je iOS-taalinstellingen. Om alleen deze app te
+  wijzigen, open je **Instellingen → Taal** in Grim Reader en tik je door naar de
+  iOS-instellingen voor de app, waar je Engels of Nederlands kunt kiezen.
+- **Snel taalfilter** — tijdens het bladeren laat een kleine taalbalk je je
+  bibliotheek filteren op de taal van de boeken zelf, handig als je boeken in meer
+  dan één taal bewaart.
+
+---
+
+## Stap 6 — Beheeropties (op eigen risico)
+
+Als je inlogt als **Grimmory-beheerder**, toont Grim Reader een extra sectie
+**Onderhoud** in Instellingen met tools die rechtstreeks op de bibliotheek van je
+server ingrijpen. Dit zijn krachtige opruimtools.
+
+> **⚠️ Op eigen risico.** Deze acties wijzigen of verwijderen gegevens op je
+> Grimmory-server en sommige zijn niet ongedaan te maken. Zorg dat je een back-up
+> van je Grimmory-datamap hebt voordat je ze gebruikt, en begin met een kleine,
+> omkeerbare wijziging zodat je weet wat je kunt verwachten.
+
+De onderhoudstools omvatten:
+
+- **Dubbele boeken opruimen** — dubbele boeken vinden en verwijderen.
+- **Auteurs samenvoegen** — items samenvoegen die naar dezelfde auteur verwijzen
+  (bijvoorbeeld "J.R.R. Tolkien" en "Tolkien, J.R.R.").
+- **Series samenvoegen** — series samenvoegen die onder net iets andere namen zijn
+  geïmporteerd.
+- **Taalcodes standaardiseren** — inconsistente taallabels in je bibliotheek
+  opschonen.
+- **Auteur-metadata verrijken** — ontbrekende auteursinformatie invullen via
+  Wikipedia.
+- **Ontbrekende auteurs / omslagen invullen** — ontbrekende auteurs of omslagen
+  opzoeken en toevoegen voor boeken die ze missen.
+- **Auteurs zonder boeken verwijderen** — auteur-items opruimen die geen boeken
+  meer hebben. Deze vraagt eerst om bevestiging.
+
+Omdat deze tools je hele bibliotheek in één keer raken, doe het rustig aan: back-up
+maken, één tool draaien, resultaat controleren, dan verder.
+
+---
+
+## Je eigen boeken — geen server nodig
+
+Grim Reader werkt ook volledig zonder server. Boeken die je zelf toevoegt,
+verschijnen onder **Mijn boeken**, en de Start- en Auteurs-schermen vullen zich
+automatisch met je eigen collectie.
+
+Er zijn twee manieren om een boek toe te voegen:
+
+- **Vanuit de Bestanden-app** — tik op de **+**-knop in *Mijn boeken* en kies een
+  EPUB of PDF ergens in de Bestanden-app (iCloud Drive, Op mijn iPhone/iPad, een
+  USB-stick, …).
+- **"Open met…"** — deel een EPUB of PDF vanuit een andere app (Mail, Safari, een
+  chat-app) en kies **Grim Reader**.
+
+Het boek wordt in de app gekopieerd, de omslag en details worden uit het bestand
+zelf gelezen, en het blijft offline beschikbaar.
+
+---
+
+## Internetboeken — gratis catalogi
+
+Onder **Internetboeken** kun je openbare boekencatalogi doorbladeren en
+rechtstreeks in *Mijn boeken* downloaden:
+
+- **Project Gutenberg** zit ingebouwd — tienduizenden gratis, publiek-domein
+  klassiekers.
+- Voeg je **eigen OPDS-catalogi** toe onder **Instellingen → Mijn catalogi** —
+  bijvoorbeeld een Calibre-Web-server of een andere OPDS-feed. Een catalogus kan
+  een optionele login hebben; het wachtwoord gaat in de sleutelhanger.
+
+---
+
+## Boeken lezen van een WebDAV-server
+
+Naast je Grimmory-server kan Grim Reader ook EPUB- en PDF-boeken rechtstreeks van
+een **WebDAV**-server lezen — bijvoorbeeld een NAS (Synology, QNAP) of een
+Nextcloud-share. Dit werkt los van Grimmory, dus je kunt het gebruiken met of
+zonder een ingelogde Grimmory-server.
+
+### Eén plek voor al je servers
+
+Open **Instellingen → Servers**. Je **Grimmory**-bibliotheek en eventuele
+**WebDAV**-servers staan nu samen in deze ene sectie. Naast elke server toont een
+klein icoon de status, gecontroleerd elke keer dat je Instellingen opent:
+
+- een groen **vinkje** — de server is bereikbaar en je login werkt;
+- een oranje **waarschuwing** — de app kan er niet bij (server offline, verkeerd
+  adres of wachtwoord);
+- een draaitolletje — de verbinding wordt gecontroleerd.
+
+Voor een WebDAV-server zie je mogelijk ook een groen **potlood**. Dat betekent dat
+de app schrijftoegang heeft en een eigen kleine privémap op de server kan bijhouden
+voor boek- en auteursgegevens. Een **slotje** betekent juist dat de share
+alleen-lezen is — boeken werken nog, de app kan er alleen geen extra metadata
+opslaan.
+
+### Een server toevoegen
+
+1. Open **Instellingen → Servers**.
+2. Tik op **Server toevoegen** en kies **WebDAV-server**. (Kies je *Grimmory-server*,
+   dan wijst dat gewoon naar je enkele Grimmory-login — zie de opmerking hieronder.)
+3. Vul in:
+   - **Naam** — wat je wilt, gewoon een label.
+   - **Adres** — het WebDAV-adres van de map die je boeken bevat (zie de tip
+     hieronder).
+   - **Gebruikersnaam** en **wachtwoord** — je login voor die server.
+4. Tik op **Verbinding testen** om het adres en de login te controleren, en dan
+   **Bewaar**.
+
+Je wachtwoord wordt veilig bewaard in de **sleutelhanger**, niet in de
+instellingen van de app. Om een server later te bewerken of te verwijderen, veeg
+je 'm naar links in de serverlijst.
+
+> **Eén Grimmory-verbinding.** Grim Reader logt in op één Grimmory-server tegelijk.
+> Om naar een andere Grimmory-server te wisselen, kies je *Server toevoegen →
+> Grimmory-server*, log je uit, en log je opnieuw in met het nieuwe adres.
+> WebDAV-servers kun je daarentegen zo veel toevoegen als je wilt.
+
+> **Belangrijk — wijs het adres naar de map, niet naar de root.** Veel servers
+> (QNAP in het bijzonder) tonen hun shares niet als je de WebDAV-*root* opent,
+> waardoor de app een lege lijst zou tonen. Vul het adres **inclusief de share of
+> map** in die je boeken bevat — bijvoorbeeld
+> `https://my-nas.example.com:5006/Ebooks` in plaats van alleen
+> `https://my-nas.example.com:5006`. Zorg op een QNAP dat de **WebDAV**-dienst aan
+> staat en noteer de poort die het gebruikt.
+
+### Al je boeken in één keer zien
+
+Tik op een WebDAV-server in de **Servers**-lijst om één overzicht te openen van
+**elk boek erop**, verzameld uit al zijn mappen en getoond als een raster met
+omslagen, titels en auteurs. De app leest elk boek één keer om de omslag en details
+uit het bestand te halen — de omslag in een EPUB, of de eerste pagina van een PDF.
+
+Dit overzicht wordt **op je toestel onthouden**, zodat het niet elke keer de hele
+server hoeft te scannen:
+
+- **Vernieuwen** (de ronde pijl) scant de server opnieuw op nieuwe of verwijderde
+  boeken.
+- **Per map bladeren** (het map-icoon) opent de klassieke map-voor-map-weergave als
+  je liever zelf door de structuur navigeert.
+
+### Downloaden en lezen
+
+Open een boek voor de details en **Download** het. Gedownloade WebDAV-boeken
+verschijnen onder **Mijn boeken** en blijven offline beschikbaar, precies als
+boeken die je van een Grimmory-server of een catalogus downloadt.
+
+---
+
+## Werkt er iets niet?
+
+Loop je ergens vast, ga dan naar **[Help &amp; support](/support/)** om een
+probleem te melden, een verbetering voor te stellen of een vraag te stellen.
+
+</div>
+
+<div lang="en" markdown="1">
 
 Grim Reader is a reading client for **Grimmory**, a self-hosted server for your
 own digital book collection. The app talks only to your own server — there is no
@@ -298,5 +613,7 @@ download from a Grimmory server or a catalogue.
 
 ## Something not working?
 
-If you get stuck at any step, head to **[Help & support](/support/)** to report a
+If you get stuck at any step, head to **[Help &amp; support](/support/)** to report a
 problem, suggest an improvement or ask a question.
+
+</div>
