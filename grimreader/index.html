@@ -7,22 +7,24 @@
   <meta name="description" content="Grim Reader: lees boeken en strips en luister audioboeken uit je eigen bronnen — een NAS of Nextcloud (WebDAV), een OPDS-catalogus, een Grimmory-server of gewoon je eigen bestanden. Offline, privé, zonder cloud van ons.">
   <link rel="icon" type="image/png" href="../assets/grimmory_icon.png">
   <link rel="apple-touch-icon" href="../assets/grimmory_icon.png">
-  <link rel="stylesheet" href="../styles.css?v=5">
-  <script src="../lang.js?v=2"></script>
+  <link rel="stylesheet" href="../styles.css?v=6">
+  <script src="../lang.js?v=3"></script>
   <script src="../email.js?v=1"></script>
 </head>
 <body>
   <div class="wrap">
-    <div class="lang-switch" role="group" aria-label="Taal / Language">
+    <div class="lang-switch" role="group" aria-label="Taal / Language / Sprache">
       <button type="button" data-lang="nl">NL</button>
       <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="de">DE</button>
     </div>
 
     <a class="back-link" href="../" lang="nl">&lsaquo; Alle apps</a>
     <a class="back-link" href="../" lang="en">&lsaquo; All apps</a>
+    <a class="back-link" href="../" lang="de">&lsaquo; Alle Apps</a>
 
     <header class="hero">
-      <img src="../assets/grimmory_icon.png" alt="Grim Reader-icoon">
+      <img src="../assets/grimmory_icon.png" alt="">
       <h1>Grim Reader</h1>
       <p class="lead" lang="nl">Lees boeken en strips en luister audioboeken uit je
         eigen bronnen — een NAS, een OPDS-catalogus, een Grimmory-server of gewoon
@@ -30,22 +32,33 @@
       <p class="lead" lang="en">Read books and comics and listen to audiobooks from
         your own sources — a NAS, an OPDS catalog, a Grimmory server or simply your
         own files. Clear, offline and private.</p>
+      <p class="lead" lang="de">Lies Bücher und Comics und höre Hörbücher aus deinen
+        eigenen Quellen — einem NAS, einem OPDS-Katalog, einem Grimmory-Server oder
+        einfach deinen eigenen Dateien. Übersichtlich, offline und privat.</p>
     </header>
 
     <section class="card" style="border-left:4px solid var(--back)">
       <h2 style="margin-bottom:8px" lang="nl">Nu in de App Store</h2>
       <h2 style="margin-bottom:8px" lang="en">Now on the App Store</h2>
-      <p lang="nl">Grim Reader is beschikbaar voor iPhone en iPad. Je wijst je
-        eigen bron aan — een NAS of Nextcloud (WebDAV), een OPDS-catalogus of een
-        Grimmory-server — of je importeert gewoon je eigen bestanden. Geen server?
-        Bekijk de app dan met de offline demo.</p>
-      <p lang="en">Grim Reader is available for iPhone and iPad. You point it at
-        your own source — a NAS or Nextcloud (WebDAV), an OPDS catalog or a
-        Grimmory server — or you simply import your own files. No server? Explore
-        the app using the offline demo.</p>
+      <h2 style="margin-bottom:8px" lang="de">Jetzt im App Store</h2>
+      <p lang="nl">Grim Reader is beschikbaar voor iPhone en iPad, in het
+        Nederlands, Engels en Duits. Je wijst je eigen bron aan — een NAS of
+        Nextcloud (WebDAV), een OPDS-catalogus of een Grimmory-server — of je
+        importeert gewoon je eigen bestanden. Geen server? Bekijk de app dan met
+        de offline demo.</p>
+      <p lang="en">Grim Reader is available for iPhone and iPad, in English, Dutch
+        and German. You point it at your own source — a NAS or Nextcloud (WebDAV),
+        an OPDS catalog or a Grimmory server — or you simply import your own files.
+        No server? Explore the app using the offline demo.</p>
+      <p lang="de">Grim Reader gibt es für iPhone und iPad, auf Deutsch, Englisch
+        und Niederländisch. Du gibst deine eigene Quelle an — ein NAS oder Nextcloud
+        (WebDAV), einen OPDS-Katalog oder einen Grimmory-Server — oder importierst
+        einfach deine eigenen Dateien. Kein Server? Dann probiere die App mit der
+        Offline-Demo aus.</p>
       <!-- Officiële Apple-badge uit Marketing Tools, per taal. Apple staat geen
            eigen varianten toe: niet verkleuren, niet uitrekken, en minimaal een
-           tiende van de hoogte aan vrije ruimte eromheen. Vandaar de marge. -->
+           tiende van de hoogte aan vrije ruimte eromheen. Vandaar de marge.
+           Duits gebruikt voorlopig de Engelse badge tot de Duitse erbij staat. -->
       <p style="margin-top:16px">
         <a href="https://apps.apple.com/app/id6782366876" lang="nl"
            style="display:inline-block;padding:4px">
@@ -57,12 +70,18 @@
           <img src="../assets/appstore-badge-en.svg" alt="Download on the App Store"
                style="height:40px;width:auto">
         </a>
+        <a href="https://apps.apple.com/app/id6782366876" lang="de"
+           style="display:inline-block;padding:4px">
+          <img src="../assets/appstore-badge-en.svg" alt="Laden im App Store"
+               style="height:40px;width:auto">
+        </a>
       </p>
     </section>
 
     <section class="card">
       <h2 style="margin-bottom:8px" lang="nl">Wat het doet</h2>
       <h2 style="margin-bottom:8px" lang="en">What it does</h2>
+      <h2 style="margin-bottom:8px" lang="de">Was die App kann</h2>
       <p lang="nl">Grim Reader is een complete e-reader die leest uit <strong>jouw
         eigen bronnen</strong>. Je bladert door je bibliotheek of gewoon door de
         mappen op je server, en de app haalt zelf de omslag, titel en schrijver
@@ -71,32 +90,49 @@
         own sources</strong>. You browse your library or simply the folders on your
         server, and the app pulls the cover, title and author from each file itself.
         What it handles:</p>
+      <p lang="de">Grim Reader ist ein vollständiger E-Reader, der aus <strong>deinen
+        eigenen Quellen</strong> liest. Du blätterst durch deine Bibliothek oder
+        einfach durch die Ordner auf deinem Server, und die App holt Cover, Titel und
+        Autor selbst aus jeder Datei. Was sie kann:</p>
       <ul lang="nl">
-        <li><strong>Boeken</strong> — EPUB in een schermvullende paginalezer, en PDF.</li>
-        <li><strong>Strips</strong> — CBZ met bladeren per pagina en knijp-zoomen.</li>
-        <li><strong>Audioboeken</strong> — met bediening op het toegangsscherm, en
-          doorspelen op de achtergrond. Grote audioboeken speel je rechtstreeks
-          van je server, zonder ze eerst helemaal te downloaden.</li>
+        <li><strong>Boeken</strong> — EPUB in een schermvullende paginalezer, en PDF
+          met een volwaardige leesbediening. Zoeken binnen een boek kan in allebei.</li>
+        <li><strong>Strips</strong> — CBZ per pagina met knijp-zoomen, of doorlopend
+          van boven naar beneden, ook voor webtoons in lange stroken.</li>
+        <li><strong>Audioboeken</strong> — met bediening op het toegangsscherm,
+          doorspelen op de achtergrond en een slaaptimer. Grote audioboeken speel je
+          rechtstreeks van je server, en een map met losse audiobestanden wordt
+          vanzelf één luisterboek.</li>
       </ul>
       <ul lang="en">
-        <li><strong>Books</strong> — EPUB in a full-screen paginated reader, and PDF.</li>
-        <li><strong>Comics</strong> — CBZ with page-by-page reading and pinch-to-zoom.</li>
-        <li><strong>Audiobooks</strong> — with lock-screen controls and background
-          playback. Large audiobooks stream straight from your server, without
-          downloading them in full first.</li>
+        <li><strong>Books</strong> — EPUB in a full-screen paginated reader, and PDF
+          with full reading controls. You can search inside a book in both.</li>
+        <li><strong>Comics</strong> — CBZ page by page with pinch-to-zoom, or as a
+          continuous vertical scroll, including webtoons in long strips.</li>
+        <li><strong>Audiobooks</strong> — with lock-screen controls, background
+          playback and a sleep timer. Large audiobooks stream straight from your
+          server, and a folder of separate audio files automatically becomes one
+          audiobook.</li>
       </ul>
-      <p lang="nl">Schrijvers krijgen een foto en beschrijving (via Wikipedia en
-        Open Library), je maakt eigen <strong>collecties</strong> en favorieten, en
-        je kunt titel, schrijver en omslag zelf <strong>aanpassen</strong> — desgewenst
-        tot in het boekbestand zelf. Alles blijft offline beschikbaar, en de app
-        praat alleen met de server die jij instelt.</p>
-      <p lang="en">Authors get a photo and description (via Wikipedia and Open
-        Library), you build your own <strong>collections</strong> and favorites, and
-        you can <strong>edit</strong> title, author and cover yourself — even into the
-        book file itself if you want. Everything stays available offline, and the app
-        only talks to the server you set up.</p>
+      <ul lang="de">
+        <li><strong>Bücher</strong> — EPUB in einem bildschirmfüllenden Seitenleser
+          und PDF mit vollständiger Lesesteuerung. In beiden kannst du im Buch suchen.</li>
+        <li><strong>Comics</strong> — CBZ Seite für Seite mit Pinch-Zoom oder
+          durchgehend von oben nach unten, auch für Webtoons in langen Streifen.</li>
+        <li><strong>Hörbücher</strong> — mit Steuerung auf dem Sperrbildschirm,
+          Wiedergabe im Hintergrund und Schlaftimer. Große Hörbücher streamst du direkt
+          von deinem Server, und ein Ordner mit einzelnen Audiodateien wird automatisch
+          zu einem Hörbuch.</li>
+      </ul>
+      <p lang="nl">Alles blijft offline beschikbaar, en de app praat alleen met de
+        server die jij instelt.</p>
+      <p lang="en">Everything stays available offline, and the app only talks to the
+        server you set up.</p>
+      <p lang="de">Alles bleibt offline verfügbar, und die App spricht nur mit dem
+        Server, den du einrichtest.</p>
       <p lang="nl"><a href="verhaal.html">Lees het verhaal: van Grimmory-lezer naar complete e-reader &rsaquo;</a></p>
       <p lang="en"><a href="verhaal.html">Read the story: from Grimmory reader to a complete e-reader &rsaquo;</a></p>
+      <p lang="de"><a href="verhaal.html">Die Geschichte: vom Grimmory-Leser zum vollständigen E-Reader &rsaquo;</a></p>
     </section>
 
     <section class="card">
@@ -107,8 +143,9 @@
           <line x1="2" y1="12" x2="22" y2="12"></line>
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
         </svg>
-        <h2 lang="nl">Vertaal terwijl je leest</h2>
-        <h2 lang="en">Translate while you read</h2>
+        <h2 lang="nl">Vertalen en voorlezen</h2>
+        <h2 lang="en">Translate and read aloud</h2>
+        <h2 lang="de">Übersetzen und vorlesen</h2>
       </div>
       <p lang="nl">Lees je een boek in een vreemde taal? Tik op de vertaalknop en
         Grim Reader vertaalt <strong>de pagina die je op dat moment leest</strong> naar
@@ -122,11 +159,116 @@
         using Apple's translation technology — no internet, and no text ever leaves for
         a server. iOS downloads the language pack once; after that it works offline too.
         <em>(iPhone/iPad on iOS 18 or newer.)</em></p>
+      <p lang="de">Liest du ein Buch in einer Fremdsprache? Tippe auf die
+        Übersetzen-Taste, und Grim Reader übersetzt <strong>die Seite, die du gerade
+        liest</strong>, in deine eigene Sprache. Die Übersetzung geschieht
+        <strong>vollständig auf deinem Gerät</strong> mit Apples
+        Übersetzungstechnologie — ohne Internet und ohne dass Text an einen Server
+        geht. iOS lädt das Sprachpaket einmalig; danach funktioniert es auch offline.
+        <em>(iPhone/iPad mit iOS 18 oder neuer.)</em></p>
+      <p lang="nl">Liever luisteren? Grim Reader <strong>leest je boek voor</strong>
+        in de taal van het boek zelf, met de gesproken zin opgelicht en steeds in
+        beeld.</p>
+      <p lang="en">Rather listen? Grim Reader <strong>reads your book aloud</strong>
+        in the book's own language, with the spoken sentence highlighted and kept in
+        view.</p>
+      <p lang="de">Lieber zuhören? Grim Reader <strong>liest dir dein Buch vor</strong>,
+        in der Sprache des Buches selbst, mit dem gesprochenen Satz hervorgehoben und
+        immer im Blick.</p>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-bottom:8px" lang="nl">Je bibliotheek op orde</h2>
+      <h2 style="margin-bottom:8px" lang="en">Your library in order</h2>
+      <h2 style="margin-bottom:8px" lang="de">Deine Bibliothek in Ordnung</h2>
+      <p lang="nl">Grim Reader leest de gegevens uit je bestanden en vult aan wat
+        ontbreekt. Wat je zelf aanpast, kan desgewenst ook in het boekbestand zelf
+        (EPUB, PDF en CBZ).</p>
+      <p lang="en">Grim Reader reads the details from your files and fills in what's
+        missing. Anything you change can also be written into the book file itself if
+        you want (EPUB, PDF and CBZ).</p>
+      <p lang="de">Grim Reader liest die Angaben aus deinen Dateien und ergänzt, was
+        fehlt. Was du selbst änderst, kann auf Wunsch auch in die Buchdatei selbst
+        geschrieben werden (EPUB, PDF und CBZ).</p>
+      <ul lang="nl">
+        <li><strong>Gegevens aanvullen</strong> — omslag, beschrijving, serie en
+          uitgever via Apple Books, Open Library en de nationale bibliotheek van je
+          boek. Je kiest zelf uit de gevonden kandidaten, ook voor alle zichtbare
+          boeken in één keer.</li>
+        <li><strong>Schrijvers</strong> — met foto en levensbericht (via onder meer
+          Wikipedia), en samen te voegen als dezelfde schrijver op meerdere manieren
+          gespeld staat.</li>
+        <li><strong>Series, uitgeverijen en onderwerpen</strong> — elk met een eigen
+          overzicht. Rommelige schrijfwijzen voeg je samen, en wat je niet wilt ruim
+          je op.</li>
+        <li><strong>Meerdere boeken tegelijk aanpassen</strong> — schrijver, serie,
+          taal of uitgever voor een hele selectie.</li>
+        <li><strong>Collecties, favorieten en planken</strong> onder Mijn lijsten,
+          en taalfilters per scherm.</li>
+        <li><strong>Onderhoud</strong> — dubbele boeken opruimen, beschadigde EPUB's
+          opsporen, en zien waar de opslagruimte op je toestel heen gaat.</li>
+      </ul>
+      <ul lang="en">
+        <li><strong>Fill in details</strong> — cover, description, series and
+          publisher via Apple Books, Open Library and your book's national library.
+          You choose from the candidates found, also for all visible books at once.</li>
+        <li><strong>Authors</strong> — with photo and biography (via Wikipedia, among
+          others), and easy to merge when the same author is spelled in several ways.</li>
+        <li><strong>Series, publishers and subjects</strong> — each with its own
+          overview. Merge messy spellings and clean up what you don't want.</li>
+        <li><strong>Edit many books at once</strong> — author, series, language or
+          publisher for a whole selection.</li>
+        <li><strong>Collections, favorites and shelves</strong> under My lists, and
+          language filters per screen.</li>
+        <li><strong>Maintenance</strong> — clean up duplicate books, track down
+          damaged EPUBs, and see where the storage on your device goes.</li>
+      </ul>
+      <ul lang="de">
+        <li><strong>Angaben ergänzen</strong> — Cover, Beschreibung, Reihe und Verlag
+          über Apple Books, Open Library und die Nationalbibliothek deines Buches. Du
+          wählst selbst aus den gefundenen Treffern, auch für alle sichtbaren Bücher
+          auf einmal.</li>
+        <li><strong>Autoren</strong> — mit Foto und Lebenslauf (unter anderem über
+          Wikipedia), und leicht zusammenzuführen, wenn derselbe Autor verschieden
+          geschrieben ist.</li>
+        <li><strong>Reihen, Verlage und Themen</strong> — jeweils mit eigener
+          Übersicht. Unordentliche Schreibweisen führst du zusammen, und was du nicht
+          willst, räumst du auf.</li>
+        <li><strong>Viele Bücher auf einmal bearbeiten</strong> — Autor, Reihe,
+          Sprache oder Verlag für eine ganze Auswahl.</li>
+        <li><strong>Sammlungen, Favoriten und Regale</strong> unter Meine Listen,
+          und Sprachfilter pro Bildschirm.</li>
+        <li><strong>Wartung</strong> — doppelte Bücher aufräumen, beschädigte EPUBs
+          aufspüren und sehen, wofür der Speicher auf deinem Gerät draufgeht.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-bottom:8px" lang="nl">Leesoverzicht</h2>
+      <h2 style="margin-bottom:8px" lang="en">Reading overview</h2>
+      <h2 style="margin-bottom:8px" lang="de">Leseübersicht</h2>
+      <p lang="nl">Onder Instellingen zie je hoeveel je leest en luistert: je
+        leestijd per dag of per maand, op welke momenten je leest, welke schrijvers,
+        thema's en formaten de meeste tijd krijgen, en hoeveel dagen op rij je hebt
+        gelezen. Bij de boeken waar je in bezig bent staat hoe lang je nog bezig bent,
+        op je eigen tempo. Alleen echte leestijd telt, en alles blijft op je toestel.</p>
+      <p lang="en">Under Settings you can see how much you read and listen: your
+        reading time per day or per month, the moments you read, which authors,
+        themes and formats get the most time, and how many days in a row you've read.
+        The books you're reading show how long you have left, at your own pace. Only
+        real reading time counts, and everything stays on your device.</p>
+      <p lang="de">Unter Einstellungen siehst du, wie viel du liest und hörst: deine
+        Lesezeit pro Tag oder Monat, zu welchen Zeiten du liest, welche Autoren,
+        Themen und Formate die meiste Zeit bekommen und wie viele Tage in Folge du
+        gelesen hast. Bei den Büchern, die du gerade liest, steht, wie lange du noch
+        brauchst — in deinem eigenen Tempo. Nur echte Lesezeit zählt, und alles
+        bleibt auf deinem Gerät.</p>
     </section>
 
     <section class="card">
       <h2 style="margin-bottom:8px" lang="nl">Aan de slag</h2>
       <h2 style="margin-bottom:8px" lang="en">Getting started</h2>
+      <h2 style="margin-bottom:8px" lang="de">Loslegen</h2>
       <ol lang="nl">
         <li>Open de app.</li>
         <li>Ga naar <strong>Instellingen &rsaquo; Server toevoegen</strong> en kies
@@ -147,46 +289,126 @@
         <li>Done. Or skip it and just add your own files via
           <strong>"Open with …"</strong>.</li>
       </ol>
-      <h3 lang="nl">Op meerdere toestellen</h3>
-      <h3 lang="en">On multiple devices</h3>
-      <p lang="nl">Je serveradres en login synchroniseren via je iCloud-sleutelhanger,
-        zodat je andere Apple-toestellen je bibliotheek automatisch oppikken.</p>
-      <p lang="en">Your server address and login sync via your iCloud Keychain, so your
-        other Apple devices pick up your library automatically.</p>
+      <ol lang="de">
+        <li>Öffne die App.</li>
+        <li>Gehe zu <strong>Einstellungen &rsaquo; Server hinzufügen</strong> und
+          wähle deine Quelle: WebDAV, OPDS oder Grimmory.</li>
+        <li>Gib die <strong>Adresse</strong> ein — lokal (z.&nbsp;B.
+          <code>192.168.1.10:5000</code>) oder deine eigene externe Adresse — und
+          bei Bedarf Benutzername und Passwort.</li>
+        <li>Fertig. Oder überspringe das und füge deine eigenen Dateien einfach über
+          <strong>„Öffnen mit …“</strong> hinzu.</li>
+      </ol>
+      <h3 lang="nl">Thuis en onderweg</h3>
+      <h3 lang="en">At home and on the go</h3>
+      <h3 lang="de">Zu Hause und unterwegs</h3>
+      <p lang="nl">Een server kan een tweede adres krijgen voor onderweg, bijvoorbeeld
+        via Tailscale. Je serveradres en login synchroniseren via je
+        iCloud-sleutelhanger, zodat je andere Apple-toestellen je bibliotheek
+        automatisch oppikken.</p>
+      <p lang="en">A server can get a second address for when you're out, for
+        example via Tailscale. Your server address and login sync via your iCloud
+        Keychain, so your other Apple devices pick up your library automatically.</p>
+      <p lang="de">Ein Server kann eine zweite Adresse für unterwegs bekommen, zum
+        Beispiel über Tailscale. Serveradresse und Login werden über deinen
+        iCloud-Schlüsselbund synchronisiert, sodass deine anderen Apple-Geräte deine
+        Bibliothek automatisch übernehmen.</p>
     </section>
 
     <section class="card">
       <h2 style="margin-bottom:8px" lang="nl">Je eigen bronnen</h2>
       <h2 style="margin-bottom:8px" lang="en">Your own sources</h2>
+      <h2 style="margin-bottom:8px" lang="de">Deine eigenen Quellen</h2>
       <p lang="nl">Grim Reader levert zelf geen boeken. Je wijst je eigen bron aan;
         de app leest daaruit en bewaart je adres en login op je toestel:</p>
       <p lang="en">Grim Reader provides no books of its own. You point it at your own
         source; the app reads from it and keeps your address and login on your device:</p>
+      <p lang="de">Grim Reader liefert selbst keine Bücher. Du gibst deine eigene
+        Quelle an; die App liest daraus und speichert Adresse und Login auf deinem
+        Gerät:</p>
       <ul lang="nl">
         <li><strong>WebDAV</strong> — een NAS (zoals Synology of QNAP), Nextcloud of
           een andere WebDAV-server. Blader door je mappen; de app vult omslag en
-          gegevens vanzelf aan.</li>
-        <li><strong>OPDS</strong> — je eigen catalogus, bijvoorbeeld een
-          Calibre-Web-server. Voeg het adres toe en blader erdoorheen.</li>
+          gegevens vanzelf aan, ook bij tienduizenden boeken.</li>
+        <li><strong>OPDS</strong> — je eigen catalogus, bijvoorbeeld Calibre-Web,
+          Calibre, Komga of Kavita. Boeken, strips en luisterboeken komen binnen, en
+          de sorteer- en filterkeuzes van je catalogus staan boven de lijst.</li>
         <li><strong><a href="https://grimmory.org" target="_blank" rel="noopener">Grimmory</a></strong>
           — een zelf-gehoste server voor je boekenverzameling, met bibliotheken,
-          series, schrijvers en planken.</li>
+          series, schrijvers en planken. Je leesvoortgang gaat terug naar de server.</li>
         <li><strong>Eigen bestanden</strong> — voeg via <strong>"Open met …"</strong>
-          je EPUB's, PDF's, strips en audioboeken toe en lees ze offline, zonder
-          server.</li>
+          je EPUB's, PDF's, strips en audioboeken toe, of importeer een hele map of
+          USB-stick, en lees ze offline, zonder server.</li>
       </ul>
       <ul lang="en">
         <li><strong>WebDAV</strong> — a NAS (such as Synology or QNAP), Nextcloud or
           any other WebDAV server. Browse your folders; the app fills in cover and
-          details automatically.</li>
-        <li><strong>OPDS</strong> — your own catalog, for example a Calibre-Web
-          server. Add the address and browse through it.</li>
+          details automatically, even with tens of thousands of books.</li>
+        <li><strong>OPDS</strong> — your own catalog, for example Calibre-Web,
+          Calibre, Komga or Kavita. Books, comics and audiobooks come in, and your
+          catalog's own sort and filter options appear above the list.</li>
         <li><strong><a href="https://grimmory.org" target="_blank" rel="noopener">Grimmory</a></strong>
           — a self-hosted server for your book collection, with libraries, series,
-          authors and shelves.</li>
+          authors and shelves. Your reading progress goes back to the server.</li>
         <li><strong>Your own files</strong> — add your EPUBs, PDFs, comics and
-          audiobooks via <strong>"Open with …"</strong> and read them offline,
-          without a server.</li>
+          audiobooks via <strong>"Open with …"</strong>, or import a whole folder or
+          USB stick, and read them offline, without a server.</li>
+      </ul>
+      <ul lang="de">
+        <li><strong>WebDAV</strong> — ein NAS (etwa Synology oder QNAP), Nextcloud
+          oder ein anderer WebDAV-Server. Blättere durch deine Ordner; die App ergänzt
+          Cover und Angaben automatisch, auch bei zehntausenden Büchern.</li>
+        <li><strong>OPDS</strong> — dein eigener Katalog, zum Beispiel Calibre-Web,
+          Calibre, Komga oder Kavita. Bücher, Comics und Hörbücher kommen herein, und
+          die Sortier- und Filteroptionen deines Katalogs stehen über der Liste.</li>
+        <li><strong><a href="https://grimmory.org" target="_blank" rel="noopener">Grimmory</a></strong>
+          — ein selbst gehosteter Server für deine Büchersammlung, mit Bibliotheken,
+          Reihen, Autoren und Regalen. Dein Lesefortschritt geht zurück an den Server.</li>
+        <li><strong>Eigene Dateien</strong> — füge deine EPUBs, PDFs, Comics und
+          Hörbücher über <strong>„Öffnen mit …“</strong> hinzu oder importiere einen
+          ganzen Ordner oder USB-Stick, und lies sie offline, ohne Server.</li>
+      </ul>
+      <p lang="nl">Heeft je server iets extra's nodig, zoals een toegangssleutel voor
+        een proxy? Je kunt eigen HTTP-headers meesturen.</p>
+      <p lang="en">Does your server need something extra, such as an access key for a
+        proxy? You can send your own HTTP headers.</p>
+      <p lang="de">Braucht dein Server etwas Zusätzliches, etwa einen Zugangsschlüssel
+        für einen Proxy? Du kannst eigene HTTP-Header mitschicken.</p>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-bottom:8px" lang="nl">Gemaakt voor iedereen</h2>
+      <h2 style="margin-bottom:8px" lang="en">Built for everyone</h2>
+      <h2 style="margin-bottom:8px" lang="de">Für alle gemacht</h2>
+      <ul lang="nl">
+        <li>Voldoet aan <a href="../toegankelijkheid/">WCAG 2.2 niveau AA</a>, met
+          volledige VoiceOver-ondersteuning.</li>
+        <li>Dynamic Type: tekstgrootte, lettertype en regelafstand naar smaak.</li>
+        <li>Licht en donker dat meebeweegt met je systeem, en twee weergaven om uit
+          te kiezen: Modern en Klassiek.</li>
+        <li>Op iPhone en iPad, staand en liggend; op een brede iPad gebruikt de app
+          de ruimte.</li>
+        <li>De app spreekt Nederlands, Engels en Duits.</li>
+      </ul>
+      <ul lang="en">
+        <li>Meets <a href="../toegankelijkheid/">WCAG 2.2 level AA</a>, with full
+          VoiceOver support.</li>
+        <li>Dynamic Type: font size, typeface and line spacing to taste.</li>
+        <li>Light and dark that follow your system, and two looks to choose from:
+          Modern and Classic.</li>
+        <li>On iPhone and iPad, portrait and landscape; on a wide iPad the app uses
+          the space.</li>
+        <li>The app speaks English, Dutch and German.</li>
+      </ul>
+      <ul lang="de">
+        <li>Erfüllt <a href="../toegankelijkheid/">WCAG 2.2 Stufe AA</a>, mit
+          vollständiger VoiceOver-Unterstützung.</li>
+        <li>Dynamic Type: Schriftgröße, Schriftart und Zeilenabstand nach Wunsch.</li>
+        <li>Hell und dunkel passend zu deinem System, und zwei Ansichten zur Wahl:
+          Modern und Klassisch.</li>
+        <li>Auf iPhone und iPad, im Hoch- und Querformat; auf einem breiten iPad nutzt
+          die App den Platz.</li>
+        <li>Die App spricht Deutsch, Englisch und Niederländisch.</li>
       </ul>
     </section>
 
@@ -197,7 +419,9 @@
           <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
           <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
         </svg>
-        <h2>Privacy</h2>
+        <h2 lang="nl">Privacy</h2>
+        <h2 lang="en">Privacy</h2>
+        <h2 lang="de">Datenschutz</h2>
       </div>
       <p lang="nl">Grim Reader verzamelt geen gegevens en bevat geen tracking of
         advertenties. Je adres en login blijven versleuteld op je eigen toestel en
@@ -205,8 +429,12 @@
       <p lang="en">Grim Reader collects no data and contains no tracking or ads. Your
         address and login stay encrypted on your own device, and the app only
         talks to the server you set up yourself.</p>
+      <p lang="de">Grim Reader sammelt keine Daten und enthält weder Tracking noch
+        Werbung. Adresse und Login bleiben verschlüsselt auf deinem eigenen Gerät,
+        und die App spricht nur mit dem Server, den du selbst einrichtest.</p>
       <p lang="nl"><a href="privacy.html">Lees de volledige privacyverklaring &rsaquo;</a></p>
       <p lang="en"><a href="privacy.html">Read the full privacy policy &rsaquo;</a></p>
+      <p lang="de"><a href="privacy.html">Vollständige Datenschutzerklärung lesen &rsaquo;</a></p>
     </section>
 
     <section class="card">
@@ -222,11 +450,14 @@
         </svg>
         <h2 lang="nl">Hulp &amp; support</h2>
         <h2 lang="en">Help &amp; support</h2>
+        <h2 lang="de">Hilfe &amp; Support</h2>
       </div>
       <p lang="nl">Iets werkt niet, een vraag of een idee?
         <a href="../support/">Naar Help &amp; support &rsaquo;</a></p>
       <p lang="en">Something not working, a question or an idea?
         <a href="../support/">Go to Help &amp; support &rsaquo;</a></p>
+      <p lang="de">Funktioniert etwas nicht, hast du eine Frage oder eine Idee?
+        <a href="../support/">Zu Hilfe &amp; Support &rsaquo;</a></p>
     </section>
 
     <p class="footer">Contact: <span class="pp-email"><noscript>info [at] polderpijplijn [punt] nl</noscript></span></p>

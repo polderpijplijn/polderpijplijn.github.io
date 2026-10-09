@@ -2,6 +2,7 @@
 layout: kb
 title_nl: Veelgestelde vragen
 title_en: Frequently asked questions
+title_de: Häufige Fragen
 title: Veelgestelde vragen / FAQ
 description: Answers to common questions about the Polderpijplijn apps.
 ---
@@ -29,7 +30,7 @@ niet? Mail ons dan op `info@polderpijplijn.nl`.
 
 Ja. Tik op **Offline demo bekijken** in **Instellingen** om rond te kijken met
 voorbeeldboeken, of voeg je eigen EPUB/PDF-bestanden toe via de **+**-knop in
-*Mijn boeken* (of "Open met…" vanuit een andere app) — geen server nodig. Een
+*Lokale boeken* (of "Open met…" vanuit een andere app) — geen server nodig. Een
 WebDAV-server (NAS/Nextcloud), een OPDS-catalogus of een Grimmory-server voegt
 een volledige bibliotheek toe, maar dat is optioneel.
 
@@ -83,7 +84,7 @@ Email us at `info@polderpijplijn.nl` instead.
 ## Can I use Grim Reader without a server?
 
 Yes. Tap **View offline demo** in **Settings** to look around with sample books,
-or add your own EPUB/PDF files via the **+** button in *My books* (or "Open
+or add your own EPUB/PDF files via the **+** button in *Local books* (or "Open
 with…" from any app) — no server required. A WebDAV server (NAS/Nextcloud), an
 OPDS catalog or a Grimmory server adds a full library on top, but it's optional.
 
@@ -110,5 +111,58 @@ for the full explanation.
 
 Open the app and go to **Settings**; the version number is at the bottom. Please
 include it when reporting an issue.
+
+</div>
+
+<div lang="de" markdown="1">
+
+## Sammeln die Apps Daten über mich?
+
+Nein. Es gibt kein Tracking, keine Werbung und kein Konto. Die Apps sprechen nur mit
+deinen eigenen Diensten (etwa deinem eigenen Server).
+
+## Wie melde ich ein Problem oder schlage eine Funktion vor?
+
+Geh auf die Seite [Hilfe &amp; Support](/support/) und wähle „Problem melden“ oder
+„Funktion vorschlagen“.
+
+## Brauche ich ein GitHub-Konto?
+
+Ja. Probleme melden, Funktionen vorschlagen und Fragen stellen laufen über GitHub,
+dafür legst du einmalig ein [kostenloses GitHub-Konto](https://github.com/signup) an.
+Danach meldest du dich einfach an, wenn du etwas melden oder antworten willst. Lieber
+nicht? Dann schreib uns an `info@polderpijplijn.nl`.
+
+## Kann ich Grim Reader ohne Server nutzen?
+
+Ja. Tippe in den **Einstellungen** auf **Offline-Demo ansehen**, um dich mit
+Beispielbüchern umzusehen, oder füge deine eigenen EPUB-/PDF-Dateien über die
+**+**-Taste in *Lokale Bücher* hinzu (oder über „Öffnen mit…“ aus einer anderen App)
+— ganz ohne Server. Ein WebDAV-Server (NAS/Nextcloud), ein OPDS-Katalog oder ein
+Grimmory-Server bringt eine ganze Bibliothek dazu, ist aber optional.
+
+## Warum hört das Vorlesen auf meinem iPad auf, wenn ich zum Home-Bildschirm gehe?
+
+Das Vorlesen läuft bei **gesperrtem Bildschirm** weiter — mit Wiedergabesteuerung,
+Titel und Cover auf dem Sperrbildschirm — auf iPhone und iPad. Auf dem **iPhone**
+läuft es auch weiter, wenn du zum Home-Bildschirm oder in eine andere App wechselst.
+Auf dem **iPad** klappt genau dieser Fall wegen einer Systemeinschränkung nicht, weil
+iPadOS die Leseansicht anhält: Sperre stattdessen den Bildschirm, dann liest die App
+weiter. Hörbücher sind davon nicht betroffen und spielen auf beiden Geräten überall.
+
+## Was bedeuten die gestrichelten Linien im Solar-Genauigkeitsdiagramm von Thuis?
+
+Eine **gestrichelte** Vorhersagelinie wird nachträglich rekonstruiert — eine
+Schätzung dessen, was die App vorhergesagt *hätte*, bevor sie jeden Morgen eine echte
+Prognose festschrieb. Eine **durchgezogene** Vorhersagelinie ist eine echte, vorab
+festgeschriebene Prognose (gegen 3 Uhr morgens fixiert, bevor der Ertrag bekannt war).
+Wo die Linie durchgezogen wird, beginnen die echten Vorhersagen. Siehe
+[Die selbstlernende Solarprognose](/support/kb/thuis-getting-started.html#die-selbstlernende-solarprognose)
+für die vollständige Erklärung.
+
+## Welche Version habe ich?
+
+Öffne die App und geh zu **Einstellungen**; die Versionsnummer steht ganz unten.
+Gib sie bitte an, wenn du ein Problem meldest.
 
 </div>

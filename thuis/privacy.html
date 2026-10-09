@@ -7,24 +7,28 @@
   <meta name="description" content="Privacyverklaring van de app Thuis (iOS en Android).">
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="apple-touch-icon" href="../assets/favicon.png">
-  <link rel="stylesheet" href="../styles.css?v=5">
-  <script src="../lang.js?v=2"></script>
+  <link rel="stylesheet" href="../styles.css?v=6">
+  <script src="../lang.js?v=3"></script>
   <script src="../email.js?v=1"></script>
 </head>
 <body>
   <div class="wrap">
-    <div class="lang-switch" role="group" aria-label="Taal / Language">
+    <div class="lang-switch" role="group" aria-label="Taal / Language / Sprache">
       <button type="button" data-lang="nl">NL</button>
       <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="de">DE</button>
     </div>
 
     <a class="back-link" href="./" lang="nl">&lsaquo; Terug naar Thuis</a>
     <a class="back-link" href="./" lang="en">&lsaquo; Back to Thuis</a>
+    <a class="back-link" href="./" lang="de">&lsaquo; Zurück zu Thuis</a>
 
     <h1 lang="nl">Privacyverklaring</h1>
     <h1 lang="en">Privacy policy</h1>
+    <h1 lang="de">Datenschutzerklärung</h1>
     <p class="updated" lang="nl">App: Thuis (iOS en Android) &middot; Laatst bijgewerkt: 9 juni 2026</p>
     <p class="updated" lang="en">App: Thuis (iOS and Android) &middot; Last updated: 9 June 2026</p>
+    <p class="updated" lang="de">App: Thuis (iOS und Android) &middot; Zuletzt aktualisiert: 9. Juni 2026</p>
 
     <section class="card">
       <p lang="nl">Deze privacyverklaring beschrijft hoe de app <strong>Thuis</strong> met
@@ -34,15 +38,21 @@
       <p lang="en">This privacy policy describes how the app <strong>Thuis</strong> handles
         data. Thuis is a personal, non-commercial project by Maarten. The policy
         applies to both the iOS and Android version of the app.</p>
+      <p lang="de">Diese Datenschutzerklärung beschreibt, wie die App <strong>Thuis</strong>
+        mit Daten umgeht. Thuis ist ein persönliches, nicht-kommerzielles Projekt von
+        Maarten. Die Erklärung gilt für die iOS- und die Android-Version der App.</p>
     </section>
 
     <section class="card">
       <h2 lang="nl">Welke gegevens we verzamelen</h2>
       <h2 lang="en">What data we collect</h2>
+      <h2 lang="de">Welche Daten wir erheben</h2>
       <p lang="nl">Geen. Thuis verzamelt, bewaart of verstuurt geen persoonsgegevens naar
         de makers of naar derden. De app bevat:</p>
       <p lang="en">None. Thuis does not collect, store or send any personal data to the
         makers or to third parties. The app contains:</p>
+      <p lang="de">Keine. Thuis erhebt, speichert oder sendet keine personenbezogenen Daten an
+        die Entwickler oder an Dritte. Die App enthält:</p>
       <ul lang="nl">
         <li>geen tracking;</li>
         <li>geen advertenties;</li>
@@ -55,15 +65,23 @@
         <li>no analytics or usage statistics;</li>
         <li>no accounts or registration.</li>
       </ul>
+      <ul lang="de">
+        <li>kein Tracking;</li>
+        <li>keine Werbung;</li>
+        <li>keine Analyse- oder Nutzungsstatistiken;</li>
+        <li>keine Konten oder Registrierung.</li></ul>
     </section>
 
     <section class="card">
       <h2 lang="nl">Gegevens op je toestel</h2>
       <h2 lang="en">Data on your device</h2>
+      <h2 lang="de">Daten auf deinem Gerät</h2>
       <p lang="nl">Om verbinding te maken met je eigen diensten sla je in de app een aantal
         instellingen op. Deze blijven uitsluitend op je toestel:</p>
       <p lang="en">To connect to your own services, you store a number of settings in the
         app. These stay solely on your device:</p>
+      <p lang="de">Um dich mit deinen eigenen Diensten zu verbinden, speicherst du einige
+        Einstellungen in der App. Diese bleiben ausschließlich auf deinem Gerät:</p>
       <ul lang="nl">
         <li>het adres van je Home Assistant en het bijbehorende toegangstoken;</li>
         <li>een optioneel PlugChoice-token voor je laadpaal;</li>
@@ -74,6 +92,10 @@
         <li>an optional PlugChoice token for your charger;</li>
         <li>your own preferences (such as tariffs and home details).</li>
       </ul>
+      <ul lang="de">
+        <li>die Adresse deines Home Assistant und dessen Zugriffstoken;</li>
+        <li>einen optionalen PlugChoice-Token für deine Ladestation;</li>
+        <li>deine eigenen Einstellungen (etwa Tarife und Angaben zum Haus).</li></ul>
       <p lang="nl">De tokens worden versleuteld opgeslagen — op iOS in de Keychain, op
         Android in EncryptedSharedPreferences. Ze worden nergens naartoe
         gestuurd, behalve naar de door jou ingestelde diensten om de gegevens
@@ -82,13 +104,18 @@
         Android in EncryptedSharedPreferences. They are not sent anywhere,
         except to the services you set up yourself in order to fetch the
         data.</p>
+      <p lang="de">Die Tokens werden verschlüsselt gespeichert — unter iOS im Schlüsselbund,
+        unter Android in EncryptedSharedPreferences. Sie werden nirgendwohin gesendet,
+        außer an die Dienste, die du selbst eingerichtet hast, um die Daten abzurufen.</p>
     </section>
 
     <section class="card">
       <h2 lang="nl">Diensten van derden</h2>
       <h2 lang="en">Third-party services</h2>
+      <h2 lang="de">Dienste Dritter</h2>
       <p lang="nl">Thuis communiceert alleen met de diensten die je zelf instelt:</p>
       <p lang="en">Thuis only communicates with the services you set up yourself:</p>
+      <p lang="de">Thuis kommuniziert nur mit den Diensten, die du selbst einrichtest:</p>
       <ul lang="nl">
         <li><strong>Home Assistant</strong> — je eigen server. De app haalt
           hier je energiegegevens op. Adres en token blijven op je toestel.</li>
@@ -103,26 +130,39 @@
           charger and to start or stop charging and set the charge limit. The
           token stays on your device.</li>
       </ul>
+      <ul lang="de">
+        <li><strong>Home Assistant</strong> — dein eigener Server. Die App holt hier
+          deine Energiedaten. Adresse und Token bleiben auf deinem Gerät.</li>
+        <li><strong>PlugChoice</strong> — optional, für den Status deiner Ladestation
+          und um das Laden zu starten oder zu stoppen und das Ladelimit einzustellen.
+          Der Token bleibt auf deinem Gerät.</li></ul>
       <p lang="nl">De app deelt geen gegevens met de makers of met andere derden.</p>
       <p lang="en">The app shares no data with the makers or with other third parties.</p>
+      <p lang="de">Die App teilt keine Daten mit den Entwicklern oder anderen Dritten.</p>
     </section>
 
     <section class="card">
       <h2 lang="nl">Kinderen</h2>
       <h2 lang="en">Children</h2>
+      <h2 lang="de">Kinder</h2>
       <p lang="nl">De app is niet gericht op kinderen en verzamelt bewust geen gegevens van
         wie dan ook.</p>
       <p lang="en">The app is not aimed at children and deliberately collects no data from
         anyone.</p>
+      <p lang="de">Die App richtet sich nicht an Kinder und erhebt bewusst von niemandem
+        Daten.</p>
     </section>
 
     <section class="card">
       <h2 lang="nl">Wijzigingen</h2>
       <h2 lang="en">Changes</h2>
+      <h2 lang="de">Änderungen</h2>
       <p lang="nl">Als deze verklaring verandert, passen we de datum bovenaan deze pagina
         aan. De meest actuele versie staat altijd op deze pagina.</p>
       <p lang="en">If this policy changes, we update the date at the top of this page. The
         most current version is always on this page.</p>
+      <p lang="de">Ändert sich diese Erklärung, passen wir das Datum oben auf dieser Seite an.
+        Die aktuelle Fassung steht immer auf dieser Seite.</p>
     </section>
 
     <section class="card">
@@ -131,10 +171,13 @@
         <span class="pp-email"><noscript>info [at] polderpijplijn [punt] nl</noscript></span>.</p>
       <p lang="en">Questions about privacy? Email
         <span class="pp-email"><noscript>info [at] polderpijplijn [dot] nl</noscript></span>.</p>
+      <p lang="de">Fragen zum Datenschutz? Schreib an
+        <span class="pp-email"><noscript>info [at] polderpijplijn [punkt] nl</noscript></span>.</p>
     </section>
 
     <p class="footer" lang="nl">Thuis &middot; een privéproject van Maarten</p>
     <p class="footer" lang="en">Thuis &middot; a personal project by Maarten</p>
+    <p class="footer" lang="de">Thuis &middot; ein privates Projekt von Maarten</p>
   </div>
 </body>
 </html>

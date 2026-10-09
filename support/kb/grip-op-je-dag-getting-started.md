@@ -2,6 +2,7 @@
 layout: kb
 title_nl: Grip op je Dag — complete handleiding
 title_en: Daily Grip — complete guide
+title_de: Daily Grip — vollständige Anleitung
 title: Grip op je Dag — handleiding / guide
 description: How to build a visual day schedule, use kid mode and the timer, work with multiple day types, share schedules by QR, and adjust the app to a child's sensory needs.
 ---
@@ -303,5 +304,158 @@ Read the full [privacy policy](/gripopjedag/privacy.html).
 
 Head to **[Help &amp; support](/support/)** to report a problem, suggest an
 improvement or ask a question.
+
+</div>
+
+<div lang="de" markdown="1">
+
+Daily Grip macht aus dem Tag einen klaren, visuellen Plan, dem ein Kind folgen und
+den es Schritt für Schritt abhaken kann. Die App ist für Kinder gedacht, denen
+Klarheit und eine feste Routine guttun, etwa Kinder im Autismus-Spektrum. Eltern und
+Betreuende richten den Plan ein; das Kind benutzt ihn.
+
+Alles funktioniert **auf deinem eigenen Gerät** — kein Konto, kein Server, keine
+Internetverbindung und kein Tracking. Nichts, was du eingibst, verlässt das Gerät
+deiner Familie.
+
+Diese Anleitung geht jeden Teil der App durch.
+
+> **Hinweis:** Die App gibt es auf Englisch und Niederländisch. Auf einem deutschen
+> Gerät erscheint sie auf Englisch; Tasten und Menüs stehen hier deshalb so, wie sie
+> in der englischen App heißen.
+
+## Das Wichtigste zuerst — einen Plan erstellen
+
+Wenn du die App öffnest, siehst du den heutigen Plan mit ein paar Beispielschritten.
+So machst du ihn zu deinem eigenen:
+
+1. Öffne das Menü (oben rechts) und wähle **Edit schedule**.
+2. Tippe auf einen Schritt, um ihn zu ändern, oder auf **+**, um einen hinzuzufügen.
+3. Für jeden Schritt kannst du festlegen:
+   - einen **Namen** (zum Beispiel „Zähne putzen“);
+   - ein **Symbol** — aus dem eingebauten Satz oder ein **eigenes Foto** (ein Foto
+     der eigenen Zahnbürste des Kindes wirkt oft besser als ein allgemeines Symbol);
+   - einen optionalen **Timer** (siehe unten).
+4. Ändere die Reihenfolge mit den Pfeilen nach oben/unten, und entferne einen
+   Schritt mit der Löschtaste.
+
+> **Klein anfangen.** Baue nicht den ganzen Tag auf einmal. Beginne mit dem
+> schwierigsten Moment — der Morgenroutine, den Mahlzeiten oder dem Zubettgehen — und
+> ergänze mehr, sobald das gut läuft. Rechne mit zwei bis vier Wochen konsequenter
+> Nutzung, bevor du die volle Wirkung siehst.
+
+## Der Hauptbildschirm
+
+Der Hauptbildschirm zeigt:
+
+- **Up next** — den aktuellen Schritt, groß und deutlich, mit einer Vorlesetaste.
+- **Let's go** — öffnet den Kindermodus (siehe unten).
+- **Take a break** — öffnet den ruhigen Pausenbildschirm.
+- Die vollständige Liste der Schritte, die das Kind zum Abhaken antippt. Erledigte
+  Schritte bekommen ein Häkchen; eine sanfte Vibration bestätigt jeden einzelnen.
+
+Ist alles erledigt, erscheint ein ruhiger „All done!“-Bildschirm — bewusst leise,
+ohne laute Feier.
+
+An jedem neuen Tag werden die Häkchen automatisch zurückgesetzt, sodass der Tag immer
+frisch beginnt. Du kannst den Tag auch selbst über das Menü neu starten.
+
+## Kindermodus — die Zuerst-dann-Tafel
+
+Tippe auf **Let's go** für den Kindermodus: eine Vollbildansicht, die **nur den
+aktuellen Schritt** zeigt, groß und ruhig, mit dem nächsten Schritt klein als
+„then“. Das ist die klassische Zuerst-dann-Tafel, digital: Das Kind sieht genau, was
+jetzt passiert und was als Nächstes kommt, und sonst nichts, was ablenkt.
+
+Im Kindermodus kann das Kind den Timer eines Schritts starten, sich den Schritt
+vorlesen lassen, ihn als erledigt markieren oder den Pausenbildschirm öffnen.
+
+## Der Timer
+
+Gib einem Schritt im Schritt-Editor einen Timer (1–30 Minuten). Tippe beim Schritt
+auf **Start timer**, um statt einer tickenden Uhr einen ruhigen, schwindenden Ring zu
+sehen — „wie lange noch“, sichtbar gemacht.
+
+Bei Timern ab ein paar Minuten erscheint **zwei Minuten vor dem Ende** (bei einem
+Zwei-Minuten-Timer eine Minute vorher) eine sanfte Vorwarnung, damit der Übergang nie
+überraschend kommt. Es gibt keine Alarme; nur eine sanfte Vibration und — wenn du es
+einschaltest — einen leisen Klang.
+
+## Mehrere Tagesarten
+
+Nicht jeder Tag sieht gleich aus. Unter Menü → **Schedules** kannst du mehrere
+Tagespläne anlegen — einen Schultag, ein Wochenende, Ferien — und jedem die
+Wochentage geben, an denen er gilt. Der richtige Plan erscheint dann automatisch am
+richtigen Tag. Teilen sich zwei Pläne einen Tag, gewinnt der obere.
+
+## „Heute ist es anders“
+
+Wenn sich etwas ändert — keine Schule, ein Besuch bei Oma — kündige es ruhig im Voraus
+an. Menü → **Today is different…**, tippe eine kurze Notiz, und das Kind sieht sie
+oben im Plan und im Kindermodus. Eine angekündigte Änderung verursacht viel weniger
+Stress als eine stille. Die Notiz verschwindet am nächsten Tag von selbst.
+
+## Blick auf morgen
+
+Menü → **Look at tomorrow** zeigt den Plan von morgen nur zum Ansehen — ein ruhiges
+Abendritual, um sich gemeinsam auf das Kommende vorzubereiten.
+
+## Der Pausenbildschirm
+
+Die Taste **Take a break** (auf dem Hauptbildschirm und im Kindermodus) öffnet einen
+ruhigen Bildschirm mit einem langsam atmenden Kreis: ein Ort zum Runterkommen, wenn
+es zu viel wird, statt sich durchzubeißen. In den Einstellungen kannst du dafür einen
+leisen Hintergrundklang einschalten.
+
+## Einen Plan teilen (QR-Code)
+
+Du kannst einen Plan ohne Konto und ohne Internet auf ein anderes Gerät kopieren:
+
+1. Auf dem Gerät mit dem Plan: Menü → **Share schedule**. Ein QR-Code erscheint. Hast
+   du mehr als einen Plan, wähle, welchen du teilen willst.
+2. Auf dem anderen Gerät: Menü → **Scan schedule**, dann den QR-Code mit der Kamera
+   scannen — oder ein Foto/einen Screenshot davon wählen (praktisch, wenn jemand den
+   Code über eine Chat-App schickt).
+3. Wähle, ob du deinen Plan **ersetzen** oder die Schritte **dahinter anfügen** willst.
+
+Der Plan reist im QR-Code selbst; nichts geht über einen Server. Es funktioniert auch
+**zwischen iPhone und Android**. Hinweis: Eigene Fotos stecken nicht im QR-Code — dort
+wird stattdessen das Symbol verwendet.
+
+## Sinnes-Einstellungen
+
+Jeder Reiz, den die App erzeugt, lässt sich herunterregeln. Menü → **Settings**:
+
+- **Vibrations** — das sanfte haptische Feedback, an oder aus.
+- **Digits on the timer** — aus zeigt nur den ruhigen Ring, ohne Zahlen.
+- **Muted colours** — eine sanftere, ruhigere Farbpalette statt des Standardblaus.
+- **Sound** — ein leiser Übergangsklang und ein Klang für den Pausenbildschirm. Beide
+  sind **standardmäßig aus**; der Klang ist immer dieselbe kurze, sanfte Melodie, und
+  die Lautstärke des Geräts hat immer Vorrang.
+
+Ton ist absichtlich standardmäßig aus: Viele Kinder reagieren empfindlich auf
+plötzliche oder unerwartete Geräusche.
+
+## Elternsperre
+
+Neigt dein Kind dazu, den Plan selbst zu ändern, schalte in den Einstellungen die
+**Parental lock** ein. Elternaufgaben (Plan bearbeiten, Einstellungen und so weiter)
+verlangen dann zuerst, eine Taste zwei Sekunden lang gedrückt zu halten — Hürde genug
+für ein kleines Kind, keine Hürde für einen Elternteil. Sie ist standardmäßig aus,
+weil eine Sperre bei jeder Aktion lästig ist, wenn man sie nicht braucht.
+
+## Datenschutz
+
+Die App sammelt nichts und enthält weder Tracking noch Werbung. Pläne, Fotos und
+Einstellungen bleiben im privaten Speicher der App auf deinem Gerät. Die Kamera wird
+nur zum Scannen von QR-Codes verwendet. Löschst du die App, werden die Daten mit
+gelöscht.
+
+Lies die vollständige [Datenschutzerklärung](/gripopjedag/privacy.html).
+
+## Funktioniert etwas nicht?
+
+Geh zu **[Hilfe &amp; Support](/support/)**, um ein Problem zu melden, eine
+Verbesserung vorzuschlagen oder eine Frage zu stellen.
 
 </div>

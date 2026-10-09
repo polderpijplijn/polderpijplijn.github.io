@@ -2,6 +2,7 @@
 layout: kb
 title_nl: Thuis — complete handleiding
 title_en: Thuis — complete setup guide
+title_de: Thuis — vollständige Anleitung
 title: Thuis — handleiding / guide
 description: What Thuis needs from Home Assistant and PlugChoice and why, how to connect, and what every screen does — including the experimental battery, tariff and heat-pump explorations.
 ---
@@ -596,5 +597,311 @@ up yourself.
 
 Head to **[Help &amp; support](/support/)** to report a problem, suggest an
 improvement or ask a question.
+
+</div>
+
+<div lang="de" markdown="1">
+
+Thuis ist ein persönliches Energie-Dashboard, das Daten aus **deinem eigenen** Home
+Assistant und optional aus deiner **PlugChoice**-Ladestation liest. Es gibt kein
+Konto und keine Cloud von uns dazwischen: Die App spricht nur mit den Diensten, die
+du selbst einrichtest, und Adresse und Tokens bleiben auf deinem Gerät.
+
+Diese Anleitung erklärt, was jeder Dienst liefert und warum, wie du dich verbindest
+und was jeder Bildschirm zeigt.
+
+> **Hinweis:** Die App gibt es auf Englisch und Niederländisch. Auf einem deutschen
+> Gerät erscheint sie auf Englisch; Tasten und Bildschirme stehen hier deshalb so, wie
+> sie in der englischen App heißen.
+
+## Was du brauchst
+
+- Einen laufenden **Home Assistant** mit einigen Energiesensoren (erforderlich).
+- Die App **Thuis** auf deinem iPhone oder iPad.
+- Optional: ein **PlugChoice**-Konto, wenn du eine smarte Ladestation hast und sie
+  sehen und steuern willst.
+
+Erst einmal nur umschauen? Gib **`demo`** als Adresse ein und verbinde dich — die App
+zeigt dann Beispieldaten, ohne dass du etwas einrichten musst.
+
+---
+
+## Schritt 1 — Home Assistant (erforderlich)
+
+Home Assistant ist die Open-Source-Plattform für Hausautomation. Von dort holt Thuis
+**alle deine Energiedaten**. Du betreibst ihn selbst; Thuis verbindet sich über seine
+lokale Netzwerkadresse (oder deine Nabu-Casa-Adresse) mit einem Token, den du
+erstellst.
+
+### Was Thuis aus Home Assistant liest, und warum
+
+| Daten | Wofür | Typische Quelle |
+|------|----------|----------------|
+| Netzleistung (W) + pro Phase | Die Live-Kachel „Netz“: Bezug oder Einspeisung | P1-Zähler |
+| Bezugs-/Einspeisesummen (kWh) | Energiebilanz und Kosten pro Tag/Zeitraum | P1-Zähler |
+| Gas gesamt (m³) | Der Gas-Bildschirm und der Wärmepumpen-Vergleich | P1-Zähler |
+| Solarleistung (W), heute & gesamt (kWh) | Der Solar-Bildschirm und die Eigenverbrauchs-Berechnung | Wechselrichter-Integration |
+| Stündliche Wettervorhersage (Bewölkung %, Lage) | Die selbstlernende Solarprognose und der Rat „bester Moment“ | Wetter-Integration (z. B. Met.no) |
+| Außentemperatur (°C) | Wetter-Bildschirm und Effizienz-/Wärmepumpen-Berechnungen | Wetter oder ein Sensor |
+| Innentemperatur (°C) | Effizienz-Bildschirm | Thermostat / climate-Entität |
+| Fossiler Anteil im Netz (%) | Rat für grünere Momente (optional) | Electricity Maps |
+
+### Die Verbindungsdaten besorgen
+
+1. Notiere die **Adresse** deines Home Assistant — lokal (zum Beispiel
+   `homeassistant.local:8123` oder eine lokale IP) und optional deine
+   **Nabu-Casa**-Adresse von außen (`https://….ui.nabu.casa`), damit die App darauf
+   ausweichen kann, wenn du nicht zu Hause bist.
+2. Erstelle in Home Assistant einen **langlebigen Zugriffstoken**: Öffne dein Profil
+   und scrolle ganz nach unten (*Langlebige Zugangstoken*). Kopiere ihn.
+
+### Empfohlene Home-Assistant-Integrationen
+
+Thuis liest Standard-Energie-Entitäten. Diese Integrationen füllen das Dashboard:
+
+- Ein **P1-Zähler** — für Netz, Verbrauch, Einspeisung und Gas. Getestet mit dem
+  HomeWizard-P1-Zähler.
+- Eine **Solaranlagen-Integration** — für aktuelle Solarleistung und Ertrag. Thuis
+  erkennt Enphase, SolarEdge, Fronius, SMA und Huawei SUN2000 automatisch, oder du
+  gibst die Entitäten von Hand an.
+- Eine **Wetter-Integration** (zum Beispiel Met.no oder KNMI) — für die stündliche
+  Bewölkungsprognose und die Außentemperatur.
+- Ein **Thermostat oder eine Wärmepumpe** (climate-Entität) — für die
+  Innentemperatur.
+- Optional: **Electricity Maps** — für den fossilen Anteil im Netz.
+- Optional: **Forecast.Solar** — eine Solarprognose (Thuis kann mit der Zeit auch
+  eine eigene Prognose aus deinem gemessenen Ertrag lernen).
+
+Heißen deine Entitäten anders als die Standardnamen, kannst du sie unter
+**Settings → Connection settings → Entities (advanced)** ändern. Es gibt eine Taste
+zur automatischen Erkennung und, sobald du verbunden bist, eine Auswahl aus einer
+Liste.
+
+---
+
+## Schritt 2 — PlugChoice (optional, für deine Ladestation)
+
+PlugChoice ist die Ladeplattform hinter vielen smarten Ladestationen. Hast du eine,
+nutzt Thuis PlugChoice für die **Live-Daten deiner Ladestation** und um **das Laden
+zu steuern**.
+
+### Was Thuis aus PlugChoice liest, und warum
+
+- **Status der Ladestation** (lädt, pausiert, verfügbar, offline) und **Live-Leistung**
+  — für die Kachel und den Detailbildschirm der Ladestation.
+- **kWh pro Sitzung, heute und im Verlauf** — für den Ladeverlauf und die
+  Sitzungsdiagramme.
+
+### Was Thuis über PlugChoice steuern kann
+
+- Eine Ladesitzung **starten** und **stoppen**.
+- **Das Ladelimit einstellen** mit dem Schieberegler auf dem Lade-Bildschirm.
+  Hinweis: Ein Ladelimit lässt sich nur ändern, *während* das Auto tatsächlich lädt
+  — sonst meldet die Ladestation, dass sie nicht im Ladezustand ist.
+
+> **Das Limit ist eine Obergrenze, kein Versprechen.** Die tatsächliche Ladeleistung
+> ist die *niedrigste* aus dem Limit, das du in der App einstellst, und einem Limit,
+> das an der Ladestation selbst eingestellt ist (zum Beispiel in der App des
+> Herstellers) — diese lokale Einstellung sieht PlugChoice nicht. Deshalb zeigt der
+> Schieberegler direkt darunter die **live gemessene Leistung**: Erhöhst du das Limit,
+> siehst du sofort, ob die Ladestation tatsächlich folgt.
+
+> Starte beim ersten Mal einmal eine Sitzung mit deiner eigenen Ladekarte. Thuis
+> verwendet diese Karte wieder, um spätere Sitzungen aus der App zu starten, sodass
+> du nichts eingeben musst.
+
+### Den PlugChoice-Token besorgen
+
+Erstelle in deinem PlugChoice-Konto auf **app.plugchoice.com** einen *Personal Access
+Token* und füge ihn in Thuis ein. Der Token bleibt auf deinem Gerät, und die
+Verbindung zur Ladestation ist völlig optional.
+
+---
+
+## Schritt 3 — Verbinden
+
+1. Öffne Thuis und geh zu **Settings**.
+2. Öffne **Connection settings** und trage ein:
+   - die **Adresse** deines Home Assistant (lokal) und optional die
+     **Nabu-Casa**-Adresse von außen;
+   - deinen **langlebigen Zugriffstoken**;
+   - optional deinen **PlugChoice-Token**.
+3. Trage optional deine **Preise** ein (Gas, Strom normal/Niedertarif, Einspeisung)
+   und die **Vertragsart** — daraus ergeben sich die Kostenangaben.
+4. Tippe auf **Connect**.
+
+Deine Kacheln füllen sich mit Live-Daten. Die Statuszeile unten in den Einstellungen
+zeigt, ob du verbunden bist, ob die Verbindung von außen genutzt wird und wie viele
+Entitäten gefunden wurden.
+
+---
+
+## Was die Bildschirme zeigen
+
+Nach dem Verbinden hat die App zwei Tabs: **Thuis** (das Live-Dashboard) und
+**Analyses** (die Was-wäre-wenn-Schätzungen — siehe
+[Experimentelle Erkundungen](#experimentelle-erkundungen) unten).
+
+Das Dashboard hat Kacheln, die Detailbildschirme öffnen:
+
+- **Solar** — aktueller und bisheriger Ertrag sowie die Prognose (siehe
+  [Die selbstlernende Solarprognose](#die-selbstlernende-solarprognose) unten).
+- **Grid** — Live-Bezug/-Einspeisung, pro Phase, und Summen.
+- **House usage** — was dein Haus verbraucht.
+- **Gas** — Gasverbrauch und eine optionale Kostenangabe.
+- **Weather** — Wetterlage, die die Solarprognose nutzt.
+- **Best time** — wann Strom am grünsten/günstigsten ist.
+- **Charger** — Live-Status, Steuerung und Verlauf der Ladestation (PlugChoice).
+- **Climate** — Innen- und Außentemperatur, Luftfeuchtigkeit und Taupunkt aller an
+  Home Assistant angeschlossenen Sensoren, pro Raum gruppiert und umbenennbar. Dieser
+  Bildschirm enthält auch den **Lüftungstipp**: Wähle dort einen Innen- und einen
+  Außentemperatursensor, und das Dashboard sagt dir, wann ein guter Moment zum Lüften
+  ist — wärmer als 20 °C drinnen und spürbar kühler draußen, plus, wenn
+  Feuchtigkeitssensoren vorhanden sind, Außenluft, die wirklich trockener ist. Siehe
+  **[Taupunkt — und warum er fürs Lüften wichtig ist](dauwpunt.html)**, warum die
+  relative Luftfeuchtigkeit dich hier in die Irre führt.
+- **Home efficiency** — wie dein Haus abschneidet, auf Grundlage von
+  Innentemperatur, Wohnfläche und Haustyp (einzustellen unter Settings).
+
+---
+
+## Die selbstlernende Solarprognose
+{: #die-selbstlernende-solarprognose}
+
+Der Solar-Bildschirm zeigt, wie viel deine Module voraussichtlich erzeugen — sowohl
+die **erwartete Summe für heute und morgen** als auch den stündlichen Verlauf, der in
+den Rat „bester Moment“ einfließt. Statt sich auf einen allgemeinen Prognosedienst zu
+verlassen, **lernt Thuis seine eigene Prognose aus deinem gemessenen Ertrag** und
+kalibriert sich so auf *dein* Dach: seine echte Leistung, Ausrichtung, Verschattung
+und das Verhalten des Wechselrichters.
+
+### Wie es funktioniert
+
+Die Prognose kombiniert zwei Dinge, die die App mit der Zeit lernt:
+
+1. **Eine Klarhimmel-Hüllkurve** — für jede Stunde des Tages der Ertrag, den deine
+   Module an einem nahezu wolkenlosen Tag erreichen. Thuis lernt das aus deinem
+   eigenen gemessenen Ertrag über ein gleitendes Fenster von **28 Tagen**.
+2. **Eine Wolken-Durchlasskurve** — wie stark die stündliche **Bewölkungsprognose**
+   deiner Wetter-Integration (zum Beispiel Met.no) den Ertrag mindert. Thuis lernt
+   das, indem es Tag für Tag die *vorhergesagte* Bewölkung mit dem vergleicht, was
+   deine Module tatsächlich erzeugt haben.
+
+Um einen Tag vorherzusagen, nimmt Thuis die stündliche Wolkenprognose und multipliziert
+für jede Tageslichtstunde den Klarhimmel-Wert mit dem gelernten Durchlass für diese
+Bewölkung, dann summiert es die Stunden. Weil es gegen die *vorhergesagte* (nicht die
+gemessene) Bewölkung lernt, schluckt das Modell nebenbei auch die systematische
+Abweichung des Wetterdienstes selbst.
+
+### Die Aktualisierung gegen 3 Uhr morgens
+
+Damit die heutige Prognose nicht davon abhängt, wann du die App gerade öffnest,
+aktualisiert Thuis die heutige Prognose **einmal früh am Morgen (gegen 3 Uhr) und
+schreibt sie fest**, mit einer Hintergrundaufgabe. Ab dann ist der Wert „erwartet
+heute“ der, der über Nacht festgelegt wurde — eine faire, feste Vorhersage, an der sich
+der echte Ertrag des Tages messen lässt. Kam die Hintergrundaufgabe nicht zum Zug (zum
+Beispiel weil das Telefon aus war), wird die Prognose stattdessen festgeschrieben, wenn
+du die App an diesem Tag zum ersten Mal öffnest.
+
+### Das Genauigkeitsdiagramm lesen — durchgezogene und gestrichelte Linien
+
+Das Genauigkeitsdiagramm zeigt pro Tag zwei Linien:
+
+- **Gemessen** — was deine Module tatsächlich erzeugt haben.
+- **Vorhergesagt** — was das Modell erwartet hat.
+
+Ein Teil der Vorhersagelinie ist **gestrichelt** und ein Teil **durchgezogen**, und der
+Unterschied zählt:
+
+- Eine **gestrichelte** Vorhersagelinie ist *rekonstruiert* — für Tage, bevor die App
+  jeden Morgen eine echte Prognose festschrieb, schätzt Thuis nachträglich, was sie
+  vorhergesagt *hätte*. Das ist eine bestmögliche Schätzung, keine echte Vorhersage.
+- Eine **durchgezogene** Vorhersagelinie ist eine **echte, vorab festgeschriebene
+  Prognose** — der Wert, der an diesem Tag gegen 3 Uhr tatsächlich festgelegt wurde,
+  bevor der Ertrag bekannt war.
+
+Wo die Linie von gestrichelt zu durchgezogen wechselt, beginnen also **die echten
+Vorhersagen**. Nur der durchgezogene Teil ist ein echter Test der Prognosegenauigkeit.
+
+### Der Anfang und die Genauigkeit mit der Zeit
+
+Das Modell braucht Daten zum Lernen. In den **ersten ein bis zwei Wochen** ist die
+Klarhimmel-Hüllkurve noch dünn, deshalb greift Thuis auf eine gröbere Schätzung nach
+der vorhergesagten Wetterlage zurück (sonnig / teils bewölkt / bewölkt / Regen) und
+wird mit wachsendem Ertragsverlauf spürbar genauer. Auch **nach einem
+Jahreszeitenwechsel** sinkt die Genauigkeit eine Weile, weil die Hüllkurve den neuen
+Sonnenstand neu lernen muss. Ein längerer Verlauf (am besten mehr als ein Jahr, damit
+jede Jahreszeit abgedeckt ist) liefert die besten Ergebnisse. Wie die App selbst
+sagt: Aus der Genauigkeit der Prognose lassen sich keine Rechte ableiten.
+
+---
+
+## Preise und Vertragsart
+
+Unter **Settings** kannst du eintragen:
+
+- **Gaspreis** (€/m³) und **Strompreise** (normal, Niedertarif, Einspeisung). Der
+  Niedertarif gilt Mo–Fr 23:00–07:00 und das ganze Wochenende (Standard in den
+  Niederlanden).
+- **Vertragsart** für Strom und Gas: *fest* oder *dynamisch*. Bei einem dynamischen
+  Vertrag fragt die App nach deinem Einkaufsaufschlag (ohne MwSt.); MwSt. und
+  Energiesteuer rechnet sie selbst hinzu.
+
+Lass ein Feld leer, um diesen Wert auszublenden.
+
+---
+
+## Experimentelle Erkundungen (der Tab „Analyses“)
+{: #experimentelle-erkundungen}
+
+Thuis enthält drei vorausschauende Werkzeuge, die **schätzen**, was passieren
+*könnte*, wenn du deine Ausstattung änderst. Sie stehen zusammen im eigenen Tab
+**Analyses**, mit dem Hinweis ganz oben. Sie sind bewusst grob und sollen ein Gefühl
+für die Größenordnung geben — nicht, um einen Kauf darauf zu planen.
+
+> **⚠️ Diese Funktionen sind experimentell. Daraus lassen sich keine Rechte ableiten.**
+> Die Zahlen sind Schätzungen auf Grundlage deiner gemessenen Daten und allgemeiner
+> Annahmen. Sie sind keine Beratung und ersetzen keine richtige Berechnung durch einen
+> qualifizierten Installateur oder Energieberater.
+
+### Heimspeicher (Home battery)
+
+Schätzt eine empfohlene Kapazität und die jährliche Ersparnis für einen kleinen
+Steckdosen-Heimspeicher, auf Grundlage deines täglichen Solarüberschusses und
+Netzbezugs. Er geht von einem bescheidenen Steckdosenspeicher aus (etwa 800 W, Laden
+und Entladen über den Tag) und zeigt die Ersparnis bei festem und dynamischem Tarif. An
+bewölkten oder Wintertagen lädt so ein Speicher kaum — die Schätzung berücksichtigt
+das, bleibt aber eine Schätzung.
+
+### Fester oder dynamischer Tarif (Fixed vs. dynamic)
+
+Vergleicht, was dein Strom mit einem festen Vertrag gegenüber einem dynamischen
+(stündlicher Marktpreis) gekostet hätte, mit deinem echten Verbrauch und historischen
+Marktpreisen plus Energiesteuer und MwSt. Vergangene Preise sind keine Garantie für die
+Zukunft, nimm das Ergebnis also als grobe Orientierung.
+
+### Wärmepumpe (Heat pump)
+
+Schätzt die Wärmepumpenleistung, die dein Haus bräuchte (abgeleitet aus deinem
+gemessenen Gasverbrauch und den Außentemperaturen), simuliert Strom- und Restgasverbrauch
+für eine Hybrid- oder vollelektrische Lösung, schätzt den jährlichen Kostenunterschied
+und schlägt passende Pumpen aus einer Referenzliste vor. Die App sagt selbst, dass sie
+keine richtige Heizlastberechnung durch einen Installateur ersetzen kann — sie braucht
+mindestens eine volle Heizperiode an Daten, bevor sie etwas schätzen kann.
+
+---
+
+## Datenschutz
+
+Thuis sammelt keine Daten und enthält weder Tracking noch Werbung. Adresse und Tokens
+bleiben verschlüsselt auf deinem eigenen Gerät, und die App spricht nur mit den
+Diensten, die du selbst einrichtest.
+
+---
+
+## Funktioniert etwas nicht?
+
+Geh zu **[Hilfe &amp; Support](/support/)**, um ein Problem zu melden, eine
+Verbesserung vorzuschlagen oder eine Frage zu stellen.
 
 </div>

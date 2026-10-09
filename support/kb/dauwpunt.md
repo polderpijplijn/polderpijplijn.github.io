@@ -2,6 +2,7 @@
 layout: kb
 title_nl: Dauwpunt — wat het is en waarom het bij ventileren telt
 title_en: Dew point — what it is and why it matters for ventilation
+title_de: Taupunkt — was er ist und warum er beim Lüften zählt
 title: Dauwpunt / Dew point
 description: What dew point is, why relative humidity misleads when comparing indoor and outdoor air, and how Thuis uses it for the ventilation tip and condensation risk.
 ---
@@ -207,5 +208,110 @@ night at 25 °C feels so much heavier than a dry day at 30 °C.
 ## Something not working?
 
 Head to **[Help &amp; support](/support/)** to report a problem or ask a question.
+
+</div>
+
+<div lang="de" markdown="1">
+
+Der Taupunkt ist die Temperatur, bei der Luft mit Wasserdampf gesättigt ist. Kühlt
+man Luft bis dorthin ab, kann sie ihre Feuchtigkeit nicht mehr halten, und sie
+kondensiert — Tau auf dem Gras, Beschlag auf einem kalten Glas.
+
+## Warum nicht einfach die relative Luftfeuchtigkeit?
+
+Warme Luft kann mehr Wasserdampf aufnehmen als kalte. Die **relative
+Luftfeuchtigkeit** (der Prozentwert) sagt daher nur, wie voll die Luft ist im
+Verhältnis zu dem, was sie bei dieser Temperatur aufnehmen *könnte*. Der
+**Taupunkt** sagt, wie viel Feuchtigkeit tatsächlich darin steckt.
+
+Dieser Unterschied ist entscheidend, sobald du zwei Luftmassen mit
+unterschiedlicher Temperatur vergleichst — genau das tust du, wenn du überlegst, ein
+Fenster zu öffnen. Erwärmst oder kühlst du Luft, ändert sich ihre relative
+Feuchtigkeit, ihr Taupunkt aber **nicht**: Es kommt keine Feuchtigkeit hinzu oder
+weg, nur das Fassungsvermögen ändert sich.
+
+## Was passiert, wenn du ein Fenster öffnest
+
+Außenluft kommt herein und erwärmt sich auf Raumtemperatur. Nimm ein Wohnzimmer mit
+22 °C und 55 % (Taupunkt 12,5 °C):
+
+| Draußen | Taupunkt | Feuchtigkeit nach Erwärmen auf 22 °C | Wirkung |
+|---|---|---|---|
+| 8 °C, 95 % | 7,2 °C | 39 % | viel trockener |
+| 15 °C, 70 % | 9,6 °C | 45 % | trockener |
+| 18 °C, 60 % | 10,1 °C | 47 % | trockener |
+| 15 °C, 90 % | 13,4 °C | 58 % | **feuchter** |
+
+Außenluft mit 8 °C und 95 % klingt klatschnass, ist aber nach dem Erwärmen knochentrocken.
+Winterluft ist immer ein gutes Trockenmittel, so neblig es draußen auch aussieht.
+
+Dieselben 15 °C klingen milder, aber bei 90 % holst du Feuchtigkeit herein: Du kühlst
+den Raum und machst ihn klammer. Wer nach Prozenten geht, kann sich in beide
+Richtungen täuschen; wer nach dem Taupunkt geht, nie.
+
+## Wie Thuis ihn nutzt
+
+Der Lüftungstipp im Dashboard prüfte früher nur, ob es draußen kühler war. Jetzt
+prüft er beides:
+
+- **Kühlen** — da geht es um Temperatur: über 20 °C drinnen und draußen mindestens
+  1 °C kühler. Der Taupunkt ist hier keine Bedingung, sondern eine Bremse: Ist die
+  Außenluft deutlich feuchter (mehr als ein halbes Grad Taupunkt), bleibt der Tipp
+  weg, denn dann kühlst du den Raum, machst ihn aber klamm.
+- **Trocknen** — da geht es um den Taupunkt: draußen mindestens 1 °C trockener, und
+  der Raum darf dabei nicht wärmer werden.
+
+Beides ist unabhängig: Jedes für sich ist ein guter Grund, ein Fenster zu öffnen. Bei
+25 °C drinnen und 20 °C draußen mit gleich feuchter Luft lüftest du rein zum
+Abkühlen — dass es nicht trockener wird, ist kein Einwand. Der Tipp sagt, was du
+bekommst: Kühlen, Trocknen oder beides.
+
+Die Spielräume sind absichtlich verschieden. Um zu *behaupten*, dass die Luft draußen
+trockener ist, willst du Sicherheit (1 °C); um zu *vermeiden*, dass der Raum klammer
+wird, willst du Vorsicht (ein halbes Grad). Beide decken die Ungenauigkeit eines
+Feuchtigkeitssensors ab, der leicht 2–3 % danebenliegt — ohne Spielraum würde der
+Tipp durch Messrauschen ständig an- und ausgehen.
+
+Ohne Feuchtigkeitssensoren greift der Tipp nur auf die Temperatur zurück.
+
+Dieser Artikel gehört zur **[vollständigen Thuis-Anleitung](thuis-getting-started.html)**,
+die das Anbinden der Sensoren und das Einrichten des Lüftungstipps behandelt.
+
+Der Klima-Bildschirm zeigt den Taupunkt für jeden Sensor, drinnen und draußen, damit
+du sie vergleichen kannst. Für den Außenwert nimmt die App am liebsten deinen eigenen
+Feuchtigkeitssensor und greift sonst auf die Wettervorhersage zurück. Das ist wichtig:
+Ein regionaler Wetterwert zusammen mit einer lokal gemessenen Temperatur kann den
+Taupunkt deutlich verfälschen.
+
+## Kondenswasser und Schimmel
+
+Feuchtigkeit kondensiert auf jeder Oberfläche, die kälter ist als der Taupunkt. Bei
+einem Innentaupunkt von 12,5 °C bekommst du an einem 10 °C kalten Fenster garantiert
+Kondenswasser.
+
+Das erklärt auch, warum Schimmel immer in der kältesten Ecke auftaucht: nicht weil es
+dort feuchter ist, sondern weil die Oberfläche dort unter den Taupunkt fällt. Je
+niedriger dein Innentaupunkt, desto kleiner das Risiko — unter 10 °C bist du fast
+immer auf der sicheren Seite; über 15 °C lohnt es sich, in einem Haus mit
+Wärmebrücken darauf zu achten.
+
+## Wie es sich anfühlt
+
+| Taupunkt | Fühlt sich an |
+|---|---|
+| unter 10 °C | trocken |
+| 10–13 °C | angenehm |
+| 13–16 °C | behaglich |
+| 16–18 °C | leicht schwül |
+| 18–21 °C | schwül |
+| über 21 °C | drückend |
+
+Ab etwa 20 °C verdunstet Schweiß kaum noch — deshalb fühlt sich eine tropische Nacht
+mit 25 °C so viel schwerer an als ein trockener Tag mit 30 °C.
+
+## Funktioniert etwas nicht?
+
+Geh zu **[Hilfe &amp; Support](/support/)**, um ein Problem zu melden oder eine
+Frage zu stellen.
 
 </div>

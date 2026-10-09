@@ -2,6 +2,7 @@
 layout: kb
 title_nl: Grim Reader — complete handleiding
 title_en: Grim Reader — complete setup guide
+title_de: Grim Reader — vollständige Anleitung
 title: Grim Reader — handleiding / guide
 description: Read from your own sources with Grim Reader — WebDAV (NAS/Nextcloud), an OPDS catalogue, a Grimmory server, or just your own files. Step-by-step for each.
 ---
@@ -42,12 +43,12 @@ Je kunt meerdere bronnen tegelijk gebruiken; ze staan samen onder
 {: #bestanden-nl}
 
 Grim Reader werkt volledig zonder server. Boeken die je zelf toevoegt,
-verschijnen onder **Mijn boeken**, en de Start- en Auteurs-schermen vullen zich
+verschijnen onder **Lokale boeken**, en de Start- en Auteurs-schermen vullen zich
 automatisch met je eigen collectie.
 
 Er zijn twee manieren om een boek toe te voegen:
 
-- **Vanuit de Bestanden-app** — tik op de **+**-knop in *Mijn boeken* en kies een
+- **Vanuit de Bestanden-app** — tik op de **+**-knop in *Lokale boeken* en kies een
   EPUB of PDF ergens in de Bestanden-app (iCloud Drive, Op mijn iPhone/iPad, een
   USB-stick, …).
 - **"Open met…"** — deel een EPUB of PDF vanuit een andere app (Mail, Safari, een
@@ -123,7 +124,7 @@ hele server hoeft te scannen:
   je liever zelf door de structuur navigeert.
 
 Open een boek voor de details en **Download** het. Gedownloade boeken verschijnen
-onder **Mijn boeken** en blijven offline beschikbaar.
+onder **Lokale boeken** en blijven offline beschikbaar.
 
 ### Onderweg bij je NAS — een tweede adres
 
@@ -190,7 +191,7 @@ bron aan.
    app-instellingen.
 
 De catalogus verschijnt nu in de **Servers**-lijst. Tik erop om erdoorheen te
-bladeren, en open een boek om het rechtstreeks in **Mijn boeken** te downloaden.
+bladeren, en open een boek om het rechtstreeks in **Lokale boeken** te downloaden.
 
 > **Zoeken.** Grim Reader vraagt de catalogus zelf om zijn zoekadres, dus meestal
 > werkt zoeken vanzelf. Doet het dat niet, dan kun je bij het bewerken van de
@@ -304,7 +305,7 @@ De leeservaring is sterk instelbaar onder **Instellingen**.
 
 ### Taal
 
-Grim Reader is beschikbaar in het **Nederlands** en **Engels**.
+Grim Reader is beschikbaar in het **Nederlands**, **Engels** en **Duits**.
 
 - **App-taal** — de app volgt je iOS-taalinstellingen. Om alleen deze app te
   wijzigen, open je **Instellingen → Taal** in Grim Reader en tik je door naar de
@@ -358,12 +359,12 @@ You can use several sources at once; they live together under
 {: #files-en}
 
 Grim Reader works entirely without a server. Books you add yourself appear under
-**My books**, and the Start and Authors screens fill up with your own collection
+**Local books**, and the Start and Authors screens fill up with your own collection
 automatically.
 
 There are two ways to add a book:
 
-- **From the Files app** — tap the **+** button in *My books* and pick an EPUB or
+- **From the Files app** — tap the **+** button in *Local books* and pick an EPUB or
   PDF from anywhere in the Files app (iCloud Drive, On My iPhone/iPad, a USB
   stick, …).
 - **"Open with…"** — share an EPUB or PDF from any other app (Mail, Safari, a
@@ -436,7 +437,7 @@ server every time:
   if you'd rather navigate the structure yourself.
 
 Open any book to see its details, then **Download** it. Downloaded books appear
-under **My books** and stay available offline.
+under **Local books** and stay available offline.
 
 ### Reaching your NAS while away — a second address
 
@@ -500,7 +501,7 @@ no books or catalogues of its own: you point it at your own source.
 4. Tap **Save**. The password goes into the **Keychain**, not the app settings.
 
 The catalogue now appears in the **Servers** list. Tap it to browse through it, and
-open a book to download it straight into **My books**.
+open a book to download it straight into **Local books**.
 
 > **Search.** Grim Reader asks the catalogue for its own search address, so search
 > usually works automatically. If it doesn't, you can enter a **search URL** when
@@ -612,7 +613,7 @@ The reading experience is highly adjustable under **Settings**.
 
 ### Language
 
-Grim Reader is available in **Dutch** and **English**.
+Grim Reader is available in **Dutch**, **English** and **German**.
 
 - **App language** — the app follows your iOS language settings. To change just
   this app, open **Settings → Language** in Grim Reader and tap through to the iOS
@@ -627,5 +628,320 @@ Grim Reader is available in **Dutch** and **English**.
 
 If you get stuck at any step, head to **[Help &amp; support](/support/)** to report
 a problem, suggest an improvement or ask a question.
+
+</div>
+
+<div lang="de" markdown="1">
+
+Grim Reader ist ein vollständiger E-Reader, der aus **deinen eigenen Quellen** liest
+— einem NAS oder Nextcloud (WebDAV), einem OPDS-Katalog, einem Grimmory-Server oder
+einfach deinen eigenen Dateien. Die App spricht nur mit dem Server, den du
+einrichtest — kein Konto und keine Cloud von uns dazwischen.
+
+Du brauchst nur die App **Grim Reader** auf deinem iPhone oder iPad und eine Quelle
+deiner Wahl (oder gar keine). Wähle unten deine Quelle und folge den Schritten.
+
+## Inhalt
+{: #inhalt-de}
+
+- [Eigene Dateien — kein Server nötig](#files-de)
+- [WebDAV — ein NAS oder Nextcloud](#webdav-de)
+- [OPDS — dein eigener Katalog (etwa Calibre-Web)](#opds-de)
+- [Grimmory — dein eigener Bücherserver](#grimmory-de)
+- [Die App einrichten — Barrierefreiheit und Sprache](#settings-de)
+- [Funktioniert etwas nicht?](#help-de)
+
+Welche Quelle passt zu dir?
+
+- **Du hast ein NAS** (Synology, QNAP) oder **Nextcloud**? → WebDAV.
+- **Du hast einen Bücherserver mit OPDS-Feed**, etwa Calibre-Web? → OPDS.
+- **Du betreibst Grimmory** oder willst es einrichten? → Grimmory.
+- **Du willst einfach einzelne Bücher lesen**, ohne Server? → Eigene Dateien.
+
+Du kannst mehrere Quellen gleichzeitig nutzen; sie stehen zusammen unter
+**Einstellungen → Server**.
+
+---
+
+## Eigene Dateien — kein Server nötig
+{: #files-de}
+
+Grim Reader funktioniert ganz ohne Server. Bücher, die du selbst hinzufügst,
+erscheinen unter **Lokale Bücher**, und die Bildschirme Start und Autoren füllen sich
+automatisch mit deiner eigenen Sammlung.
+
+Es gibt zwei Wege, ein Buch hinzuzufügen:
+
+- **Aus der Dateien-App** — tippe auf die **+**-Taste in *Lokale Bücher* und wähle
+  ein EPUB oder PDF von irgendwo in der Dateien-App (iCloud Drive, Auf meinem
+  iPhone/iPad, ein USB-Stick, …).
+- **„Öffnen mit…“** — teile ein EPUB oder PDF aus einer anderen App (Mail, Safari,
+  einer Messenger-App) und wähle **Grim Reader**.
+
+Das Buch wird in die App kopiert, Cover und Angaben werden aus der Datei selbst
+gelesen, und es bleibt offline verfügbar.
+
+> **Nur umschauen?** Tippe unter **Einstellungen** auf **Offline-Demo ansehen**, um
+> die App mit ein paar Beispielbüchern zu erkunden, ohne etwas einzurichten.
+
+---
+
+## WebDAV — ein NAS oder Nextcloud
+{: #webdav-de}
+
+Grim Reader liest EPUBs, PDFs, Comics (CBZ) und Hörbücher direkt von einem
+**WebDAV**-Server — zum Beispiel einem NAS (Synology, QNAP) oder einer
+Nextcloud-Freigabe. Große Hörbücher streamen direkt vom Server, ohne dass du sie erst
+ganz herunterladen musst.
+
+### Einen Server hinzufügen
+
+1. Öffne **Einstellungen → Server**.
+2. Tippe auf **Server hinzufügen** und wähle **WebDAV-Server**.
+3. Trage ein:
+   - **Name** — was du willst, nur eine Bezeichnung.
+   - **Adresse** — die WebDAV-Adresse des Ordners mit deinen Büchern (siehe den Tipp
+     unten).
+   - **Benutzername** und **Passwort** — dein Login für diesen Server.
+4. Tippe auf **Verbindung testen**, um Adresse und Login zu prüfen, dann auf
+   **Speichern**.
+
+Dein Passwort wird sicher im **Schlüsselbund** gespeichert, nicht in den
+App-Einstellungen. Um einen Server später zu bearbeiten oder zu entfernen, wische in
+der Serverliste nach links darüber. Du kannst beliebig viele WebDAV-Server hinzufügen.
+
+> **Wichtig — gib den Ordner an, nicht das Stammverzeichnis.** Viele Server (vor
+> allem QNAP) listen ihre Freigaben nicht auf, wenn du das WebDAV-*Stammverzeichnis*
+> öffnest, sodass die App eine leere Liste zeigen würde. Gib die Adresse **mit der
+> Freigabe oder dem Ordner** ein, in dem deine Bücher liegen — zum Beispiel
+> `https://mein-nas.example.com:5006/Ebooks` statt nur
+> `https://mein-nas.example.com:5006`. Achte bei einem QNAP darauf, dass der
+> **WebDAV**-Dienst eingeschaltet ist, und notiere den Port, den er nutzt.
+
+### Die Statussymbole
+
+Neben jedem Server in der Liste **Server** zeigt ein kleines Symbol seinen Status,
+geprüft bei jedem Öffnen der Einstellungen:
+
+- ein grünes **Häkchen** — der Server ist erreichbar und dein Login funktioniert;
+- eine orange **Warnung** — die App erreicht ihn nicht (Server offline, falsche
+  Adresse oder falsches Passwort);
+- ein Ladekreis — die Verbindung wird geprüft.
+
+Vielleicht siehst du auch einen grünen **Stift**: Die App hat Schreibrechte und darf
+einen kleinen eigenen Ordner auf dem Server für Buch- und Autorenangaben anlegen. Ein
+**Schloss** bedeutet, dass die Freigabe schreibgeschützt ist — Bücher funktionieren
+trotzdem, die App kann dort nur keine zusätzlichen Metadaten ablegen.
+
+### Alle Bücher sehen, laden und lesen
+
+Tippe auf einen WebDAV-Server, um eine Übersicht **aller Bücher darauf** zu öffnen,
+gesammelt aus allen Ordnern und als Raster mit Covern, Titeln und Autoren angezeigt.
+Die App liest jedes Buch einmal, um Cover und Angaben aus der Datei zu holen. Diese
+Übersicht wird **auf deinem Gerät gemerkt**, damit nicht jedes Mal der ganze Server
+durchsucht werden muss:
+
+- **Aktualisieren** (der Kreispfeil) durchsucht den Server erneut nach neuen oder
+  entfernten Büchern.
+- **Nach Ordnern blättern** (das Ordnersymbol) öffnet die klassische Ordneransicht,
+  wenn du lieber selbst durch die Struktur navigierst.
+
+Öffne ein Buch, um seine Angaben zu sehen, und **lade** es dann. Geladene Bücher
+erscheinen unter **Lokale Bücher** und bleiben offline verfügbar.
+
+### Dein NAS unterwegs erreichen — eine zweite Adresse
+
+Zu Hause erreichst du dein NAS über seine Adresse in deinem eigenen Netzwerk.
+Unterwegs bedeutet diese Adresse nichts: `192.168.…` gibt es nur zu Hause.
+**Tailscale** — ein kostenloses VPN, das deine eigenen Geräte miteinander verbindet —
+bringt dich trotzdem hin, und Grim Reader wechselt von selbst.
+
+So richtest du es ein:
+
+1. Installiere **Tailscale** auf deinem NAS *und* auf deinem iPhone oder iPad, und
+   melde dich auf beiden mit demselben Konto an.
+2. Schau in der [Tailscale-Konsole](https://login.tailscale.com/admin/machines) nach,
+   wie dein NAS dort heißt. Das ist einfach der Gerätename, zum Beispiel `nas`.
+3. Öffne in Grim Reader **Einstellungen → Server**, tippe auf deinen WebDAV-Server
+   und trage unter *Unterwegs* die **zweite Adresse** ein: Kopiere deine erste
+   Adresse und ersetze **nur die IP-Adresse** durch diesen Namen. Der Rest der
+   Adresse — der Port und der Pfad dahinter — bleibt genau gleich.
+4. Tippe auf **Verbindung testen**, dann auf **Speichern**.
+
+Ein Beispiel, wie die beiden zusammenhängen:
+
+| Feld | Wert |
+|---|---|
+| Adresse | `http://192.168.2.17:5000/Ebooks` |
+| Zweite Adresse | `http://nas:5000/Ebooks` |
+
+> Funktioniert der kurze Name nicht, nimm den vollen Namen, den die Tailscale-Konsole
+> daneben zeigt — den, der auf `.ts.net` endet. Dann muss die Adresse mit `https://`
+> beginnen, denn iOS erlaubt unverschlüsselten Verkehr nur in dein eigenes Netzwerk
+> und zu Namen ohne Punkte.
+
+Schalte unterwegs **Tailscale** ein. Grim Reader nutzt deine normale Adresse, solange
+sie antwortet, und weicht auf die zweite aus, wenn nicht. Deine Bibliothek bleibt
+unberührt: Nichts wird neu durchsucht, und Lesefortschritt und Favoriten bleiben, wo
+sie sind. Zurück zu Hause wechselt die App von selbst zurück.
+
+> **Halte den Pfad gleich.** Beim Ausweichen tauscht die App nur die Serveradresse,
+> nicht das, was danach kommt. Zeigt die zweite Adresse auf einen anderen Ordner,
+> kommen deine Bücher unterwegs nicht an.
+
+---
+
+## OPDS — dein eigener Katalog
+{: #opds-de}
+
+OPDS ist ein offener Standard für Bücherkataloge. Viele Bücherserver bieten einen an
+— zum Beispiel **Calibre-Web** — und Grim Reader kann ihn direkt durchblättern. Grim
+Reader liefert selbst keine Bücher oder Kataloge: Du gibst deine eigene Quelle an.
+
+1. Öffne **Einstellungen → Server**.
+2. Tippe auf **Server hinzufügen** und wähle **OPDS-Katalog**.
+3. Trage ein:
+   - **Name** — eine Bezeichnung deiner Wahl.
+   - **Feed-URL** — die OPDS-Adresse des Katalogs, zum Beispiel
+     `https://mein-calibre.example.com/opds`. Nimm `https://`; iOS blockiert
+     unsichere `http://`-Adressen, außer in deinem eigenen lokalen Netzwerk.
+   - **Benutzername** und **Passwort** — nur wenn der Katalog ein Login verlangt.
+     Sonst leer lassen.
+4. Tippe auf **Speichern**. Das Passwort kommt in den **Schlüsselbund**, nicht in die
+   App-Einstellungen.
+
+Der Katalog steht jetzt in der Liste **Server**. Tippe darauf, um ihn zu
+durchblättern, und öffne ein Buch, um es direkt in **Lokale Bücher** zu laden.
+
+> **Suche.** Grim Reader fragt den Katalog nach seiner eigenen Suchadresse, deshalb
+> funktioniert die Suche meist automatisch. Wenn nicht, kannst du beim Bearbeiten des
+> Katalogs eine **Such-URL** eintragen, mit `{searchTerms}` an der Stelle des
+> Suchbegriffs.
+
+> **Nur deine Quellen.** Füge nur Kataloge hinzu, denen du vertraust und deren Bücher
+> du herunterladen darfst — zum Beispiel deinen eigenen Calibre-Web-Server oder einen
+> Katalog gemeinfreier Bücher. Die App prüft den Inhalt eines Katalogs nicht.
+
+---
+
+## Grimmory — dein eigener Bücherserver
+{: #grimmory-de}
+
+[Grimmory](https://grimmory.org) ist ein selbst gehosteter Server für deine
+Büchersammlung, mit Bibliotheken, Reihen, Autoren und Regalen. Grim Reader zeigt diese
+Struktur genau so, wie du sie auf dem Server ordnest.
+
+### 1. Einen Grimmory-Server betreiben
+
+Hast du noch keinen Grimmory-Server, richte ihn zuerst ein. Der einfachste und
+empfohlene Weg ist **Docker**. Das offizielle Image ist **`grimmory/grimmory:latest`**
+auf Docker Hub, und du startest es mit einer `docker-compose.yml`, die Grimmory auf
+zwei Dinge auf deinem Rechner verweist:
+
+- einen **Daten**-Ordner, in dem Grimmory seine Einstellungen ablegt;
+- einen oder mehrere **Bücher**-Ordner, in denen deine eigentlichen Dateien liegen.
+
+Grimmory durchsucht deinen Bücherordner, liest die Metadaten (Titel, Autor, Reihe,
+Cover) und baut deine Bibliothek auf.
+
+> **Halte dich an die offizielle Compose-Datei.** Grimmory braucht auch einen
+> Datenbank-Container, und genaue Ports, Volumes und Umgebungsvariablen ändern sich
+> mit der Zeit — richte es also mit der aktuellen `docker-compose.yml` aus der Quelle
+> ein, statt einen Befehl aus dem Gedächtnis zu kopieren. Die Installationsanleitung
+> und ein aktuelles Beispiel stehen auf **[grimmory.org](https://grimmory.org)**; das
+> Image ist [`grimmory/grimmory`](https://hub.docker.com/r/grimmory/grimmory) auf
+> Docker Hub.
+
+Läuft Grimmory, öffne es im Webbrowser (meist auf einem Port wie `6060`), lege deinen
+**ersten Benutzer** an und füge mindestens einen Bibliotheksordner hinzu. Notiere dir
+die **Adresse** sowie deinen **Benutzernamen** und dein **Passwort** — die brauchst
+du gleich.
+
+### 2. Anmelden
+
+1. Öffne Grim Reader und geh zu **Einstellungen → Server hinzufügen →
+   Grimmory-Server**.
+2. Gib die **Adresse** ein — lokal (`192.168.1.10:6060`) oder von außen
+   (`https://books.example.com`).
+3. Gib **Benutzername** und **Passwort** ein und melde dich an.
+
+Deine Bibliotheken erscheinen automatisch. Serveradresse und Login werden sicher in
+deinem **iCloud-Schlüsselbund** gespeichert, sodass deine anderen Apple-Geräte deine
+Bibliothek automatisch übernehmen. Grim Reader meldet sich jeweils bei einem
+Grimmory-Server an; zum Wechseln meldest du dich ab und mit der neuen Adresse wieder
+an.
+
+### 3. So funktioniert es
+
+- **Bibliotheken** — jeder Bibliotheksordner, den du auf dem Server anlegst,
+  erscheint als eigener Eintrag in der Seitenleiste (iPad) oder Liste (iPhone).
+- **Reihen und Autoren** — Grimmory liest sie aus den Metadaten; landet ein Buch
+  falsch, korrigiere es auf dem Server (oder mit den Verwaltungswerkzeugen unten), und
+  es ändert sich überall. Unter **Einstellungen → Reihen** kannst du Reihen mit nur
+  wenigen Büchern ausblenden.
+- **Regale** — ein **Regal** ist eine handverlesene Sammlung auf dem Server; ein
+  **intelligentes Regal** (Funkelsymbol) füllt sich selbst nach Regeln, die du in
+  Grimmory festlegst. Beide erscheinen in einem eigenen Bereich.
+
+### 4. Verwaltungsoptionen (auf eigene Gefahr)
+
+Meldest du dich als **Grimmory-Administrator** an, zeigt Grim Reader in den
+Einstellungen einen zusätzlichen Bereich **Wartung** mit Werkzeugen, die direkt auf
+die Bibliothek deines Servers wirken.
+
+> **⚠️ Auf eigene Gefahr.** Diese Aktionen ändern oder entfernen Daten auf deinem
+> Grimmory-Server, und manche lassen sich nicht rückgängig machen. Sichere zuerst
+> deinen Grimmory-Datenordner und beginne mit einer kleinen, umkehrbaren Änderung.
+
+Die Wartungswerkzeuge: Duplikate aufräumen, Autoren zusammenführen, Reihen
+zusammenführen, Sprachcodes vereinheitlichen, Autoren-Metadaten über Wikipedia
+ergänzen, fehlende Autoren oder Cover ergänzen und Autoren ohne Bücher entfernen. Da
+sie deine ganze Bibliothek auf einmal betreffen: sichern, ein Werkzeug ausführen,
+Ergebnis prüfen, dann weitermachen.
+
+---
+
+## Die App einrichten
+{: #settings-de}
+
+### Barrierefreiheit
+
+Das Leseerlebnis lässt sich unter **Einstellungen** weitgehend anpassen.
+
+- **Dynamic Type** — schalte *Textgröße folgt iOS* ein, damit der Reader die
+  Textgröße nutzt, die du systemweit in iOS eingestellt hast. Lieber pro App? Schalte
+  das aus und nutze die Textgrößen-Steuerung in der App.
+- **Schrift OpenDyslexic** — eine Schrift, die für Menschen mit Legasthenie leichter
+  zu lesen sein soll. Weitere Optionen sind klassische Buchschriften mit Serifen
+  (Georgia, Palatino, Iowan, Charter) und eine serifenlose Systemschrift.
+- **Lesethemen** — System, Hell, Sepia, Dunkel oder **Hoher Kontrast** (reines
+  Schwarz auf Weiß).
+- **Zeilenabstand** — vergrößere den Abstand zwischen den Zeilen, wenn dichter Text
+  schwer zu verfolgen ist.
+- **Vorlesen** — Grim Reader kann dir Bücher mit den iOS-Stimmen vorlesen, mit
+  einstellbarem **Vorlesetempo**. Das Vorlesen läuft bei **gesperrtem Bildschirm**
+  weiter, mit Wiedergabesteuerung, Titel und Cover auf dem Sperrbildschirm. Auf dem
+  iPhone läuft es auch weiter, wenn du zum Home-Bildschirm oder in eine andere App
+  wechselst; auf dem iPad halte die App im Vordergrund oder sperre den Bildschirm.
+  (Hörbücher spielen auf beiden überall.)
+- **VoiceOver** — die App funktioniert mit Apples eingebautem Screenreader.
+
+### Sprache
+
+Grim Reader gibt es auf **Deutsch**, **Englisch** und **Niederländisch**.
+
+- **App-Sprache** — die App folgt deinen iOS-Spracheinstellungen. Um nur diese App
+  umzustellen, öffne in Grim Reader **Einstellungen → Sprache** und tippe dich zu den
+  iOS-Einstellungen der App durch.
+- **Schneller Sprachfilter** — beim Blättern filtert eine kleine Sprachleiste deine
+  Bibliothek nach der Sprache der Bücher selbst.
+
+---
+
+## Funktioniert etwas nicht?
+{: #help-de}
+
+Kommst du bei einem Schritt nicht weiter, geh zu **[Hilfe &amp; Support](/support/)**,
+um ein Problem zu melden, eine Verbesserung vorzuschlagen oder eine Frage zu stellen.
 
 </div>

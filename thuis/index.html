@@ -7,19 +7,21 @@
   <meta name="description" content="Thuis: een persoonlijk energie-dashboard dat je Home Assistant-gegevens toont. Info, instructies en privacy.">
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="apple-touch-icon" href="../assets/favicon.png">
-  <link rel="stylesheet" href="../styles.css?v=5">
-  <script src="../lang.js?v=2"></script>
+  <link rel="stylesheet" href="../styles.css?v=6">
+  <script src="../lang.js?v=3"></script>
   <script src="../email.js?v=1"></script>
 </head>
 <body>
   <div class="wrap">
-    <div class="lang-switch" role="group" aria-label="Taal / Language">
+    <div class="lang-switch" role="group" aria-label="Taal / Language / Sprache">
       <button type="button" data-lang="nl">NL</button>
       <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="de">DE</button>
     </div>
 
     <a class="back-link" href="../" lang="nl">&lsaquo; Alle apps</a>
     <a class="back-link" href="../" lang="en">&lsaquo; All apps</a>
+    <a class="back-link" href="../" lang="de">&lsaquo; Alle Apps</a>
 
     <header class="hero">
       <img src="../assets/icon.png" alt="Thuis-icoon">
@@ -28,21 +30,27 @@
         gas, verbruik, laadpaal en een verkenning voor de warmtepomp.</p>
       <p class="lead" lang="en">A personal dashboard for your energy at home: solar, grid,
         gas, usage, charger and an exploration for the heat pump.</p>
+      <p class="lead" lang="de">Ein persönliches Dashboard für die Energie bei dir zu Hause:
+        Solar, Netz, Gas, Verbrauch, Ladestation und eine Erkundung zur Wärmepumpe.</p>
     </header>
 
     <section class="card" style="border-left:4px solid var(--solar)">
       <h2 style="margin-bottom:8px" lang="nl">Status: in ontwikkeling</h2>
       <h2 style="margin-bottom:8px" lang="en">Status: in development</h2>
+      <h2 style="margin-bottom:8px" lang="de">Status: in Entwicklung</h2>
       <p lang="nl">Deze app is nog volop in ontwikkeling. Functies kunnen
         veranderen, en sommige onderdelen zijn experimenteel — je kunt er geen
         rechten aan ontlenen.</p>
       <p lang="en">This app is still under active development. Features may change,
         and some parts are experimental — no rights can be derived from them.</p>
+      <p lang="de">Diese App wird noch aktiv entwickelt. Funktionen können sich ändern,
+        und manche Teile sind experimentell — daraus lassen sich keine Rechte ableiten.</p>
     </section>
 
     <section class="card">
       <h2 style="margin-bottom:8px" lang="nl">Wat het doet</h2>
       <h2 style="margin-bottom:8px" lang="en">What it does</h2>
+      <h2 style="margin-bottom:8px" lang="de">Was die App kann</h2>
       <p lang="nl">Thuis haalt je energiegegevens op uit je eigen Home Assistant en toont
         ze in een overzichtelijk dashboard. Beschikbaar voor iOS en Android. De
         app draait volledig op jouw gegevens en diensten — er zit geen account
@@ -51,11 +59,16 @@
         it in a clear dashboard. Available for iOS and Android. The app runs
         entirely on your own data and services — there's no account or cloud of
         ours in between.</p>
+      <p lang="de">Thuis holt deine Energiedaten aus deinem eigenen Home Assistant und
+        zeigt sie in einem übersichtlichen Dashboard. Verfügbar für iOS und Android.
+        Die App läuft vollständig mit deinen eigenen Daten und Diensten — kein Konto
+        und keine Cloud von uns dazwischen.</p>
     </section>
 
     <section class="card">
       <h2 style="margin-bottom:8px" lang="nl">Aan de slag</h2>
       <h2 style="margin-bottom:8px" lang="en">Getting started</h2>
+      <h2 style="margin-bottom:8px" lang="de">Loslegen</h2>
       <ol lang="nl">
         <li>Open de instellingen in de app.</li>
         <li>Vul het adres van je <strong>Home Assistant</strong> in — lokaal
@@ -78,18 +91,32 @@
           status of your charger and control charging.</li>
         <li>Tap <strong>Connect</strong>.</li>
       </ol>
+      <ol lang="de">
+        <li>Öffne die Einstellungen in der App.</li>
+        <li>Gib die Adresse deines <strong>Home Assistant</strong> ein — lokal
+          (z.&nbsp;B. <code>homeassistant.local:8123</code>) oder von außen über Nabu
+          Casa (<code>https://&hellip;.ui.nabu.casa</code>).</li>
+        <li>Erstelle in Home Assistant einen <em>langlebigen Zugriffstoken</em>
+          (Profil &rarr; ganz unten) und füge ihn in die App ein.</li>
+        <li>Optional: Gib deinen <strong>PlugChoice</strong>-Token ein, um den
+          Status deiner Ladestation zu sehen und das Laden zu steuern.</li>
+        <li>Tippe auf <strong>Verbinden</strong>.</li></ol>
       <h3 lang="nl">Even rondkijken zonder server?</h3>
       <h3 lang="en">Just want to look around without a server?</h3>
+      <h3 lang="de">Nur umschauen, ohne Server?</h3>
       <p lang="nl">Vul <code>demo</code> in als adres en verbind — dan toont de app
         voorbeeldgegevens, zonder dat je iets hoeft in te stellen.</p>
       <p lang="en">Enter <code>demo</code> as the address and connect — the app then
         shows example data, without you having to set anything up.</p>
+      <p lang="de">Gib <code>demo</code> als Adresse ein und verbinde dich — die App zeigt
+        dann Beispieldaten, ohne dass du etwas einrichten musst.</p>
     </section>
 
     <section class="card">
       <h2 style="margin-bottom:8px">Home Assistant &amp; PlugChoice</h2>
       <p lang="nl">Thuis bouwt voort op twee diensten die je zelf beheert:</p>
       <p lang="en">Thuis builds on two services that you manage yourself:</p>
+      <p lang="de">Thuis baut auf zwei Dienste, die du selbst verwaltest:</p>
       <ul lang="nl">
         <li><strong><a href="https://www.home-assistant.io" target="_blank" rel="noopener">Home Assistant</a></strong>
           — het open-source platform voor woningautomatisering. Hieruit haalt
@@ -112,19 +139,33 @@
           power and the history of your charging sessions) and to control
           charging: start, stop and set the charge limit.</li>
       </ul>
+      <ul lang="de">
+        <li><strong><a href="https://www.home-assistant.io" target="_blank" rel="noopener">Home Assistant</a></strong>
+          — die Open-Source-Plattform für Hausautomation. Von hier holt Thuis
+          alle deine Energiedaten: Solarertrag, Netzbezug, Einspeisung und Gas.</li>
+        <li><strong><a href="https://plugchoice.com" target="_blank" rel="noopener">PlugChoice</a></strong>
+          — die Ladeplattform hinter vielen smarten Ladestationen. Thuis nutzt
+          PlugChoice für die Live-Daten deiner Ladestation (Ladestatus, aktuelle
+          Leistung und den Verlauf deiner Ladevorgänge) und um das Laden zu
+          steuern: starten, stoppen und das Ladelimit einstellen.</li></ul>
       <p lang="nl">Beide koppelingen zijn optioneel; je tokens blijven op je eigen
         toestel.</p>
       <p lang="en">Both connections are optional; your tokens stay on your own
         device.</p>
+      <p lang="de">Beide Verbindungen sind optional; deine Tokens bleiben auf deinem
+        eigenen Gerät.</p>
     </section>
 
     <section class="card">
       <h2 style="margin-bottom:8px" lang="nl">Aanbevolen Home Assistant-integraties</h2>
       <h2 style="margin-bottom:8px" lang="en">Recommended Home Assistant integrations</h2>
+      <h2 style="margin-bottom:8px" lang="de">Empfohlene Home-Assistant-Integrationen</h2>
       <p lang="nl">Thuis leest standaard energie-entiteiten uit Home Assistant. Deze
         koppelingen vullen het dashboard:</p>
       <p lang="en">Thuis reads standard energy entities from Home Assistant. These
         integrations populate the dashboard:</p>
+      <p lang="de">Thuis liest Standard-Energie-Entitäten aus Home Assistant. Diese
+        Integrationen füllen das Dashboard:</p>
       <ul lang="nl">
         <li>Een <strong>P1-meter</strong> — voor net, verbruik, teruglevering en gas.
           Getest met de HomeWizard P1-meter.</li>
@@ -150,10 +191,23 @@
           temperature.</li>
         <li>Optional: <strong>Electricity Maps</strong> — for the fossil share of the grid.</li>
       </ul>
+      <ul lang="de">
+        <li>Ein <strong>P1-Zähler</strong> — für Netz, Verbrauch, Einspeisung und Gas.
+          Getestet mit dem HomeWizard-P1-Zähler.</li>
+        <li>Eine <strong>Solaranlagen-Integration</strong> — für aktuelle
+          Solarleistung und Ertrag.</li>
+        <li><strong>Forecast.Solar</strong> — für die Solarprognose für heute und morgen.</li>
+        <li>Eine <strong>Wetter-Integration</strong> — für die Außentemperatur
+          (z.&nbsp;B. Met.no oder KNMI).</li>
+        <li>Ein <strong>Thermostat oder eine Wärmepumpe</strong> (climate) — für die
+          Innentemperatur.</li>
+        <li>Optional: <strong>Electricity Maps</strong> — für den fossilen Anteil im Netz.</li></ul>
       <p lang="nl">Wijken de entiteitsnamen af? Pas ze aan onder
         Instellingen &rarr; Geavanceerd.</p>
       <p lang="en">Do the entity names differ? Change them under
         Settings &rarr; Advanced.</p>
+      <p lang="de">Heißen die Entitäten bei dir anders? Ändere sie unter
+        Einstellungen &rarr; Erweitert.</p>
     </section>
 
     <section class="card">
@@ -171,8 +225,12 @@
       <p lang="en">Thuis collects no data and contains no tracking or ads. Your address
         and tokens stay encrypted on your own device, and the app only talks to
         the services you set up yourself.</p>
+      <p lang="de">Thuis sammelt keine Daten und enthält weder Tracking noch Werbung.
+        Adresse und Tokens bleiben verschlüsselt auf deinem eigenen Gerät, und die
+        App spricht nur mit den Diensten, die du selbst einrichtest.</p>
       <p lang="nl"><a href="privacy.html">Lees de volledige privacyverklaring &rsaquo;</a></p>
       <p lang="en"><a href="privacy.html">Read the full privacy policy &rsaquo;</a></p>
+      <p lang="de"><a href="privacy.html">Vollständige Datenschutzerklärung lesen &rsaquo;</a></p>
     </section>
 
     <section class="card">
@@ -188,11 +246,14 @@
         </svg>
         <h2 lang="nl">Hulp &amp; support</h2>
         <h2 lang="en">Help &amp; support</h2>
+        <h2 lang="de">Hilfe &amp; Support</h2>
       </div>
       <p lang="nl">Iets werkt niet, een vraag of een idee?
         <a href="../support/">Naar Help &amp; support &rsaquo;</a></p>
       <p lang="en">Something not working, a question or an idea?
         <a href="../support/">Go to Help &amp; support &rsaquo;</a></p>
+      <p lang="de">Funktioniert etwas nicht, hast du eine Frage oder eine Idee?
+        <a href="../support/">Zu Hilfe &amp; Support &rsaquo;</a></p>
     </section>
 
     <p class="footer">Contact: <span class="pp-email"><noscript>info [at] polderpijplijn [punt] nl</noscript></span></p>

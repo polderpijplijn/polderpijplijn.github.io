@@ -36,8 +36,9 @@ body {
 }
 
 /* Taalkeuze: toon alleen de actieve taal. */
-html[data-lang="nl"] [lang="en"] { display: none !important; }
-html[data-lang="en"] [lang="nl"] { display: none !important; }
+html[data-lang="nl"] [lang="en"], html[data-lang="nl"] [lang="de"],
+html[data-lang="en"] [lang="nl"], html[data-lang="en"] [lang="de"],
+html[data-lang="de"] [lang="nl"], html[data-lang="de"] [lang="en"] { display: none !important; }
 
 .lang-switch {
   position: absolute;
