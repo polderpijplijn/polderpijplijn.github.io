@@ -98,6 +98,10 @@ boeken. Het pictogram rechts toont de status:
 Met **Bron toevoegen** onderaan voeg je een nieuwe bron toe. Ben je al met een
 Grimmory-server verbonden, dan vraagt de app eerst om uit te loggen.
 
+Bij het bewerken van een WebDAV-server stel je ook een [tweede adres voor
+onderweg](boeken-toevoegen.html#onderweg-nl) in. Bij een Grimmory-server kun je
+[eigen headers](boeken-toevoegen.html#headers-nl) opgeven voor een proxy.
+
 **Offline demo.** Met **Offline demo bekijken** probeer je de app met een paar
 voorbeeldboeken, zonder server. Zolang de demo loopt, staat hier **Demo verlaten**.
 
@@ -307,6 +311,10 @@ books. The icon on the right shows its status:
 
 **Add source** at the bottom adds a new source. If you are already connected to a
 Grimmory server, the app asks you to log out first.
+
+When you edit a WebDAV server you can also set a [second address for when you are
+away](boeken-toevoegen.html#onderweg-en). For a Grimmory server you can add [custom
+headers](boeken-toevoegen.html#headers-en) for a proxy.
 
 **Offline demo.** **View offline demo** lets you try the app with a few sample books,
 without a server. While the demo runs, this shows **Leave demo**.
@@ -520,6 +528,10 @@ Bücher. Das Symbol rechts zeigt den Status:
 
 Mit **Quelle hinzufügen** unten fügst du eine neue Quelle hinzu. Bist du schon mit
 einem Grimmory-Server verbunden, bittet die App dich zuerst, dich abzumelden.
+
+Beim Bearbeiten eines WebDAV-Servers stellst du auch eine [zweite Adresse für
+unterwegs](boeken-toevoegen.html#onderweg-de) ein. Bei einem Grimmory-Server kannst
+du [eigene Header](boeken-toevoegen.html#headers-de) für einen Proxy angeben.
 
 **Offline-Demo.** Mit **Offline-Demo ansehen** probierst du die App mit ein paar
 Beispielbüchern aus, ohne Server. Solange die Demo läuft, steht hier **Demo

@@ -76,9 +76,44 @@ Gebruik je een adres met `http://`, dan waarschuwt de app dat je gegevens
 onversleuteld over het netwerk gaan. Thuis is dat meestal geen probleem; op het
 wifi van een ander wel.
 
-Staat er een proxy met eigen toegangscontrole voor je server, zoals Cloudflare Zero
-Trust? Voeg dan onder **Eigen headers** de benodigde regels toe met **Header
-toevoegen**. Die headers gaan alleen naar je eigen server.
+### Eigen headers: toegang via een proxy
+{: #headers-nl}
+
+Staat je Grimmory-server achter een proxy met eigen toegangscontrole, zoals
+Cloudflare Zero Trust (Access), Authelia of Authentik? Dan blokkeert die proxy de app
+al voordat de server je inlog ziet. Zo'n proxy laat je door op basis van een header
+met een sleutel, en die headers vul je hier in. Zonder proxy heb je dit niet nodig.
+
+1. Open het inlogscherm: **Server toevoegen › Grimmory-server**. Onderaan staat
+   **Eigen headers**.
+2. Tik op **Header toevoegen**.
+3. Vul de **Naam** in, bijvoorbeeld `CF-Access-Client-Id`, en de **Waarde**. De
+   waarde is verborgen; met het oogje maak je hem zichtbaar.
+4. Herhaal dit voor elke header. Een regel verwijder je door hem naar links te vegen.
+5. Tik op **Inloggen**. De app bewaart de headers vóór het inloggen, zodat de proxy de
+   inlog zelf ook doorlaat.
+
+**Voorbeeld: Cloudflare Access.** Maak in Cloudflare Zero Trust een service token aan
+en sta dat token toe in de Access-policy van je server (actie Service Auth). Vul
+daarna twee headers in:
+
+| Naam | Waarde |
+| --- | --- |
+| `CF-Access-Client-Id` | De Client ID van het service token |
+| `CF-Access-Client-Secret` | Het Client Secret van het service token |
+
+**Regels.** Een naam mag geen spaties bevatten en een waarde geen regeleinde. De
+namen `Authorization`, `Content-Type`, `Content-Length`, `Host`, `Connection` en
+`Transfer-Encoding` zet de app zelf; die kun je niet overschrijven. Een regel die
+niet aan de regels voldoet, slaat de app over; je ziet dan een oranje waarschuwing
+onder de headers.
+
+**Veiligheid.** De headers, ook de waarden, staan in de Keychain van je toestel. Ze
+gaan alleen mee naar je Grimmory-server, nooit naar andere diensten zoals Open
+Library of een OPDS-catalogus.
+
+**Later wijzigen.** Log uit en open het inlogscherm opnieuw. Je bewaarde headers
+staan daar al ingevuld.
 
 ### Een boek downloaden
 
@@ -156,9 +191,39 @@ uit de bestanden zelf.
 5. Tik op **Verbinding testen** om te zien of de app de map bereikt.
 6. Tik op **Opslaan**.
 
-Kun je onderweg via Tailscale of een VPN bij je NAS? Vul dan onder **Onderweg** een
-**Tweede adres** in: hetzelfde pad, met alleen een ander IP-adres of een andere
-hostnaam. De app wijkt daar alleen naar uit als het eerste adres niet antwoordt.
+### Onderweg: een tweede adres
+{: #onderweg-nl}
+
+Thuis bereik je je NAS op een lokaal adres, zoals `http://192.168.2.17:5000/Ebooks`.
+Buiten de deur werkt dat adres niet. Kun je onderweg via Tailscale of een VPN bij je
+NAS, dan heeft hij daar een ander adres. Met een tweede adres vindt de app je boeken
+op beide plekken.
+
+1. Open de server: **Instellingen › Bronnen en accounts**, veeg de server naar links
+   en tik op **Bewerk**. Bij een nieuwe server vul je het meteen in.
+2. Vul onder **Onderweg** bij **Tweede adres (optioneel)** het adres in dat je via de
+   VPN gebruikt. Bijvoorbeeld het Tailscale-adres `http://100.64.12.34:5000/Ebooks`,
+   of de Tailscale-naam `http://nas.jouw-tailnet.ts.net:5000/Ebooks`.
+3. Alleen het IP-adres of de hostnaam mag verschillen (en zo nodig de poort of
+   http/https). Het pad erachter, hier `/Ebooks`, moet gelijk zijn. Verschilt het pad,
+   of is het hetzelfde adres als hierboven, dan waarschuwt de app.
+4. Tik op **Verbinding testen**. Thuis meldt de app vaak **Het tweede adres antwoordt
+   nu niet**. Dat is normaal zolang de VPN uit staat. Wil je het echt proberen, zet
+   dan wifi uit en de VPN aan, en test opnieuw.
+5. Tik op **Opslaan**.
+
+Zo werkt het:
+
+- De app gebruikt altijd eerst het eerste adres. Antwoordt dat niet, dan stapt hij
+  over op het tweede.
+- Per server onthoudt de app welk adres werkt, ook na een herstart. Zo wacht je
+  onderweg niet telkens op een time-out van het thuisadres.
+- Antwoordt ook het tweede adres niet, dan ligt het aan je verbinding. Bij de
+  volgende poging probeert de app eerst weer het thuisadres.
+- Je bibliotheek verandert niet: er wordt niets opnieuw doorzocht, en leesvoortgang
+  en favorieten blijven staan. Alleen de weg naar de server verschilt.
+
+Een tweede adres kan alleen bij een WebDAV-server.
 
 ### De bibliotheek doorzoeken
 
@@ -311,9 +376,44 @@ If you use an address starting with `http://`, the app warns you that your detai
 travel unencrypted across the network. At home that is usually fine; on someone
 else's Wi-Fi it is not.
 
-Is there a proxy with its own access control in front of your server, such as
-Cloudflare Zero Trust? Add the lines it needs under **Custom headers** with **Add
-header**. Those headers are only sent to your own server.
+### Custom headers: access through a proxy
+{: #headers-en}
+
+Is your Grimmory server behind a proxy with its own access control, such as
+Cloudflare Zero Trust (Access), Authelia or Authentik? Then that proxy blocks the app
+before the server even sees your login. Such a proxy lets you through based on a
+header carrying a key, and you enter those headers here. Without a proxy you do not
+need this.
+
+1. Open the login screen: **Add server › Grimmory server**. **Custom headers** is at
+   the bottom.
+2. Tap **Add header**.
+3. Enter the **Name**, for example `CF-Access-Client-Id`, and the **Value**. The value
+   is hidden; tap the eye to show it.
+4. Repeat for each header. Swipe a row to the left to delete it.
+5. Tap **Log in**. The app saves the headers before logging in, so the proxy lets the
+   login itself through too.
+
+**Example: Cloudflare Access.** Create a service token in Cloudflare Zero Trust and
+allow that token in your server's Access policy (action Service Auth). Then add two
+headers:
+
+| Name | Value |
+| --- | --- |
+| `CF-Access-Client-Id` | The service token's Client ID |
+| `CF-Access-Client-Secret` | The service token's Client Secret |
+
+**Rules.** A name cannot contain spaces and a value cannot contain a line break. The
+app sets `Authorization`, `Content-Type`, `Content-Length`, `Host`, `Connection` and
+`Transfer-Encoding` itself; you cannot override those. The app skips a row that breaks
+these rules and shows an orange warning below the headers.
+
+**Security.** The headers, values included, are stored in your device's Keychain.
+They are only sent to your Grimmory server, never to other services such as Open
+Library or an OPDS catalog.
+
+**Changing them later.** Log out and open the login screen again. Your saved headers
+are already filled in there.
 
 ### Downloading a book
 
@@ -390,10 +490,41 @@ from the files themselves.
 5. Tap **Test connection** to check that the app can reach the folder.
 6. Tap **Save**.
 
-Can you reach your NAS through Tailscale or a VPN when you are out? Then fill in a
-**Second address** under **Away from home**: the same path, with only a different IP
-address or host name. The app only falls back to it when the first address does not
-answer.
+### Away from home: a second address
+{: #onderweg-en}
+
+At home you reach your NAS at a local address, such as
+`http://192.168.2.17:5000/Ebooks`. Outside the house that address does not work. If
+you can reach your NAS through Tailscale or a VPN when you are out, it has a
+different address there. With a second address the app finds your books in both
+places.
+
+1. Open the server: **Settings › Sources and accounts**, swipe the server to the left
+   and tap **Edit**. For a new server, fill it in straight away.
+2. Under **Away from home**, enter the address you use over the VPN in **Second
+   address (optional)**. For example the Tailscale address
+   `http://100.64.12.34:5000/Ebooks`, or the Tailscale name
+   `http://nas.your-tailnet.ts.net:5000/Ebooks`.
+3. Only the IP address or host name may differ (and the port or http/https if
+   needed). The path after it, here `/Ebooks`, must be the same. If the path differs,
+   or it is the same address as above, the app warns you.
+4. Tap **Test connection**. At home the app often reports **The second address does
+   not answer right now**. That is normal while the VPN is off. To really try it, turn
+   off Wi-Fi, turn on the VPN and test again.
+5. Tap **Save**.
+
+How it works:
+
+- The app always tries the first address first. If it does not answer, it switches to
+  the second.
+- For each server the app remembers which address works, even after a restart. That
+  way you do not wait for the home address to time out every time you are out.
+- If the second address does not answer either, the problem is your connection. On
+  the next attempt the app tries the home address first again.
+- Your library does not change: nothing is rescanned, and reading progress and
+  favorites stay. Only the route to the server differs.
+
+A second address is only available for a WebDAV server.
 
 ### Scanning the library
 
@@ -545,9 +676,46 @@ Verwendest du eine Adresse mit `http://`, warnt die App, dass deine Daten
 unverschlüsselt durchs Netz gehen. Zu Hause ist das meist kein Problem, im WLAN
 eines anderen schon.
 
-Steht vor deinem Server ein Proxy mit eigener Zugangskontrolle, etwa Cloudflare Zero
-Trust? Füge dann unter **Eigene Header** die nötigen Zeilen mit **Header
-hinzufügen** hinzu. Diese Header gehen nur an deinen eigenen Server.
+### Eigene Header: Zugang über einen Proxy
+{: #headers-de}
+
+Steht dein Grimmory-Server hinter einem Proxy mit eigener Zugangskontrolle, etwa
+Cloudflare Zero Trust (Access), Authelia oder Authentik? Dann blockiert dieser Proxy
+die App, bevor der Server deine Anmeldung überhaupt sieht. Ein solcher Proxy lässt
+dich anhand eines Headers mit einem Schlüssel durch, und diese Header trägst du hier
+ein. Ohne Proxy brauchst du das nicht.
+
+1. Öffne den Anmeldebildschirm: **Server hinzufügen › Grimmory-Server**. Unten steht
+   **Eigene Header**.
+2. Tippe auf **Header hinzufügen**.
+3. Gib den **Namen** ein, zum Beispiel `CF-Access-Client-Id`, und den **Wert**. Der
+   Wert ist verborgen; mit dem Auge machst du ihn sichtbar.
+4. Wiederhole das für jeden Header. Eine Zeile löschst du, indem du sie nach links
+   wischst.
+5. Tippe auf **Anmelden**. Die App speichert die Header vor der Anmeldung, damit der
+   Proxy auch die Anmeldung selbst durchlässt.
+
+**Beispiel: Cloudflare Access.** Erstelle in Cloudflare Zero Trust ein Service-Token
+und erlaube dieses Token in der Access-Richtlinie deines Servers (Aktion Service
+Auth). Trage danach zwei Header ein:
+
+| Name | Wert |
+| --- | --- |
+| `CF-Access-Client-Id` | Die Client-ID des Service-Tokens |
+| `CF-Access-Client-Secret` | Das Client-Secret des Service-Tokens |
+
+**Regeln.** Ein Name darf keine Leerzeichen enthalten und ein Wert keinen
+Zeilenumbruch. Die Namen `Authorization`, `Content-Type`, `Content-Length`, `Host`,
+`Connection` und `Transfer-Encoding` setzt die App selbst; die kannst du nicht
+überschreiben. Eine Zeile, die diese Regeln verletzt, überspringt die App; du siehst
+dann eine orange Warnung unter den Headern.
+
+**Sicherheit.** Die Header, auch die Werte, liegen im Schlüsselbund deines Geräts.
+Sie gehen nur an deinen Grimmory-Server, nie an andere Dienste wie Open Library oder
+einen OPDS-Katalog.
+
+**Später ändern.** Melde dich ab und öffne den Anmeldebildschirm erneut. Deine
+gespeicherten Header sind dort schon eingetragen.
 
 ### Ein Buch laden
 
@@ -626,10 +794,43 @@ App aus den Dateien selbst.
 5. Tippe auf **Verbindung testen**, um zu prüfen, ob die App den Ordner erreicht.
 6. Tippe auf **Speichern**.
 
-Erreichst du dein NAS unterwegs über Tailscale oder ein VPN? Dann trage unter
-**Unterwegs** eine **Zweite Adresse** ein: derselbe Pfad, nur mit anderer IP-Adresse
-oder anderem Hostnamen. Die App weicht nur dorthin aus, wenn die erste Adresse nicht
-antwortet.
+### Unterwegs: eine zweite Adresse
+{: #onderweg-de}
+
+Zu Hause erreichst du dein NAS über eine lokale Adresse, etwa
+`http://192.168.2.17:5000/Ebooks`. Außer Haus funktioniert diese Adresse nicht.
+Erreichst du dein NAS unterwegs über Tailscale oder ein VPN, hat es dort eine andere
+Adresse. Mit einer zweiten Adresse findet die App deine Bücher an beiden Orten.
+
+1. Öffne den Server: **Einstellungen › Quellen und Accounts**, wische den Server nach
+   links und tippe auf **Bearbeiten**. Bei einem neuen Server trägst du sie gleich mit
+   ein.
+2. Trage unter **Unterwegs** bei **Zweite Adresse (optional)** die Adresse ein, die du
+   über das VPN verwendest. Zum Beispiel die Tailscale-Adresse
+   `http://100.64.12.34:5000/Ebooks` oder den Tailscale-Namen
+   `http://nas.dein-tailnet.ts.net:5000/Ebooks`.
+3. Nur die IP-Adresse oder der Hostname darf sich unterscheiden (und bei Bedarf der
+   Port oder http/https). Der Pfad dahinter, hier `/Ebooks`, muss gleich sein.
+   Unterscheidet sich der Pfad oder ist es dieselbe Adresse wie oben, warnt die App.
+4. Tippe auf **Verbindung testen**. Zu Hause meldet die App oft **Die zweite Adresse
+   antwortet gerade nicht**. Das ist normal, solange das VPN aus ist. Willst du es
+   wirklich ausprobieren, schalte WLAN aus und das VPN ein und teste erneut.
+5. Tippe auf **Speichern**.
+
+So funktioniert es:
+
+- Die App verwendet immer zuerst die erste Adresse. Antwortet sie nicht, wechselt sie
+  zur zweiten.
+- Pro Server merkt sich die App, welche Adresse funktioniert, auch nach einem
+  Neustart. So wartest du unterwegs nicht jedes Mal auf eine Zeitüberschreitung der
+  Heimadresse.
+- Antwortet auch die zweite Adresse nicht, liegt es an deiner Verbindung. Beim
+  nächsten Versuch probiert die App zuerst wieder die Heimadresse.
+- Deine Bibliothek ändert sich nicht: Es wird nichts neu durchsucht, und
+  Lesefortschritt und Favoriten bleiben erhalten. Nur der Weg zum Server ist ein
+  anderer.
+
+Eine zweite Adresse gibt es nur bei einem WebDAV-Server.
 
 ### Die Bibliothek durchsuchen
 
