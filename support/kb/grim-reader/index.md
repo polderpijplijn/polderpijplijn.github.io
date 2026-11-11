@@ -13,7 +13,7 @@ Grim Reader is een leesapp voor je eigen boekenverzameling op iPhone en iPad. Je
 haalt boeken uit een bron die jij zelf beheert en leest ze daarna offline. De app
 bevat geen winkel, geen advertenties en geen account bij een derde partij.
 
-Deze handleiding volgt versie 5.70 van de app. Tik op een hoofdstuk om het te
+Deze handleiding volgt versie 5.71 van de app. Tik op een hoofdstuk om het te
 openen.
 
 ## Inhoud
@@ -45,7 +45,7 @@ Grim Reader is a reading app for your own book collection on iPhone and iPad. Yo
 get books from a source you manage yourself, then read them offline. The app has
 no store, no ads and no third-party account.
 
-This guide follows version 5.70 of the app. Tap a chapter to open it.
+This guide follows version 5.71 of the app. Tap a chapter to open it.
 
 ## Contents
 
@@ -77,7 +77,7 @@ Du holst Bücher aus einer Quelle, die du selbst verwaltest, und liest sie danac
 offline. Die App hat keinen Shop, keine Werbung und kein Konto bei einem
 Drittanbieter.
 
-Diese Anleitung folgt Version 5.70 der App. Tippe auf ein Kapitel, um es zu öffnen.
+Diese Anleitung folgt Version 5.71 der App. Tippe auf ein Kapitel, um es zu öffnen.
 
 ## Inhalt
 
