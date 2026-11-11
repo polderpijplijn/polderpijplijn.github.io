@@ -419,7 +419,7 @@ are already filled in there.
 
 1. Find the book through Start, Library or Search and tap it.
 2. On the book screen, tap **Download**. When the download is done, the button
-   changes to **Reading** (or **Continue reading** if you had already started).
+   changes to **Read** (or **Continue reading** if you had already started).
 3. For a whole series or author, tap **Download all** in that list. You see how many
    books are done and which ones failed.
 
