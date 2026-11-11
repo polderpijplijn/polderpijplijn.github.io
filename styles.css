@@ -183,3 +183,32 @@ h3 { font-size: 16px; margin: 22px 0 4px; }
   font-size: 12px;
   font-weight: 600;
 }
+
+/* Tabellen in de kennisbank. Op een smal scherm scrolt de tabel zelf
+   horizontaal, zodat de pagina dat niet hoeft. */
+.kb-article table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 15px;
+}
+.kb-article th, .kb-article td {
+  border: 1px solid var(--card-stroke);
+  padding: 6px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+.kb-article th { background: var(--card); }
+.kb-article td { color: var(--muted); }
+
+/* Vorige · Inhoud · Volgende onder een hoofdstuk van een meerdelige handleiding. */
+.kb-article .chapter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--card-stroke);
+}
