@@ -124,12 +124,34 @@ Houd de app open tijdens het voorbereiden. In de energiebesparingsmodus pauzeert
 en gaat het verder zodra die uit staat. Het model werkt in het Nederlands, Engels,
 Duits, Frans en andere talen in Latijns schrift.
 
+**Boeken op een Grimmory-server.** De app haalt de titels en samenvattingen van je
+Grimmory-boeken op bij je eigen server en bereidt ze op dit apparaat voor; er gaat
+niets terug. Daarna komen alleen nieuwe boeken mee. Heb je samenvattingen op de
+server bijgewerkt, tik dan op **Samenvattingen opnieuw ophalen**. Een boek dat je
+gedownload hebt, telt maar één keer mee.
+
 Waar je het terugziet:
 
+- **Zoeken met een zin**: typ op Start een zin in de zoekbalk, zoals "Engelse
+  thrillers die ik nog niet gelezen heb", en druk op Enter of tik op de gouden
+  **AI**-knop. De app maakt er filters van voor taal, leesstatus, onderwerp en
+  schrijver. Onder **Boeken bij je vraag** staan de boeken die daaraan voldoen;
+  **Lijkt op je vraag** vult aan met boeken die erop lijken, binnen dezelfde
+  filters.
 - **Zoeken**: kies **Op betekenis**. De resultaten staan op volgorde van best
   passend.
 - **Lijkt op dit boek**: op het boekscherm, boeken met een vergelijkbare inhoud.
 - **Omdat je … leest**: op Start, suggesties op basis van wat je nu leest.
+- **Waar was ik?**: op het boekscherm van een EPUB die op je toestel staat en waarin
+  je al begonnen bent, een korte samenvatting van wat je het laatst las.
+
+**Op dit toestel.** Onderaan zie je per functie of hij werkt. Staat er geen
+**Werkt**, dan staat eronder waarom: AI-zoeken staat nog uit, het model wordt nog
+gedownload, of Apple Intelligence ontbreekt. **Een vraag begrijpen** (het omzetten
+van een zin in filters) en **Waar was ik?** gebruiken Apple Intelligence. Die vragen
+een geschikt toestel met iOS 26 of nieuwer, en Apple Intelligence moet aan staan in
+Instellingen van iOS. De andere functies werken met het model van AI-zoeken, ook
+zonder Apple Intelligence.
 
 Zet je de schakelaar uit en bevestig je **Zoekmodel verwijderen?**, dan verdwijnt
 het model van je toestel. Je kunt het later opnieuw downloaden.
@@ -338,12 +360,31 @@ Keep the app open while it prepares. In Low Power Mode it pauses and carries on 
 that is off. The model works in Dutch, English, German, French and other languages
 written in the Latin alphabet.
 
+**Books on a Grimmory server.** The app fetches the titles and summaries of your
+Grimmory books from your own server and prepares them on this device; nothing is sent
+back. After that, only new books are added. If you updated summaries on the server,
+tap **Fetch summaries again**. A book you downloaded counts only once.
+
 Where you see it:
 
+- **Search with a sentence**: on Start, type a sentence in the search bar, such as
+  "English thrillers I haven't read yet", and press Enter or tap the golden **AI**
+  button. The app turns it into filters for language, reading status, subject and
+  author. **Books for your search** lists the books that match; **Similar to your
+  search** adds books that resemble it, within the same filters.
 - **Search**: choose **By meaning**. Results are sorted by best match.
 - **Similar books**: on the book screen, books with similar content.
-- **Because you're reading …**: on Start, suggestions based on what you are reading
-  now.
+- **Because you read …**: on Start, suggestions based on what you are reading now.
+- **Where was I?**: on the book screen of an EPUB that is on your device and that you
+  have started, a short summary of what you read last.
+
+**On this device.** At the bottom you see for each feature whether it works. If it
+doesn't say **Works**, the reason is shown below it: AI search is still off, the
+model is still downloading, or Apple Intelligence is missing. **Understand a
+question** (turning a sentence into filters) and **Where was I?** use Apple
+Intelligence. They need a supported device with iOS 26 or later, and Apple
+Intelligence must be turned on in iOS Settings. The other features work with the AI
+search model, also without Apple Intelligence.
 
 If you turn the switch off and confirm **Delete search model?**, the model is removed
 from your device. You can download it again later.
@@ -556,13 +597,36 @@ Lass die App während der Vorbereitung geöffnet. Im Stromsparmodus pausiert sie
 macht weiter, sobald er aus ist. Das Modell funktioniert auf Niederländisch,
 Englisch, Deutsch, Französisch und in anderen Sprachen mit lateinischer Schrift.
 
+**Bücher auf einem Grimmory-Server.** Die App lädt die Titel und Zusammenfassungen
+deiner Grimmory-Bücher von deinem eigenen Server und bereitet sie auf diesem Gerät
+vor; es wird nichts zurückgesendet. Danach kommen nur neue Bücher hinzu. Hast du
+Zusammenfassungen auf dem Server aktualisiert, tippe auf **Zusammenfassungen erneut
+laden**. Ein heruntergeladenes Buch zählt nur einmal.
+
 Wo du es wiederfindest:
 
+- **Suchen mit einem Satz**: Tippe auf Start einen Satz in die Suchleiste, etwa
+  „englische Thriller, die ich noch nicht gelesen habe", und drücke die Eingabetaste
+  oder tippe auf die goldene **KI**-Taste. Die App macht daraus Filter für Sprache,
+  Lesestatus, Thema und Autor. Unter **Bücher zu deiner Frage** stehen die passenden
+  Bücher; **Ähnlich wie deine Suche** ergänzt Bücher, die ihr ähneln, innerhalb
+  derselben Filter.
 - **Suchen**: Wähle **Nach Bedeutung**. Die Ergebnisse sind nach bester
   Übereinstimmung sortiert.
 - **Ähnliche Bücher**: auf dem Buchbildschirm, Bücher mit ähnlichem Inhalt.
 - **Weil du … liest**: auf Start, Vorschläge auf Grundlage dessen, was du gerade
   liest.
+- **Wo war ich?**: auf dem Buchbildschirm eines EPUB, das auf deinem Gerät ist und das
+  du schon begonnen hast, eine kurze Zusammenfassung dessen, was du zuletzt gelesen
+  hast.
+
+**Auf diesem Gerät.** Unten siehst du für jede Funktion, ob sie funktioniert. Steht
+dort nicht **Funktioniert**, steht darunter der Grund: Die KI-Suche ist noch aus, das
+Modell wird noch geladen oder Apple Intelligence fehlt. **Eine Frage verstehen** (aus
+einem Satz Filter machen) und **Wo war ich?** nutzen Apple Intelligence. Dafür
+brauchst du ein unterstütztes Gerät mit iOS 26 oder neuer, und Apple Intelligence
+muss in den iOS-Einstellungen eingeschaltet sein. Die anderen Funktionen arbeiten mit
+dem Modell der KI-Suche, auch ohne Apple Intelligence.
 
 Schaltest du den Schalter aus und bestätigst **Suchmodell löschen?**, verschwindet
 das Modell von deinem Gerät. Du kannst es später erneut laden.

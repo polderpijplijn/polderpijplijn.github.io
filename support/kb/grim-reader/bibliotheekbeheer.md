@@ -4,7 +4,7 @@ title_nl: Grim Reader — bibliotheekbeheer
 title_en: Grim Reader — library management
 title_de: Grim Reader — Bibliotheksverwaltung
 title: Grim Reader — bibliotheekbeheer / library management
-description: Improve, clean up and maintain your Grim Reader library — missing details, duplicate books, merging authors, publishers and series, language codes, subjects, checking books and backups.
+description: Improve, clean up and maintain your Grim Reader library — missing details, duplicate books, merging authors, publishers and series, language codes, summaries, subjects, checking books and backups.
 ---
 
 <div lang="nl" markdown="1">
@@ -20,7 +20,7 @@ taak laat eerst zien wat er gaat gebeuren en vraagt om bevestiging.
 - [Waar een taak wordt uitgevoerd](#waar-nl)
 - [Gegevens verbeteren](#verbeteren-nl): ontbrekende gegevens, schrijvers verrijken
 - [Opschonen en samenvoegen](#opschonen-nl): dubbele boeken, schrijvers, uitgevers,
-  series, lege schrijvers, taalcodes, onderwerpen
+  series, lege schrijvers, taalcodes, samenvattingen, onderwerpen
 - [Onderhoud](#onderhoud-nl): boeken controleren, back-up en herstel
 
 ## Taken en scans
@@ -166,6 +166,16 @@ per taal welke varianten worden samengevoegd en hoeveel boeken het betreft. Tik 
 **Omzetten** (op een Grimmory-server: **Standaardiseren**). Staat er **Alle
 taalcodes zijn al eenduidig.**, dan is er niets te doen.
 
+### Samenvattingen opschonen
+
+Alleen voor de WebDAV-catalogus. Samenvattingen bevatten soms Word-opmaak,
+HTML-resten of rijen lege regels. Deze taak maakt er platte tekst met alinea's van.
+Je ziet hoeveel samenvattingen het betreft en onder **Voorbeelden** hoe de tekst voor
+en na eruitziet. Pas na **Opschonen** wordt er geschreven. Opmaak en lege regels
+verdwijnen; de alinea's blijven staan. Ontbrekende samenvattingen worden niet
+aangevuld, en de boekbestanden zelf blijven ongewijzigd. Staat er **Alle
+samenvattingen zijn al netjes.**, dan is er niets te doen.
+
 ### Onderwerpen beheren
 
 Toont alle onderwerpen, genres en trefwoorden uit je boeken, te sorteren op
@@ -249,7 +259,7 @@ will happen and asks you to confirm.
 - [Where a task runs](#waar-en)
 - [Improve data](#verbeteren-en): missing details, enriching authors
 - [Clean up and merge](#opschonen-en): duplicate books, authors, publishers, series,
-  empty authors, language codes, subjects
+  empty authors, language codes, summaries, subjects
 - [Maintenance](#onderhoud-en): checking books, backup and restore
 
 ## Tasks and scans
@@ -388,6 +398,16 @@ language you see which variants are merged and how many books are affected. Tap
 **Convert** (on a Grimmory server: **Standardize**). If it says **All language codes
 are already consistent.**, there is nothing to do.
 
+### Clean up summaries
+
+Only for the WebDAV catalogue. Summaries sometimes contain Word formatting, HTML
+leftovers or runs of blank lines. This task turns them into plain text with
+paragraphs. You see how many summaries are affected and, under **Examples**, what the
+text looks like before and after. Nothing is written until you tap **Clean Up**.
+Formatting and blank lines are removed; paragraphs are kept. Missing summaries are
+not filled in, and the book files themselves stay unchanged. If it says **All
+summaries are already clean.**, there is nothing to do.
+
 ### Manage subjects
 
 Shows all subjects, genres and keywords from your books, sorted by **Most books** or
@@ -468,7 +488,7 @@ zeigt zuerst, was passieren wird, und bittet um Bestätigung.
 - [Wo eine Aufgabe ausgeführt wird](#waar-de)
 - [Daten verbessern](#verbeteren-de): fehlende Daten, Autoren anreichern
 - [Bereinigen und zusammenführen](#opschonen-de): doppelte Bücher, Autoren, Verlage,
-  Reihen, leere Autoren, Sprachcodes, Themen
+  Reihen, leere Autoren, Sprachcodes, Zusammenfassungen, Themen
 - [Wartung](#onderhoud-de): Bücher prüfen, Backup und Wiederherstellung
 
 ## Aufgaben und Scans
@@ -617,6 +637,17 @@ Bücher speichern ihre Sprache oft unterschiedlich, etwa „nl", „dut" und
 (ISO 639-1) um. Du siehst pro Sprache, welche Varianten zusammengeführt werden und
 wie viele Bücher betroffen sind. Tippe auf **Umwandeln** (auf einem Grimmory-Server:
 **Vereinheitlichen**). Steht dort **Alle Sprachcodes sind schon eindeutig.**, gibt
+es nichts zu tun.
+
+### Zusammenfassungen bereinigen
+
+Nur für den WebDAV-Katalog. Zusammenfassungen enthalten manchmal Word-Formatierung,
+HTML-Reste oder viele Leerzeilen. Diese Aufgabe macht daraus reinen Text mit
+Absätzen. Du siehst, wie viele Zusammenfassungen betroffen sind, und unter
+**Beispiele**, wie der Text vorher und nachher aussieht. Erst nach **Bereinigen**
+wird geschrieben. Formatierung und Leerzeilen werden entfernt, die Absätze bleiben
+erhalten. Fehlende Zusammenfassungen werden nicht ergänzt, und die Buchdateien selbst
+bleiben unverändert. Steht dort **Alle Zusammenfassungen sind bereits sauber.**, gibt
 es nichts zu tun.
 
 ### Themen verwalten
